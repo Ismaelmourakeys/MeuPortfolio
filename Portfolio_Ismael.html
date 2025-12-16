@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ismael Moura | Portfólio</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#fff', // azul
+                        secondary: '#10b981', // verde
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-slate-700 text-slate-100 font-sans">
+
+    <!-- HEADER -->
+    <header class="flex justify-between items-center px-8 py-6">
+        <h1 class="text-xl font-bold text-secondary">Ismael Moura</h1>
+        <nav class="hidden md:flex space-x-6 text-sm">
+            <a href="#sobre" class="hover:text-secondary">Sobre</a>
+            <a href="#projetos" class="hover:text-secondary">Projetos</a>
+            <a href="#hobbies" class="hover:text-secondary">Hobbies</a>
+            <a href="#contato" class="hover:text-secondary">Contato</a>
+        </nav>
+
+        <!-- Menu Hamburguer (visível em telas menores) -->
+        <div class="md:hidden flex items-center">
+            <button id="menuToggle" class="text-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    class="w-8 h-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Menu Mobile (inicialmente escondido) -->
+    <div id="mobileMenu" class="md:hidden hidden bg-slate-800 p-4 space-y-4 text-center">
+        <a href="#sobre" class="block text-sm hover:text-secondary">Sobre</a>
+        <a href="#projetos" class="block text-sm hover:text-secondary">Projetos</a>
+        <a href="#hobbies" class="block text-sm hover:text-secondary">Hobbies</a>
+        <a href="#contato" class="block text-sm hover:text-secondary">Contato</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="flex flex-col sm:flex-row items-center justify-center px-6 py-20 gap-10">
+
+        <!-- IMAGEM -->
+        <img src="./assets/design_oficial.png" alt="Avatar" class="w-full sm:w-[500px] h-auto" />
+
+        <!-- TEXTO -->
+        <div class="flex flex-col text-center sm:text-left sm:items-start max-w-xl">
+            <h2 class="text-4xl font-bold mb-4">Desenvolvedor Front-end</h2>
+            <p class="text-slate-300 mb-8">
+                Apaixonado por transformar ideias em interfaces acessíveis, funcionais e modernas, com foco na
+                experiência do usuário.
+            </p>
+            <a href="./curriculo.pdf" download
+                class="bg-secondary text-slate-900 px-6 py-3 rounded-xl font-semibold hover:opacity-90 transition">
+                Baixar Currículo (PDF)
+            </a>
+        </div>
+
+    </section>
+
+
+    <!-- SOBRE -->
+    <section id="sobre" class="px-8 py-20 bg-slate-800">
+
+        <h3 class="text-3xl font-bold mb-6 text-secondary">Sobre mim</h3>
+        <p class="max-w-3xl text-slate-300">
+            "Olá! Sou Ismael Moura, desenvolvedor em constante evolução. Tenho experiência com HTML, CSS, JavaScript e
+            React Native, criando interfaces funcionais, modernas e focadas na melhor experiência possível para o
+            usuário. Atualmente estou estudando React e sigo ampliando meus conhecimentos para acompanhar as
+            necessidades do mercado — e estou totalmente pronto para aprender o que for preciso para contribuir com a
+            empresa. Aqui você encontra meus projetos, estudos e experimentos que refletem minha curiosidade e dedicação
+            ao aprendizado contínuo."
+        </p>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projetos" class="px-8 py-20">
+        <h3 class="text-3xl font-bold mb-10 text-secondary">Projetos</h3>
+        <div class="grid md:grid-cols-3 gap-8 items-start">
+
+            <div
+                class="card bg-slate-800 rounded-2xl p-6 shadow-lg flex flex-col transition-all duration-300 hover:scale-105 transition-transform">
+
+                <a href="https://mygluco.vercel.app">
+                    <div class="card-content overflow-hidden max-h-[420px] transition-all duration-300">
+                        <h4 class="text-xl font-semibold mb-2">Landing Page - MyGluco</h4>
+                        <p class="text-slate-300 mb-4">
+                            Landing page criado com objetivo de ajudar as pessoas com diabetes,
+                            apresentar o nosso sistema e fazer download de um aplicativo mobile,
+                            onde as ferramentas usando nesse site são HTML, TailwindCSS,
+                            JavaScript e Firebase. Projeto criado para o Trabalho de Conclusão
+                            de Curso (TCC) na Etec Sapopemba.
+                        </p>
+                        <img src="./assets/pagina_principal.png" alt="Site MyGluco" class="mb-4 rounded-lg" />
+                </a>
+
+                <div class="flex gap-4 text-sm">
+                    <a href="https://mygluco.vercel.app" class="text-secondary hover:underline">Link do Site</a>
+                    <a href="https://github.com/Ismaelmourakeys/SiteMygluco"
+                        class="text-secondary hover:underline">GitHub</a>
+                </div>
+            </div>
+
+            <button class="ver-mais text-secondary text-sm mt-4 self-start hover:underline">
+                Ver mais
+            </button>
+        </div>
+
+
+        <div
+            class="card bg-slate-800 rounded-2xl p-6 shadow-lg flex flex-col transition-all duration-300 hover:scale-105 transition-transform">
+
+            <div class="card-content overflow-hidden max-h-[420px] transition-all duration-300">
+                <h4 class="text-xl font-semibold mb-2">Aplicativo Mobile - MyGluco</h4>
+
+                <p class="text-slate-300 mb-4">
+                    Aplicativo mobile desenvolvido para o Trabalho de Conclusão de Curso
+                    (TCC) na Etec Sapopemba. O projeto foi feito com React Native,
+                    Firebase e outras tecnologias.
+                </p>
+
+                <video src="./assets/video_app.mp4" autoplay loop muted playsinline
+                    class="mx-auto w-full max-w-[220px] h-[470px] object-cover rounded-xl"></video>
+
+                <div class="flex gap-4 text-sm mt-4">
+                    <a href="#" class="text-secondary hover:underline">Demo</a>
+                    <a href="#" class="text-secondary hover:underline">GitHub</a>
+                </div>
+            </div>
+
+            <button class="ver-mais text-secondary text-sm mt-4 self-start hover:underline">
+                Ver mais
+            </button>
+        </div>
+        </div>
+
+        <!-- Você pode duplicar esse card -->
+        </div>
+    </section>
+
+    <!-- HOBBIES -->
+    <section id="hobbies" class="px-8 py-20 bg-slate-800">
+        <h3 class="text-3xl font-bold mb-6 text-secondary">Hobbies</h3>
+        <ul class="list-disc list-inside text-slate-300 space-y-2">
+            <li>Estudar novas tecnologias</li>
+            <li>Design de interfaces</li>
+            <li>Projetos pessoais</li>
+            <li>Aprender inglês</li>
+        </ul>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="px-8 py-20">
+        <h3 class="text-3xl font-bold mb-6 text-secondary">Contato</h3>
+        <p class="text-slate-300 mb-6">Vamos conversar?</p>
+        <div class="flex flex-wrap gap-6">
+            <a href="mailto:seuemail@email.com" class="hover:text-secondary">📧 Email</a>
+            <a href="https://github.com/seugithub" target="_blank" class="hover:text-secondary">💻 GitHub</a>
+            <a href="https://linkedin.com/in/seulinkedin" target="_blank" class="hover:text-secondary">🔗 LinkedIn</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center py-6 text-slate-400 text-sm bg-slate-950">
+        © 2025 Ismael Moura. Todos os direitos reservados.
+    </footer>
+
+</body>
+<script src="./portfolio_ismael.js"></script>
+
+</html>
