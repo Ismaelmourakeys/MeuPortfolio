@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ismael Moura | Portfólio</title>
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./assets/img/design_oficial.png" />
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
@@ -29,34 +29,52 @@
 <body class="bg-slate-700 text-slate-100 font-sans">
 
     <!-- HEADER -->
-    <header class="flex justify-between items-center px-8 py-6">
+    <header id="header"
+        class="fixed top-0 w-full flex justify-between items-center px-8 py-6 transition-all duration-300 z-50">
         <h1 class="text-3xl font-bold text-secondary">Ismael Moura</h1>
         <nav class="hidden md:flex space-x-6 text-lg">
-            <a href="#sobre" class="hover:text-secondary">Sobre</a>
-            <a href="#projetos" class="hover:text-secondary">Projetos</a>
-            <a href="#hobbies" class="hover:text-secondary">Hobbies</a>
-            <a href="#contato" class="hover:text-secondary">Contato</a>
+            <a href="#sobre" class="relative text-slate-200 transition-colors duration-300 hover:text-secondary
+          after:absolute after:left-1/2 after:bottom-[-4px]
+          after:h-[2px] after:w-0 after:bg-secondary
+          after:transition-all after:duration-300
+          hover:after:w-full hover:after:left-0">Sobre</a>
+            <a href="#projetos" class="relative text-slate-200 transition-colors duration-300 hover:text-secondary
+          after:absolute after:left-1/2 after:bottom-[-4px]
+          after:h-[2px] after:w-0 after:bg-secondary
+          after:transition-all after:duration-300
+          hover:after:w-full hover:after:left-0">Projetos</a>
+            <a href="#hobbies" class="relative text-slate-200 transition-colors duration-300 hover:text-secondary
+          after:absolute after:left-1/2 after:bottom-[-4px]
+          after:h-[2px] after:w-0 after:bg-secondary
+          after:transition-all after:duration-300
+          hover:after:w-full hover:after:left-0">Hobbies</a>
+            <a href="#contato" class="relative text-slate-200 transition-colors duration-300 hover:text-secondary
+          after:absolute after:left-1/2 after:bottom-[-4px]
+          after:h-[2px] after:w-0 after:bg-secondary
+          after:transition-all after:duration-300
+          hover:after:w-full hover:after:left-0">Contato</a>
         </nav>
 
         <!-- Menu Hamburguer (visível em telas menores) -->
         <div class="md:hidden flex items-center">
-            <button id="menuToggle" class="text-secondary">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                    class="w-8 h-8">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
-                    </path>
-                </svg>
+            <button id="menuToggle" class="relative w-10 h-10 flex flex-col justify-center items-center gap-1.5">
+                <span class="line w-6 h-0.5 bg-secondary transition-all duration-300"></span>
+                <span class="line w-6 h-0.5 bg-secondary transition-all duration-300"></span>
+                <span class="line w-6 h-0.5 bg-secondary transition-all duration-300"></span>
             </button>
         </div>
     </header>
 
     <!-- Menu Mobile (inicialmente escondido) -->
-    <div id="mobileMenu"
-        class="md:hidden hidden bg-slate-800 p-4 space-y-4 text-center transition-opacity duration-300">
-        <a href="#sobre" class="block text-sm hover:text-secondary">Sobre</a>
-        <a href="#projetos" class="block text-sm hover:text-secondary">Projetos</a>
-        <a href="#hobbies" class="block text-sm hover:text-secondary">Hobbies</a>
-        <a href="#contato" class="block text-sm hover:text-secondary">Contato</a>
+    <div id="mobileMenu" class="md:hidden fixed top-[88px] left-0 w-full bg-slate-800/95 backdrop-blur-md
+         p-6 space-y-6 text-center
+         transform -translate-y-6 opacity-0 pointer-events-none
+         transition-all duration-300 ease-out z-50">
+        <a href="#sobre" class="menu-link block text-sm hover:text-secondary transition-all duration-300">Sobre</a>
+        <a href="#projetos"
+            class="menu-link block text-sm hover:text-secondary transition-all duration-300">Projetos</a>
+        <a href="#hobbies" class="menu-link block text-sm hover:text-secondary transition-all duration-300">Hobbies</a>
+        <a href="#contato" class="menu-link block text-sm hover:text-secondary transition-all duration-300">Contato</a>
     </div>
 
     <!-- HERO -->
@@ -71,8 +89,8 @@
 
             <h3 class="mb-2 font-bold">Redes Sociais:</h3>
             <div class="flex justify-center sm:justify-start gap-4 mb-4">
-                <a href="https://github.com/Ismaelmourakeys" target="_blank"
-                    class="text-slate-300 hover:text-secondary transition">
+                <a href="https://github.com/Ismaelmourakeys" target="_blank" class="text-slate-300 hover:text-secondary transition-all duration-300
+          hover:scale-110 hover:-translate-y-1">
                     <!-- GitHub -->
                     <svg class="w-6 h-6 hover:scale-105 transform" fill="currentColor" viewBox="0 0 24 24">
                         <path
@@ -80,8 +98,17 @@
                     </svg>
                 </a>
 
-                <a href="https://linkedin.com/in/seulinkedin" target="_blank"
-                    class="text-slate-300 hover:text-secondary transition">
+                <a href="https://instagram.com/seuinsta" target="_blank" class="text-slate-300 hover:text-secondary transition-all duration-300
+          hover:scale-110 hover:-translate-y-1">
+                    <!-- Instagram -->
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3h10zm-5 3.5A5.5 5.5 0 1 0 17.5 13 5.51 5.51 0 0 0 12 7.5zm0 9A3.5 3.5 0 1 1 15.5 13 3.5 3.5 0 0 1 12 16.5zM18 6.5a1 1 0 1 0-1-1 1 1 0 0 0 1 1z" />
+                    </svg>
+                </a>
+
+                <a href="https://linkedin.com/in/seulinkedin" target="_blank" class="text-slate-300 hover:text-secondary transition-all duration-300
+          hover:scale-110 hover:-translate-y-1">
                     <!-- LinkedIn -->
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                         <path
@@ -89,14 +116,6 @@
                     </svg>
                 </a>
 
-                <a href="https://instagram.com/seuinsta" target="_blank"
-                    class="text-slate-300 hover:text-secondary transition">
-                    <!-- Instagram -->
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3h10zm-5 3.5A5.5 5.5 0 1 0 17.5 13 5.51 5.51 0 0 0 12 7.5zm0 9A3.5 3.5 0 1 1 15.5 13 3.5 3.5 0 0 1 12 16.5zM18 6.5a1 1 0 1 0-1-1 1 1 0 0 0 1 1z" />
-                    </svg>
-                </a>
             </div>
 
 
@@ -104,18 +123,17 @@
                 <span>Eu sou</span>
 
                 <span id="typed" class="text-secondary"></span>
-                
+
             </h2>
 
 
-            <p class="text-slate-300 mb-8">
+            <p class="text-slate-300 mb-8 flex sm:justify-center sm:text-center">
                 Apaixonado por transformar ideias em interfaces acessíveis, funcionais e modernas, com foco na
                 experiência do usuário.
             </p>
             <a href="./assets/docs/Curriculo_IsmaelMoura.pdf" download
-                class="bg-secondary text-slate-900 px-6 py-3 rounded-xl font-semibold hover:opacity-90 transition hover:scale-105 inline-block w-max">
-                Download do meu Currículo (PDF)
-            </a>
+                class="mx-auto bg-secondary text-slate-900 px-6 py-3 rounded-xl font-semibold hover:opacity-90 hover:scale-105 transition">
+                Download do meu Currículo (PDF) </a>
         </div>
 
     </section>
@@ -141,7 +159,8 @@
         <div class="grid md:grid-cols-3 gap-8 items-start">
 
             <div
-                class="card bg-slate-800 rounded-2xl p-6 shadow-lg flex flex-col transition-all duration-300 hover:scale-105 transition-transform">
+                class="card bg-slate-800 rounded-2xl p-6 shadow-lg flex flex-col
+       transition-all duration-300 hover:-translate-y-4 hover:shadow-2xl">
 
                 <a href="https://mygluco.vercel.app">
                     <div class="card-content overflow-hidden max-h-[420px] transition-all duration-300">
@@ -170,7 +189,8 @@
 
 
         <div
-            class="card bg-slate-800 rounded-2xl p-6 shadow-lg flex flex-col transition-all duration-300 hover:scale-105 transition-transform">
+           class="card bg-slate-800 rounded-2xl p-6 shadow-lg flex flex-col
+       transition-all duration-300 hover:-translate-y-4 hover:shadow-2xl">
 
             <div class="card-content overflow-hidden max-h-[420px] transition-all duration-300">
                 <h4 class="text-xl font-semibold mb-2">Aplicativo Mobile - MyGluco</h4>
