@@ -2,11 +2,6 @@
 const menuToggle = document.getElementById('menuToggle');
 const mobileMenu = document.getElementById('mobileMenu');
 
-// Alterna a visibilidade do menu
-menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-});
-
 // Fecha o menu quando um link é clicado
 const menuLinks = mobileMenu.querySelectorAll('a');
 menuLinks.forEach(link => {
@@ -57,4 +52,14 @@ buttons.forEach(button => {
             button.textContent = 'Ver menos';
         }
     });
+
 });
+
+new Typed('#typed', {
+    strings: ['Desenvolvedor', 'Estudante', 'Designer'],
+    typeSpeed: 100,
+    backSpeed: 60,
+    loop: true
+});
+
+

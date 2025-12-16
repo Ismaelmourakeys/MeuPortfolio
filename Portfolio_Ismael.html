@@ -8,6 +8,8 @@
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -19,15 +21,17 @@
                 }
             }
         }
+
     </script>
+
 </head>
 
 <body class="bg-slate-700 text-slate-100 font-sans">
 
     <!-- HEADER -->
     <header class="flex justify-between items-center px-8 py-6">
-        <h1 class="text-xl font-bold text-secondary">Ismael Moura</h1>
-        <nav class="hidden md:flex space-x-6 text-sm">
+        <h1 class="text-3xl font-bold text-secondary">Ismael Moura</h1>
+        <nav class="hidden md:flex space-x-6 text-lg">
             <a href="#sobre" class="hover:text-secondary">Sobre</a>
             <a href="#projetos" class="hover:text-secondary">Projetos</a>
             <a href="#hobbies" class="hover:text-secondary">Hobbies</a>
@@ -47,7 +51,8 @@
     </header>
 
     <!-- Menu Mobile (inicialmente escondido) -->
-    <div id="mobileMenu" class="md:hidden hidden bg-slate-800 p-4 space-y-4 text-center">
+    <div id="mobileMenu"
+        class="md:hidden hidden bg-slate-800 p-4 space-y-4 text-center transition-opacity duration-300">
         <a href="#sobre" class="block text-sm hover:text-secondary">Sobre</a>
         <a href="#projetos" class="block text-sm hover:text-secondary">Projetos</a>
         <a href="#hobbies" class="block text-sm hover:text-secondary">Hobbies</a>
@@ -58,18 +63,58 @@
     <section class="flex flex-col sm:flex-row items-center justify-center px-6 py-20 gap-10">
 
         <!-- IMAGEM -->
-        <img src="./assets/design_oficial.png" alt="Avatar" class="w-full sm:w-[500px] h-auto" />
+        <img src="./assets/img/design_oficial.png" alt="Avatar" class="w-full sm:w-[500px] h-auto" />
 
-        <!-- TEXTO -->
-        <div class="flex flex-col text-center sm:text-left sm:items-start max-w-xl">
-            <h2 class="text-4xl font-bold mb-4">Desenvolvedor Front-end</h2>
+
+        <!-- APRESENTAÇÃO -->
+        <div class="flex flex-col text-center sm:text-left sm:items-center max-w-xl">
+
+            <h3 class="mb-2 font-bold">Redes Sociais:</h3>
+            <div class="flex justify-center sm:justify-start gap-4 mb-4">
+                <a href="https://github.com/Ismaelmourakeys" target="_blank"
+                    class="text-slate-300 hover:text-secondary transition">
+                    <!-- GitHub -->
+                    <svg class="w-6 h-6 hover:scale-105 transform" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.1 3.29 9.43 7.86 10.96.58.11.79-.25.79-.56v-2.04c-3.2.7-3.87-1.54-3.87-1.54-.53-1.34-1.3-1.7-1.3-1.7-1.06-.73.08-.72.08-.72 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.76.41-1.27.74-1.56-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.3-.52-1.52.11-3.17 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.5 3.17-1.18 3.17-1.18.64 1.65.24 2.87.12 3.17.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.69.42.36.79 1.08.79 2.18v3.23c0 .31.21.67.8.56A11.53 11.53 0 0 0 23.5 12C23.5 5.74 18.27.5 12 .5z" />
+                    </svg>
+                </a>
+
+                <a href="https://linkedin.com/in/seulinkedin" target="_blank"
+                    class="text-slate-300 hover:text-secondary transition">
+                    <!-- LinkedIn -->
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4v16h-4V8zm7.5 0h3.8v2.2h.05c.53-1 1.83-2.2 3.75-2.2 4 0 4.7 2.6 4.7 6v10h-4v-8.8c0-2.1 0-4.8-2.9-4.8s-3.3 2.3-3.3 4.6V24h-4V8z" />
+                    </svg>
+                </a>
+
+                <a href="https://instagram.com/seuinsta" target="_blank"
+                    class="text-slate-300 hover:text-secondary transition">
+                    <!-- Instagram -->
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3h10zm-5 3.5A5.5 5.5 0 1 0 17.5 13 5.51 5.51 0 0 0 12 7.5zm0 9A3.5 3.5 0 1 1 15.5 13 3.5 3.5 0 0 1 12 16.5zM18 6.5a1 1 0 1 0-1-1 1 1 0 0 0 1 1z" />
+                    </svg>
+                </a>
+            </div>
+
+
+            <h2 class="text-4xl font-bold mb-4 flex justify-center sm:justify-start gap-2 leading-none">
+                <span>Eu sou</span>
+
+                <span id="typed" class="text-secondary"></span>
+                
+            </h2>
+
+
             <p class="text-slate-300 mb-8">
                 Apaixonado por transformar ideias em interfaces acessíveis, funcionais e modernas, com foco na
                 experiência do usuário.
             </p>
-            <a href="./curriculo.pdf" download
-                class="bg-secondary text-slate-900 px-6 py-3 rounded-xl font-semibold hover:opacity-90 transition">
-                Baixar Currículo (PDF)
+            <a href="./assets/docs/Curriculo_IsmaelMoura.pdf" download
+                class="bg-secondary text-slate-900 px-6 py-3 rounded-xl font-semibold hover:opacity-90 transition hover:scale-105 inline-block w-max">
+                Download do meu Currículo (PDF)
             </a>
         </div>
 
@@ -108,7 +153,7 @@
                             JavaScript e Firebase. Projeto criado para o Trabalho de Conclusão
                             de Curso (TCC) na Etec Sapopemba.
                         </p>
-                        <img src="./assets/pagina_principal.png" alt="Site MyGluco" class="mb-4 rounded-lg" />
+                        <img src="./assets/img/pagina_principal.png" alt="Site MyGluco" class="mb-4 rounded-lg" />
                 </a>
 
                 <div class="flex gap-4 text-sm">
@@ -136,7 +181,7 @@
                     Firebase e outras tecnologias.
                 </p>
 
-                <video src="./assets/video_app.mp4" autoplay loop muted playsinline
+                <video src="./assets/video/video_app.mp4" autoplay loop muted playsinline
                     class="mx-auto w-full max-w-[220px] h-[470px] object-cover rounded-xl"></video>
 
                 <div class="flex gap-4 text-sm mt-4">
