@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    
+    <link rel="stylesheet"  href="Tela de login.css">  
+
+    <script language="JavaScript"> 
+
+    function Entrar () {
+ 
+        var Email=(document.Tela_de_login.txt_email.value);
+        var Senha=(document.Tela_de_login.txt_senha.value);
+    
+
+    if (Email = "ismael" && Senha == 123) {
+        
+    window.location.href="Lista_exercicios.html";
+            
+    } 
+    else {
+        alert("Email ou Senha inválidos")
+
+    } 
+
+    }
+        
+        function Limpar () {
+            document.Tela_de_login.txt_email.value="";
+            document.Tela_de_login.txt_email.focus();
+            document.Tela_de_login.txt_senha.value="";
+            document.Tela_de_login.txt_senha.focus();
+        }
+        
+    
+</script>
+</head>
+
+
+<body>
+    <form name="Tela_de_login">
+
+        
+        <fieldset>
+            <legend>
+                <h2>Entrar</h2> 
+            </legend>
+         
+            <div class="container">
+        
+        <label>Email:</label>
+        <input type="text" name="txt_email" placeholder="Digite seu email..." value="" >
+        <br>
+        <br>
+        <label>Senha:</label>
+        <input type= "password" name="txt_senha" placeholder="Digite sua senha..." value="" >
+
+        <br><br>
+        <input type= "button" value= "Entrar" onClick= "Entrar()">
+        <input type= "button" value= "Limpar" onClick= "Limpar()">
+
+    </div>
+
+    </fieldset>
+</form>
+
+</body>
+</html>

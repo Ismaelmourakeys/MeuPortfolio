@@ -1,0 +1,78 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do corpo da página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #dbe6f6, #0a5863);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* Título */
+h2 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+/* Lista de exercícios */
+ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Itens da lista */
+li {
+    background-color: #fff;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    border-left: 5px solid #2c3e50;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+li:hover {
+    transform: scale(1.02);
+}
+
+/* Estilo dos links */
+a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+a:hover {
+    color: #c5796d;
+}
+
+/* Botão "Voltar ao Login" */
+input[value="Voltar ao Login"] {
+    background-color: #93d6f5;
+    color: #000000;
+    padding: 10px 25px;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 20px;
+}
+
+/* Efeito ao passar o mouse */
+input[value="Voltar ao Login"]:hover {
+    background-color: #b6e4e1;
+    transform: scale(1.03);
+}

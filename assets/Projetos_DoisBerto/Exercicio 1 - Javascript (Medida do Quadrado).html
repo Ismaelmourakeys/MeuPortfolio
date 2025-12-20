@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1 - Javascript</title>
+
+    <link rel="stylesheet" href="Exercicio1.css">
+    
+    <!--Entrar como uma entrada de medida do quadrado e exibir a área e perimetro do mesmo;-->
+
+    
+    <script language="Javascript">
+
+    function calculo () {
+        var Lado=parseInt(document.frm_area.txt_medida.value);
+        var area = Lado*Lado
+        var perimetro = Lado + Lado + Lado + Lado
+        
+        alert("A área do quadrado é: " + Lado + "\nO perimetro do quadrado é: " + area+ "\nA medida total dos lados é: " + perimetro);
+    }
+
+    function Limpa () {
+document.frm_area.txt_medida.value="";
+document.frm_area.txt_medida.focus();
+}
+
+
+</script>
+</head>
+<body>
+    
+    <form name="frm_area">
+        <fieldset> <!--Fieldset = Cria um leyout no formato de quadrado + o "legend" destaca o titulo nesse quadrado -->
+            
+        
+            <h3><center>Calculo da Medida do Quadrado</center></h3>
+        
+        
+
+        <label>Digite a medida do quadrado para saber o tamanho da área e o perimetro: </label>
+        <br>
+        <br>
+
+        <input type="text" name="txt_medida" placeholder="Digite o valor da medida" value="">
+        <br>
+        <br>
+            
+        <center>
+        <input type="button" value="CALCULAR" onclick="calculo()">
+        <input type="button" value="LIMPAR" onclick="Limpa()">
+        </center>
+        <br>
+
+        <a style="text-align: center;"  href="Lista_exercicios.html"> Voltar ao Menu de exercicios</a>
+    
+    </fieldset>
+    </form>
+
+    
+</body>
+</html>

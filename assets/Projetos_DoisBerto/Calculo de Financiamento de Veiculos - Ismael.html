@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Financiamento.css">
+    <title>Financiamento de Veiculos</title>
+
+
+    <script language="Javascript">
+
+        function calcularFinanciamento() {
+            var modelo = document.frm_financiamento.modelo.value;
+            var montadora = document.frm_financiamento.montadoras.value;
+            var anoVeiculo = document.frm_financiamento.ano_veiculo.value;
+            var valorVeiculo = parseFloat(document.getElementById("valor").value.replace(",", "."));
+            var valorEntrada = parseFloat(document.getElementById("entrada").value.replace(",", "."));
+            var planoPagamento = document.frm_financiamento.plano_pagamento.value;
+
+            if (valorEntrada >= valorVeiculo) {
+                alert("O valor de entrada não pode ser maior ou igual ao valor do veículo.");
+            }
+
+            var valorFinanciado = valorVeiculo - valorEntrada;
+            var taxaJuros = 0;
+
+            switch (planoPagamento) {
+                case "1":
+                    taxaJuros = 0.12;
+                    break;
+                case "2":
+                    taxaJuros = 0.21;
+                    break;
+                case "3":
+                    taxaJuros = 0.34;
+                    break;
+                case "4":
+                    taxaJuros = 0.42;
+                    break;
+                case "5":
+                    taxaJuros = 0.54;
+                    break;
+                default:
+                    alert("Selecione um plano de pagamento válido.");
+                    return;
+            }
+
+            var totalFinanciado = valorFinanciado * (1 + taxaJuros);
+            var parcelasMensais = totalFinanciado / (parseInt(planoPagamento) * 12);
+
+            alert("Modelo: " + modelo + "\nMontadora: " + montadora + "\nAno do Veículo: " + anoVeiculo +
+                  "\nValor do Veículo: R$" + valorVeiculo.toFixed(2) +
+                  "\nValor de Entrada: R$" + valorEntrada.toFixed(2) +
+                  "\nValor Financiado: R$" + valorFinanciado.toFixed(2) +
+                  "\nTotal Financiado: R$" + totalFinanciado.toFixed(2) +
+                  "\nParcelas Mensais: R$" + parcelasMensais.toFixed(2));
+        }
+
+    </script>
+
+</head>
+
+
+<body>
+    <form name="frm_financiamento">
+
+
+<center>
+        <legend>
+            <h2> Financiamento de Veiculos </h2>
+        </legend>
+
+</center>        
+
+        <h3>Preencha os campos abaixos:</h3>
+<fieldset>
+        <Label> Insira o modelo do veiculo: </Label>
+
+        <input name="modelo" type="text" placeholder="Modelo do veiculo" required>
+        
+        <br><br>
+
+        <label> Selecione o nome da montadora do veiculo: </label>
+        <select name="montadoras" id="montadora" required>
+            
+            <option placeholder="" disabled selected>Selecione a montadora...</option>
+            
+            <option value="Volkswagen">Volkswagen</option>
+            <option value="Chevrolet">Chevrolet</option>
+            <option value="Fiat">Fiat</option>
+            <option value="Ford">Ford</option>
+            <option value="Renault">Renault</option>
+            <option value="Hyundai">Hyundai</option>
+            <option value="Honda">Honda</option>
+            <option value="Toyota">Toyota</option>
+            <option value="Nissan">Nissan</option>
+            <option value="Peugeot">Peugeot</option>
+            <option value="Citroen">Citroen</option>
+            <option value="Kia">Kia</option>
+            <option value="Jeep">Jeep</option>  
+            <option value="Subaru">Subaru</option>
+            <option value="Chrysler">Mercedes-Benz</option>
+            <option value="Mitsubishi">Mitsubishi</option>
+            <option value="Land Rover">Land Rover</option>
+
+
+
+        </select>
+        <br><br>
+
+    <label> Ano do Veiculo: </label>
+
+    <input type="number" name="ano_veiculo" min="1980" max="2025" required>
+    <br><br>
+
+    <label> Valor do Veiculo: </label>
+    <input type="text" id="valor" required> 
+
+    <br><br>
+    <label> Valor de Entrada: </label>
+    <input type="text" id="entrada" required>
+    <br><br>
+
+    <label> Plano de Pagamento: </label>
+    <select name="plano_pagamento" id="plano_pagamento" required>
+
+        <option placeholder="" disabled selected>Selecione o plano de pagamento...</option>
+
+        <option value="1"> 12 meses — Juros de 12% sobre o valor financiado </option>
+        <option value="2"> 24 meses — Juros de 21% sobre o valor financiado </option>
+        <option value="3"> 36 meses — Juros de 34% sobre o valor financiado </option>
+        <option value="4"> 48 meses — Juros de 42% sobre o valor financiado </option>
+        <option value="5"> 60 meses — Juros de 54% sobre o valor financiado </option>
+
+        </select>
+
+        <br><br><br>
+
+        <center>
+        
+            <input type="button" value="Calcular" onclick="calcularFinanciamento()">
+            <input type="reset" value="Novo Calculo" onclick="limparCampos()">
+    
+        </center>
+        <br>
+</fieldset>
+
+        <h4> Obs: O valor do veiculo e o valor de entrada devem ser informados em R$ (reais) </h4>
+        <h4> Exemplo: 10000,00 </h4>
+        <h4> O valor de entrada não pode ser maior ou igual ao valor do veiculo. </h4>
+    
+
+</form>
+</body>
+</html>

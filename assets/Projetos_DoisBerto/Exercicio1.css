@@ -1,0 +1,107 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do corpo da página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #6aade08e, #56a5f3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Fieldset */
+fieldset {
+    border: none;
+}
+
+
+/* Estilo do formulário */
+form {
+    background-color: #dbf3ef;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens horizontalmente */
+}
+
+/* Título */
+h3 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Campo de entrada */
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #f57070;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #2c3e50;
+    outline: none;
+}
+
+/* Botões */
+input[type="button"] {
+    padding: 10px 20px;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+    margin-bottom: 10px; /* Espaçamento entre os botões */
+}
+
+/* Estilo do botão CALCULAR */
+input[value="CALCULAR"] {
+    background-color: #2c3e50;
+    color: white;
+}
+
+input[value="CALCULAR"]:hover {
+    background-color: #34495e;
+}
+
+/* Estilo do botão LIMPAR */
+input[value="LIMPAR"] {
+    background-color: #bdc3c7;
+    color: #2c3e50;
+}
+
+input[value="LIMPAR"]:hover {
+    background-color: #95a5a6;
+    
+}
+
+/* Links */
+a {
+    display: block;
+    margin-top: 1px;
+    text-align: center;
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #1c5d99;
+}

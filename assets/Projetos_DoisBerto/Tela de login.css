@@ -1,0 +1,95 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do corpo da página */
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #dbe6f6, #0a5863);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estilo do formulário */
+form {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Título */
+legend h2 {
+    text-align: center;
+    color: #2a5298;
+    margin-bottom: 30px;
+}
+
+fieldset {
+    border: none;
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Rótulos */
+label {
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Campos de entrada */
+input[type="text"],
+input[type="password"] {
+    padding: 12px;
+    border: solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #2a5298;
+    outline: none;
+}
+
+/* Botões */
+input[type="button"] {
+    padding: 12px;
+    background-color: #2a5298;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+input[type="button"]:hover {
+    background-color: #1e3c72;
+}
+
+/* Botão ao lado */
+input[type="button"] + input[type="button"] {
+    margin-top: 10px;
+}
+
+/* Responsivo */
+@media (max-width: 450px) {
+    form {
+        padding: 30px 20px;
+    }
+}

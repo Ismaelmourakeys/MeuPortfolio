@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Financiamento de Veículo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="Financiamento.css">
+
+    <script language="Javascript">
+
+        function calcular() {
+        
+        var nomeVeiculo = document.getElementById('nomeVeiculo').value;
+        var montadora = document.getElementById('montadora').value;
+        var ano = parseInt(document.getElementById('ano').value);
+        var valorVeiculo = parseFloat(document.getElementById('valorVeiculo').value);
+        var entrada = parseFloat(document.getElementById('entrada').value);
+        var plano = parseInt(document.getElementById('plano').value);
+    
+        var jurosPorPlano = {
+            12: 0.12,
+            24: 0.21,
+            36: 0.34,
+            48: 0.42,
+            60: 0.54
+        };
+    
+        var valorFinanciado = valorVeiculo - entrada;
+        var juros = jurosPorPlano[plano];
+        var totalPrazo = valorFinanciado * (1 + juros);
+    
+        var ipva = 0;
+          if (ano > 2004) {
+            ipva = valorVeiculo * 0.04;
+          } 
+    
+        var resultadoHTML = `
+            <strong>Nome do Veículo:</strong> ${nomeVeiculo}<br>
+            <strong>Montadora:</strong> ${montadora}<br>
+            <strong>Ano:</strong> ${ano}<br>
+            <strong>Valor do Veículo:</strong> R$ ${valorVeiculo.toFixed(2)}<br>
+            <strong>Valor de Entrada:</strong> R$ ${entrada.toFixed(2)}<br>
+            <strong>Valor Financiado:</strong> R$ ${valorFinanciado.toFixed(2)}<br>
+            <strong>Plano Escolhido:</strong> ${plano} meses (${(juros * 100).toFixed(0)}% juros)<br>
+            <strong>IPVA:</strong> ${ipva > 0 ? `R$ ${ipva.toFixed(2)}` : "Isento"}<br>
+            <strong>Total do Veículo a Prazo:</strong> R$ ${totalPrazo.toFixed(2)}
+          `;
+    
+          document.getElementById('resultado').innerHTML = resultadoHTML;
+        }
+
+        function limparCampos() {
+            document.getElementById('nomeVeiculo').value = "";
+            document.getElementById('montadora').value = "";
+            document.getElementById('ano').value = "";
+            document.getElementById('valorVeiculo').value = "";
+            document.getElementById('entrada').value = "";
+            document.getElementById('plano').value = "";
+            document.getElementById('resultado').innerHTML = ""; 
+}
+
+    </script>
+</head>
+<body>
+
+<div class="container">
+
+  <br><br>
+<center>
+
+    <legend>
+        <h2>Simulador de Financiamento</h2>
+    </legend>
+</center>  
+
+<fieldset>
+<label>Nome do Veículo:</label>
+  <input type="text" id="nomeVeiculo"><br><br>
+
+  <label>Montadora:</label>
+  <select id="montadora">
+
+    <option value="" disabled selected>Selecione a montadora...</option>
+
+    <option value="Fiat">Fiat</option>
+    <option value="Ford">Ford</option>
+    <option value="Chevrolet">Chevrolet</option>
+    <option value="Volkswagen">Volkswagen</option>
+    <option value="Toyota">Toyota</option>
+    <option value="Hyundai">Hyundai</option>
+    <option value="Honda">Honda</option>
+    <option value="Renault">Renault</option>
+    <option value="Nissan">Nissan</option>
+    <option value="Peugeot">Peugeot</option>
+  </select>
+  
+  <br><br>
+
+  <label>Ano:</label>
+  <input type="number" id="ano" min="1980" max="2025"><br><br>
+
+  <label>Valor do Veículo (R$):</label>
+  <input type="number" id="valorVeiculo"><br><br>
+
+  <label>Valor de Entrada (R$):</label>
+  <input type="number" id="entrada"><br><br>
+
+  <label>Plano de Pagamento:</label>
+  <select id="plano">
+
+    <option value="" disabled selected>Selecione o plano...</option>
+
+    <option value="12">12 meses - 12%</option>
+    <option value="24">24 meses - 21%</option>
+    <option value="36">36 meses - 34%</option>
+    <option value="48">48 meses - 42%</option>
+    <option value="60">60 meses - 54%</option>
+  
+</select>
+  
+    <br>
+  <br>
+<br>
+
+<div class="buttons">
+<center>
+  <input type="button" value="Calcular" onclick="calcular()">
+  <input type="reset" value="Novo Calculo" onclick="limparCampos()">
+</center>
+</div>
+
+<br>
+</fieldset>
+
+<h3>Resultado:</h3>
+  <div id="resultado"></div>
+
+</div>
+
+  </script>
+</body>
+</html>

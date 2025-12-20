@@ -50,36 +50,32 @@ mobileMenu.querySelectorAll('a').forEach(link => {
 });
 
 
-// Função para alternar o conteúdo "Ver mais" / "Ver menos"
-const buttons = document.querySelectorAll('.ver-mais');
+document.addEventListener("click", (e) => {
+  // ABRIR DETALHES
+  if (e.target.classList.contains("ver-mais")) {
+    const card = e.target.closest(".project-card");
+    const resumo = card.querySelector(".resumo");
+    const detalhes = card.querySelector(".detalhes");
 
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
-        const currentCard = button.closest('.card');
-        const currentContent = currentCard.querySelector('.card-content');
+    resumo.classList.add("hidden");
+    detalhes.classList.remove("hidden");
+  }
 
-        const isOpen = currentContent.classList.contains('max-h-[2000px]');
+  // FECHAR DETALHES
+  if (e.target.classList.contains("fechar-detalhes")) {
+    const card = e.target.closest(".project-card");
+    const resumo = card.querySelector(".resumo");
+    const detalhes = card.querySelector(".detalhes");
 
-        // Fecha TODOS os cards primeiro
-        document.querySelectorAll('.card').forEach(card => {
-            const content = card.querySelector('.card-content');
-            const btn = card.querySelector('.ver-mais');
-
-            content.classList.remove('max-h-[2000px]');
-            content.classList.add('max-h-[420px]');
-            btn.textContent = 'Ver mais';
-        });
-
-        // Se o card clicado estava fechado, abre ele
-        if (!isOpen) {
-            currentContent.classList.remove('max-h-[420px]');
-            currentContent.classList.add('max-h-[2000px]');
-            button.textContent = 'Ver menos';
-        }
-    });
-
+    detalhes.classList.add("hidden");
+    resumo.classList.remove("hidden");
+  }
 });
 
+
+
+
+// Efeito de digitação animado
 new Typed('#typed', {
     strings: ['Desenvolvedor', 'Designer', 'Estudante'],
     typeSpeed: 100,
@@ -114,5 +110,40 @@ menuLinksAnimated.forEach((link, index) => {
     link.style.transitionDelay = `${index * 80}ms`;
 });
 
+// Animação sequencial dos ícones sociais (Ver como funciona)
+const socialIcons = document.querySelectorAll('.social-icon');
+socialIcons.forEach((icon, index) => {
+    icon.style.transitionDelay = `${index * 100}ms`;
+});
 
 
+// Controles do carrossel
+const carousel = document.getElementById("projectsCarousel");
+const prev = document.getElementById("prevBtn");
+const next = document.getElementById("nextBtn");
+
+const scrollAmount = 460;
+
+next.addEventListener("click", () => {
+    carousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
+});
+
+prev.addEventListener("click", () => {
+    carousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+});
+
+
+
+
+const cards = document.querySelectorAll('.card');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.remove('opacity-0', 'translate-y-6');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.2 });
+
+cards.forEach(card => observer.observe(card));

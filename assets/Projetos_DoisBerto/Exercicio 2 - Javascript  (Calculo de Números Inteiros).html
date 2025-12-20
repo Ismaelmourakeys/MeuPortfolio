@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de Números Inteiros</title>
+
+    <link rel="stylesheet" href="Exercicio2.css">
+    <!--Entrar com três números inteiros quaisquer e exibir o maior número entre eles;-->
+    
+
+    <script language="Javascript">
+     
+  
+        function Calcular () {
+            var num_int1=parseInt(document.frm_inteiro.txt_inteiro1.value);
+            var num_int2=parseInt(document.frm_inteiro.txt_inteiro2.value);
+            var num_int3=parseInt(document.frm_inteiro.txt_inteiro3.value);
+
+            var total=(num_int1+num_int2+num_int3);
+            var situacao=""
+
+            if (num_int1 > num_int2 && num_int1 > num_int3){
+            situacao="O Número " + num_int1 + " é o maior número entre " + num_int2 + " e " + num_int3
+            }
+
+            else if (num_int2 > num_int1 && num_int2 > num_int3){
+            situacao="O Número " + num_int2 + " é o maior número entre " + num_int1 + " e " + num_int3
+            }
+
+            else if (num_int3 > num_int1 && num_int3 > num_int2){
+            situacao="O Número " + num_int3 + " é o maior número entre " + num_int1 + " e " + num_int2
+            }   
+
+            else if (num_int1 == num_int2 && num_int3) {
+            situacao="Foram digitados três números iguais"
+            }
+
+            else {
+            situacao=("\n ATENÇÃO!!! \n\nPOR FAVOR, DIGITE NÚMERO NOS CAMPOS DESTACADOS")
+            }
+
+
+
+            alert("\n O total entre os inteiros é: " +total+ "\n \n"+ situacao)
+        
+        }
+
+        function Limpar () {
+    document.frm_inteiro.txt_inteiro1.value="";
+    document.frm_inteiro.txt_inteiro2.value="";
+    document.frm_inteiro.txt_inteiro3.value="";
+    document.frm_inteiro.txt_inteiro.focus();
+}
+
+    </script>
+</head>
+<body>
+    <form name="frm_inteiro">
+
+        <fieldset>
+            <h3>Calculo de Números Inteiros</h3>
+
+        <strong> Digite o primeiro número inteiro: </strong>
+            <br>
+            <br>
+
+            <input type="text" name="txt_inteiro1" placeholder="Digite o número" value="">
+            <br>
+            <br>
+            
+            <strong> Digite o segundo número inteiro: </strong>
+            <br>
+            <br>
+
+            <input type="text" name="txt_inteiro2" placeholder="Digite o número" value="">
+            <br>
+            <br>
+
+            <strong>Digite o terceiro número inteiro: </strong>
+            <br>
+            <br>
+
+        <center>
+            
+            <input type="text" name="txt_inteiro3" placeholder="Digite o número" value="">
+            <br>
+            <br>
+
+            <input type="button" value="CALCULAR" onclick="Calcular()">
+            <input type="button" value="LIMPAR" onclick="Limpar()">
+
+            <br>
+            <a href="Lista_exercicios.html">Voltar ao menu de exercicios </a>
+       
+        </center>
+
+
+        </fieldset>
+    </form>
+</body>
+</html>

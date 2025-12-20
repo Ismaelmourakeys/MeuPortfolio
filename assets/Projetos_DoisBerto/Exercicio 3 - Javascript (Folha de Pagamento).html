@@ -1,0 +1,89 @@
+<!--Calcular a folha de pagamento do fúncionário, como segue:
+
+Entrada de Dados:
+
+1-Quantidade de Salários Minimos; Referência do Salário Mínimo: R$: 1518,00
+
+Saida de Dados;
+
+1-Salário Bruto;
+2-INSS (Descontar 11% de aliquota de imposto, caso salário bruto superior à R$ 1850,00; caso contrário, haverá isenção.)
+3-Salário Liquido; -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3 - Folha de Pagamento</title>
+
+    <link rel="stylesheet" href="Exercicio3.css">
+
+    <script language="JavaScript">
+
+    function Calculo () {
+        var qtd_minimos=(document.frm_pagamento.txt_salario.value);
+        var salario_minimo = (1518.00);
+        var salario_bruto = (qtd_minimos * salario_minimo);
+        var desconto_inss
+        var salario_liquido = salario_bruto - desconto_inss
+
+        if (salario_bruto > 1850) {
+            desconto_inss = (salario_bruto*11)/100
+            salario_liquido = salario_bruto - desconto_inss
+        }
+        else {
+            desconto_inss = 0
+            salario_liquido = salario_bruto - desconto_inss
+        }
+        
+
+       
+
+            document.write("<hr>");
+            document.write("<b>");
+            document.write("<h2>");
+            document.write("Salário Bruto é: " + salario_bruto);
+            document.write("<br>");
+            document.write("Desconto pelo INSS: " + desconto_inss);
+            document.write("<br>");
+            document.write("Salário Liquido é: " + salario_liquido);
+            document.write("<hr>");
+            document.write("<a href='Exercicio 3 - Javascript (Folha de Pagamento).html'> VOLTAR</a>");
+
+    }
+
+        function Limpa () {
+            document.frm_pagamento.txt_salario.value="";
+            document.frm_pagamento.txt_salario.focus();
+        }
+
+    </script>
+</head>
+<body>
+    <form name="frm_pagamento">
+
+        
+            <legend>
+                <h2>Folha de Pagamento</h2>
+            </legend>
+
+            <label>Insira a quantidade de salários minimos: </label>
+
+            <center>
+            
+            <input type="text" name="txt_salario" value=""> 
+            <br>
+            <br>
+            <input type="button" value="CALCULAR" onClick="Calculo()">
+            <input type="button" value="LIMPAR" onClick="Limpa()">
+            
+            <br>
+            
+            <a href="Lista_exercicios.html">Voltar ao menu de lista de exercicios</a>
+        </center>
+
+    </form>
+
+</body>
+</html>
