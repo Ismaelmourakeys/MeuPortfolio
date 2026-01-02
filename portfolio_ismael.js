@@ -49,29 +49,41 @@ mobileMenu.querySelectorAll('a').forEach(link => {
     });
 });
 
+// Lógica dos cards de projetos (abrir/fechar detalhes)
+document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".project-card");
 
-document.addEventListener("click", (e) => {
-  // ABRIR DETALHES
-  if (e.target.classList.contains("ver-mais")) {
-    const card = e.target.closest(".project-card");
-    const resumo = card.querySelector(".resumo");
-    const detalhes = card.querySelector(".detalhes");
+    cards.forEach(card => {
+        const btnVerMais = card.querySelector(".ver-mais");
+        const overlay = card.querySelector(".conteudo.detalhes");
+        const btnsFechar = card.querySelectorAll(".fechar-detalhes");
 
-    resumo.classList.add("hidden");
-    detalhes.classList.remove("hidden");
-  }
+        if (!btnVerMais || !overlay) return;
 
-  // FECHAR DETALHES
-  if (e.target.classList.contains("fechar-detalhes")) {
-    const card = e.target.closest(".project-card");
-    const resumo = card.querySelector(".resumo");
-    const detalhes = card.querySelector(".detalhes");
+        // ABRIR DETALHES
+        btnVerMais.addEventListener("click", () => {
+            overlay.classList.remove("hidden");
 
-    detalhes.classList.add("hidden");
-    resumo.classList.remove("hidden");
-  }
+            // força reflow pra animação funcionar
+            overlay.offsetHeight;
+
+            overlay.classList.remove("opacity-0", "scale-95");
+            overlay.classList.add("opacity-100", "scale-100");
+        });
+
+        // FECHAR DETALHES (qualquer botão de fechar)
+        btnsFechar.forEach(btn => {
+            btn.addEventListener("click", () => {
+                overlay.classList.add("opacity-0", "scale-95");
+
+                setTimeout(() => {
+                    overlay.classList.add("hidden");
+                    overlay.classList.remove("opacity-100", "scale-100");
+                }, 300); // mesmo tempo da transition
+            });
+        });
+    });
 });
-
 
 
 
@@ -147,3 +159,44 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.2 });
 
 cards.forEach(card => observer.observe(card));
+
+
+// Modal do video do card de projeto 
+// Video modal behavior
+            (function () {
+                const modal = document.getElementById('videoModal');
+                const modalVideo = document.getElementById('modalVideo');
+                const closeBtn = document.getElementById('closeVideoModal');
+
+                // open when clicking any element with data-video-src
+                document.querySelectorAll('[data-video-src]').forEach(el => {
+                    el.addEventListener('click', () => {
+                        const src = el.getAttribute('data-video-src');
+                        if (!src) return;
+                        modalVideo.src = src;
+                        modal.classList.remove('hidden');
+                        document.body.style.overflow = 'hidden';
+                        modalVideo.play().catch(() => { /* ignore play promise */ });
+                    });
+                });
+
+                function closeModal() {
+                    modal.classList.add('hidden');
+                    modalVideo.pause();
+                    modalVideo.currentTime = 0;
+                    modalVideo.src = '';
+                    document.body.style.overflow = '';
+                }
+
+                closeBtn.addEventListener('click', closeModal);
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) closeModal();
+                });
+
+                // optional: stop video when pressing Escape
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+                });
+
+                // Keep existing "ver-mais" / "fechar-detalhes" behavior working if you have JS elsewhere.
+            })();

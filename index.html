@@ -7,6 +7,8 @@
     <title>Ismael Moura | Portfólio</title>
     <link rel="icon" type="image/x-icon" href="./assets/img/design_oficial.png" />
     <link rel="stylesheet" href="./portfolio_ismael.css" />
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
@@ -17,7 +19,7 @@
                 extend: {
                     colors: {
                         primary: '#fff', // Branco 
-                        secondary: '#10b981', // verde
+                        secondary: '#61dafb', // verde
                     }
                 }
             }
@@ -82,7 +84,7 @@
     <section class="flex flex-col sm:flex-row items-center justify-center px-6 py-20 gap-10">
 
         <!-- IMAGEM -->
-        <img src="./assets/img/design_oficial.png" alt="Avatar" class="w-full sm:w-[500px] h-auto" />
+        <img src="./assets/img/design_oficial.png" alt="Avatar" class="w-full sm:w-[400px] h-auto" />
 
 
         <!-- APRESENTAÇÃO -->
@@ -117,7 +119,7 @@
                     </svg>
                 </a>
 
-                <a href="https://instagram.com/seuinsta" target="_blank" class="social-icon text-slate-300 hover:text-secondary transition-all duration-300
+                <a href="https://www.instagram.com/ismaelmourakeys/" target="_blank" class="social-icon text-slate-300 hover:text-secondary transition-all duration-300
           hover:scale-110 hover:-translate-y-1">
                     <!-- Instagram -->
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -126,7 +128,7 @@
                     </svg>
                 </a>
 
-                <a href="https://linkedin.com/in/seulinkedin" target="_blank" class="social-icon text-slate-300 hover:text-secondary transition-all duration-300
+                <a href="https://www.linkedin.com/in/Ismaelmourakeys" target="_blank" class="social-icon text-slate-300 hover:text-secondary transition-all duration-300
           hover:scale-110 hover:-translate-y-1">
                     <!-- LinkedIn -->
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -148,7 +150,8 @@
         <p class="max-w-3xl text-slate-300">
             "Sou desenvolvedor front-end. Tenho experiência com HTML, CSS, JavaScript e
             React Native, criando interfaces funcionais, modernas e focadas na melhor experiência possível para o
-            usuário. Atualmente estou estudando Tailwind, React para aplicações web e sigo ampliando meus conhecimentos para acompanhar as
+            usuário. Atualmente estou estudando Tailwind, React para aplicações web e sigo ampliando meus conhecimentos
+            para acompanhar as
             necessidades do mercado — e estou totalmente pronto para aprender o que for preciso para contribuir com a
             empresa. Aqui você encontra meus projetos, estudos e experimentos que refletem minha curiosidade e dedicação
             ao aprendizado contínuo."
@@ -184,45 +187,104 @@
             <div id="projectsCarousel"
                 class="flex items-start gap-6 overflow-x-auto snap-x snap-mandatory pb-6 no-scrollbar">
 
-
                 <!-- CARD 1 -->
-                <div class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-6 flex flex-col
+                <div class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-6 flex flex-col justify-between
 shadow-lg border border-slate-700/50
 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl
-snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px]">
+snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[420px]">
 
                     <!-- RESUMO -->
                     <div class="conteudo resumo">
-                        <a href="https://mygluco.vercel.app" target="_blank">
+                        <a href="https://mygluco.vercel.app" target="_blank" class="block">
                             <h4 class="text-xl font-bold mb-2 text-yellow-300">
                                 Landing Page – MyGluco
                             </h4>
 
                             <p class="text-slate-300 mb-4">
-                                Landing page criada para apresentar o sistema MyGluco.
+                                Landing page criada para apresentar o sistema e o aplicativo MyGluco.
+                                Objetivo de captar usuários interessados no app com experiências básicas de sua
+                                funcionalidade.
                             </p>
 
-                            <img src="./assets/img/pagina_principal.png" class="rounded-lg" />
+                            <img src="./assets/img/pagina_principal.png" class="rounded-lg w-full h-40 object-cover" />
                         </a>
                     </div>
 
-                    <!-- DETALHES -->
+                    <!-- OVERLAY DETALHES (ESTILO MELHORADO) -->
                     <div class="conteudo detalhes hidden absolute inset-0
-bg-slate-900/95 backdrop-blur-md rounded-2xl
-p-6 flex flex-col items-center justify-center">
+    bg-gradient-to-b from-slate-900/90 via-slate-900/80 to-slate-800/70
+    backdrop-blur-md rounded-2xl
+    p-6 flex flex-col items-center justify-center text-center space-y-4
+    transform scale-95 opacity-0 transition-all duration-300 ease-out z-30">
 
-                        <h4 class="font-bold text-xl mb-6 text-yellow-300">
-                            Ferramentas Utilizadas
+                        <!-- Botão de fechar (canto) -->
+                        <button aria-label="Fechar detalhes" class="fechar-detalhes absolute top-3 right-3
+                            bg-white/6 hover:bg-white/10 text-slate-100 px-3 py-1.5 rounded-md
+                            flex items-center gap-2 text-sm transition-colors duration-200">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            Fechar
+                        </button>
+
+                        <h4 class="font-bold text-2xl mb-1 text-yellow-300 flex items-center gap-2">
+                            <svg class="w-6 h-6 text-yellow-300" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M3 7v4a1 1 0 0 0 1 1h3"></path>
+                                <path d="M21 7v4a1 1 0 0 1-1 1h-3"></path>
+                                <path d="M7 16v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            Ferramentas utilizadas
                         </h4>
 
-                        <p class="text-slate-300 text-sm mb-6">
-                            🔹 HTML, Tailwind, JS<br>
-                            🔹 Firebase<br>
-                            🔹 Layout responsivo<br>
-                            🔹 UX/UI
+                        <p class="text-slate-300 text-sm max-w-[36rem]">
+                            Tecnologias e ferramentas empregadas neste projeto.
                         </p>
 
-                        <button class="fechar-detalhes mt-auto text-sm text-secondary hover:underline">
+                        <!-- Grid de ferramentas -->
+                        <div class="w-full max-w-md grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <!-- ícones... (mantidos igual ao original) -->
+                            <div
+                                class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2">
+                                <svg viewBox="0 0 128 128" class="w-8 h-8" aria-hidden="true">... </svg>
+                                <span class="text-xs text-slate-200">HTML</span>
+                            </div>
+                            <div
+                                class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2">
+                                <svg viewBox="0 0 128 128" class="h-8 w-8" aria-hidden="true">... </svg>
+                                <span class="text-xs text-slate-200">Tailwind</span>
+                            </div>
+                            <div
+                                class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2">
+                                <svg viewBox="0 0 128 128" class=" w-8 h-8" aria-hidden="true">... </svg>
+                                <span class="text-xs text-slate-200">JavaScript</span>
+                            </div>
+                            <div
+                                class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2">
+                                <svg viewBox="0 0 128 128" class="h-8 w-8" aria-hidden="true">... </svg>
+                                <span class="text-xs text-slate-200">Firebase</span>
+                            </div>
+                        </div>
+
+                        <!-- Texto adicional -->
+                        <p class="text-slate-400 text-sm max-w-[36rem]">
+                            <strong>Breve descrição:</strong> Estrutura com HTML, estilos com Tailwind via CDN e
+                            comportamento com
+                            JavaScript;
+                            backend/serviços com Firebase.
+                        </p>
+
+                        <a href="https://github.com/Ismaelmourakeys/SiteMygluco" target="_blank"
+                            rel="noopener noreferrer" aria-label="Abrir projeto MyGluco (nova aba)"
+                            class="inline-flex items-center gap-2 text-sm font-semibold bg-secondary text-slate-900 px-4 py-2 rounded-md shadow-sm hover:opacity-95 hover:scale-105 transition transform">
+                            GitHub do projeto
+                            <svg viewBox="0 0 128 128" class="h-5 w-5" aria-hidden="true">... </svg>
+                        </a>
+
+                        <button class="fechar-detalhes mt-2 text-sm text-secondary hover:underline">
                             Fechar ✕
                         </button>
                     </div>
@@ -233,10 +295,10 @@ p-6 flex flex-col items-center justify-center">
                 </div>
 
                 <!-- CARD 2 (VÍDEO) -->
-                <div class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-6 flex flex-col
+                <div class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-6 flex flex-col justify-between
 shadow-lg border border-slate-700/50
 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl
-snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px]">
+snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[420px]">
 
                     <div class="conteudo resumo">
                         <h4 class="text-xl font-bold mb-2 text-yellow-300">
@@ -244,38 +306,138 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px]">
                         </h4>
 
                         <p class="text-slate-300 mb-4">
-                            Aplicativo desenvolvido em React Native e Firebase.
+                            Aplicativo mobile desenvolvido em React Native para monitoramento de níveis de glicose no
+                            sangue através de gráficos.
                         </p>
 
-                        <video src="./assets/video/video_app.mp4" autoplay loop muted playsinline
-                            class="mx-auto w-full max-w-[220px] rounded-xl"></video>
-                    </div>
+                        <!-- Miniatura / botão que abre modal (mais moderno e abre modal menor) -->
+                        <div class="relative rounded-xl overflow-hidden bg-gradient-to-t from-black/40 to-transparent cursor-pointer group/video-thumb shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition"
+                            data-video-src="./assets/video/video_app.mp4" aria-label="Abrir vídeo do app"
+                            onclick="(function(){const c=document.querySelector('#videoModal > div'); const v=document.getElementById('modalVideo'); if(c){c.classList.remove('max-w-3xl'); c.classList.add('max-w-xl');} if(v){v.style.maxHeight='60vh'; v.classList.add('rounded-md');}})()">
 
-                    <div class="conteudo detalhes hidden absolute inset-0
-bg-slate-900/95 backdrop-blur-md rounded-2xl
-p-6 flex flex-col items-center justify-center">
+                            <!-- vídeo miniatura (preload metadata para mostrar poster frame) -->
+                            <video class="rounded-lg w-full h-40 object-cover object-center mx-auto pointer-events-none" preload="metadata" muted playsinline poster="./assets/img/UI APP/SplashScreen.jpeg" aria-hidden="true">
+                                <source src="./assets/video/video_app.mp4" type="video/mp4">
+                            </video>
 
+                            <!-- overlay moderno com botão circular -->
+                            <div
+                                class="absolute inset-0 flex items-center justify-center bg-black/40 group-hover/bg-black/50 transition">
+                                <button
+                                    class="flex items-center justify-center w-14 h-14 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 text-white shadow-md transition-transform transform hover:scale-105"
+                                    aria-hidden="true">
+                                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M5 3v18l15-9L5 3z"></path>
+                                    </svg>
+                                </button>
+                            </div>
 
-                        <video src="./assets/video/video_app.mp4" controls
-                            class="w-full max-w-[240px] max-h-[70%] object-contain rounded-xl">
-                        </video>
+                            <!-- pequena legenda -->
+                            <span
+                                class="absolute left-3 bottom-3 text-xs bg-black/50 text-slate-100 px-2 py-1 rounded-md">Video
+                                do App • 7:13</span>
+                        </div>
 
+                        <!-- OVERLAY DETALHES (ESTILO MELHORADO) -->
+                        <div class="conteudo detalhes hidden absolute inset-0
+    bg-gradient-to-b from-slate-900/90 via-slate-900/80 to-slate-800/70
+    backdrop-blur-md rounded-2xl
+    p-6 flex flex-col items-center justify-center text-center space-y-4
+    transform scale-95 opacity-0 transition-all duration-300 ease-out z-30">
 
-                        <button class="fechar-detalhes mt-4 text-sm text-secondary hover:underline">
-                            Fechar ✕
+                            <!-- Botão de fechar (canto) -->
+                            <button aria-label="Fechar detalhes" class="fechar-detalhes absolute top-3 right-3
+                            bg-white/6 hover:bg-white/10 text-slate-100 px-3 py-1.5 rounded-md
+                            flex items-center gap-2 text-sm transition-colors duration-200">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                                Fechar
+                            </button>
+
+                            <h4 class="font-bold text-2xl mb-1 text-yellow-300 flex items-center gap-2">
+                                <svg class="w-6 h-6 text-yellow-300" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M3 7v4a1 1 0 0 0 1 1h3"></path>
+                                    <path d="M21 7v4a1 1 0 0 1-1 1h-3"></path>
+                                    <path d="M7 16v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                Ferramentas utilizadas
+                            </h4>
+
+                            <p class="text-slate-300 text-sm max-w-[36rem]">
+                                Tecnologias e ferramentas empregadas neste projeto.
+                            </p>
+
+                            <!-- Grid de ferramentas (resumido) -->
+                            <div class="w-full max-w-md grid grid-cols-2 sm:grid-cols-4 gap-3">
+                                <div
+                                    class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2">
+                                    <svg viewBox="0 0 128 128" class="w-8 h-8" aria-hidden="true">... </svg>
+                                    <span class="text-xs text-slate-200">React Native</span>
+                                </div>
+                                <div
+                                    class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2">
+                                    <svg viewBox="0 0 128 128" class=" w-8 h-8" aria-hidden="true">... </svg>
+                                    <span class="text-xs text-slate-200">Node.js</span>
+                                </div>
+                                <div
+                                    class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2">
+                                    <svg viewBox="0 0 128 128" class="h-8 w-8" aria-hidden="true">... </svg>
+                                    <span class="text-xs text-slate-200">Firebase</span>
+                                </div>
+                                <div
+                                    class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2">
+                                    <svg viewBox="0 0 128 128" class="w-8 h-8" aria-hidden="true">... </svg>
+                                    <span class="text-xs text-slate-200">Figma</span>
+                                </div>
+                            </div>
+
+                            <p class="text-slate-400 text-sm max-w-[36rem]">
+                                <strong>Breve descrição:</strong> Estrutura com HTML, estilos com Tailwind via CDN e
+                                comportamento com JavaScript; backend/serviços com Firebase.
+                            </p>
+
+                            <a href="https://github.com/Ismaelmourakeys/SiteMygluco" target="_blank"
+                                rel="noopener noreferrer" aria-label="Abrir projeto MyGluco (nova aba)"
+                                class="inline-flex items-center gap-2 text-sm font-semibold bg-secondary text-slate-900 px-4 py-2 rounded-md shadow-sm hover:opacity-95 hover:scale-105 transition transform">
+                                GitHub do projeto
+                                <svg viewBox="0 0 128 128" class="h-5 w-5" aria-hidden="true">
+                                    ...
+                                </svg>
+                            </a>
+
+                            <button class="fechar-detalhes mt-2 text-sm text-secondary hover:underline">
+                                Fechar ✕
+                            </button>
+                        </div>
+
+                        <button class="ver-mais mt-16 text-sm font-medium text-secondary hover:underline self-start">
+                            Mais detalhes →
                         </button>
                     </div>
-
-                    <button class="ver-mais mt-4 text-sm font-medium text-secondary hover:underline self-start">
-                        Mais detalhes →
-                    </button>
                 </div>
 
+                <!-- VIDEO MODAL DO CARD 2 -->
+                <div id="videoModal" class="fixed inset-0 bg-black/70 hidden items-center justify-center p-4 z-50">
+                    <div class="bg-slate-900 rounded-xl overflow-hidden w-full max-w-3xl relative">
+                        <button id="closeVideoModal" aria-label="Fechar vídeo"
+                            class="absolute top-3 right-3 z-40 bg-white/6 hover:bg-white/10 text-white px-3 py-1.5 rounded-md">✕</button>
+                        <video id="modalVideo" controls class="w-full h-auto bg-black" playsinline></video>
+                    </div>
+                </div>
+
+
                 <!-- CARD 3 -->
-                <div class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-6 flex flex-col
+                <div class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-6 flex flex-col justify-between
 shadow-lg border border-slate-700/50
 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl
-snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px]">
+snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[420px]">
                     <h4 class="text-xl font-bold mb-2 text-yellow-300">
                         Projetos em Sala – ETEC
                     </h4>
@@ -284,16 +446,260 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px]">
                         Projetos focados em lógica, HTML, CSS e JS.
                     </p>
 
-                    <img src="./assets/img/Projetos_Sala.png" class="rounded-lg" />
+                    <a href="./assets/projetos_DoisBerto/Lista_exercicios.html">
+                        <img src="./assets/img/Projetos_Sala.png" class="rounded-lg w-full h-40 object-cover" />
+                    </a>
+
+                    <!-- OVERLAY DETALHES (ESTILO MELHORADO) -->
+                    <div class="conteudo detalhes hidden absolute inset-0
+    bg-gradient-to-b from-slate-900/90 via-slate-900/80 to-slate-800/70
+    backdrop-blur-md rounded-2xl
+    p-6 flex flex-col items-center justify-center text-center space-y-4
+    transform scale-95 opacity-0 transition-all duration-300 ease-out z-30">
+
+                        <!-- Botão de fechar (canto) -->
+                        <button aria-label="Fechar detalhes" class="fechar-detalhes absolute top-3 right-3
+                            bg-white/6 hover:bg-white/10 text-slate-100 px-3 py-1.5 rounded-md
+                            flex items-center gap-2 text-sm transition-colors duration-200">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            Fechar
+                        </button>
+
+                        <h4 class="font-bold text-2xl mb-1 text-yellow-300 flex items-center gap-2">
+                            <svg class="w-6 h-6 text-yellow-300" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M3 7v4a1 1 0 0 0 1 1h3"></path>
+                                <path d="M21 7v4a1 1 0 0 1-1 1h-3"></path>
+                                <path d="M7 16v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            Ferramentas utilizadas
+                        </h4>
+
+                        <p class="text-slate-300 text-sm max-w-[36rem]">
+                            Tecnologias e ferramentas empregadas neste projeto.
+                        </p>
+
+                        <!-- Grid de ferramentas (resumido) -->
+                        <div class="w-full max-w-md grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <div
+                                class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2">
+                                <svg viewBox="0 0 128 128" class="w-8 h-8" aria-hidden="true">... </svg>
+                                <span class="text-xs text-slate-200">HTML</span>
+                            </div>
+                            <div
+                                class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2">
+                                <svg viewBox="0 0 128 128" class="h-8 w-8" aria-hidden="true">... </svg>
+                                <span class="text-xs text-slate-200">CSS</span>
+                            </div>
+                            <div
+                                class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2">
+                                <svg viewBox="0 0 128 128" class=" w-8 h-8" aria-hidden="true">... </svg>
+                                <span class="text-xs text-slate-200">JavaScript</span>
+                            </div>
+                        </div>
+
+                        <p class="text-slate-400 text-sm max-w-[36rem]">
+                            <strong>Breve descrição:</strong> Estrutura com HTML, estilos com css e
+                            comportamento com JavaScript;
+                        </p>
+
+                        <a href="https://github.com/Ismaelmourakeys/SiteMygluco" target="_blank"
+                            rel="noopener noreferrer" aria-label="Abrir projeto MyGluco (nova aba)"
+                            class="inline-flex items-center gap-2 text-sm font-semibold bg-secondary text-slate-900 px-4 py-2 rounded-md shadow-sm hover:opacity-95 hover:scale-105 transition transform">
+                            GitHub do projeto
+                            <svg viewBox="0 0 128 128" class="h-5 w-5" aria-hidden="true">... </svg>
+                        </a>
+
+                        <button class="fechar-detalhes mt-2 text-sm text-secondary hover:underline">
+                            Fechar ✕
+                        </button>
+                    </div>
 
                     <button class="ver-mais mt-4 text-sm font-medium text-secondary hover:underline self-start">
                         Mais detalhes →
                     </button>
-
                 </div>
             </div>
-        </div>
+
+            <!-- novos cartões: serão inseridos dentro do carrossel automaticamente -->
+            <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const carousel = document.getElementById('projectsCarousel');
+                if (!carousel) return;
+
+                const novosProjetos = [
+                    {
+                        title: 'Demo com Vídeo',
+                        desc: 'Vídeo demonstrativo do projeto mostrando funcionalidades e fluxo.',
+                        img: './assets/video/Aplicacao_kivy_py/Aplicacao_kivy_py.jpg',
+                        video: './assets/video/Aplicacao_kivy_py/Aplicacao_py_video.mp4',
+                    },
+            /*
+                    {
+                        title: 'Portfolio Pessoal',
+                        desc: 'Site pessoal com apresentação de projetos, contato e blog.',
+                        img: './assets/img/projeto_portfolio.png',
+                        link: 'https://example.com/portfolio'
+                    },
+
+                    {
+                        title: 'App de Tarefas',
+                        desc: 'Aplicativo simples para gestão de tarefas com persistência local.',
+                        img: './assets/img/projeto_tasks.png',
+                        link: 'https://example.com/tasks'
+                    }*/
+                ];  
+
+                novosProjetos.forEach(function (p) {
+                    const link = p.link || '#';
+                    const card = document.createElement('div');
+                    card.className = 'project-card relative overflow-hidden bg-slate-800 rounded-2xl p-6 flex flex-col justify-between shadow-lg border border-slate-700/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[420px]';
+
+                    card.innerHTML = ''
+                        + '<div class="conteudo resumo">'
+                        //+   '<a href="' + encodeURI(link) + '" target="_blank" rel="noopener noreferrer" class="block">'
+                        +     '<h4 class="text-xl font-bold mb-2 text-yellow-300">' + escapeHtml(p.title) + '</h4>'
+                        +     '<p class="text-slate-300 mb-4">' + escapeHtml(p.desc) + '</p>'
+                        +     '<img src="' + encodeURI(p.img || '') + '" class="rounded-lg w-full h-40 object-cover" alt="' + escapeHtml(p.title) + ' Thumbnail" />'
+                        +   '</a>'
+                        + '</div>'
+                        + '<div class="conteudo detalhes hidden absolute inset-0 bg-gradient-to-b from-slate-900/90 via-slate-900/80 to-slate-800/70 backdrop-blur-md rounded-2xl p-6 flex flex-col items-center justify-center text-center space-y-4 transform scale-95 opacity-0 transition-all duration-300 ease-out z-30">'
+                        +   '<button aria-label="Fechar detalhes" class="fechar-detalhes absolute top-3 right-3 bg-white/6 hover:bg-white/10 text-slate-100 px-3 py-1.5 rounded-md flex items-center gap-2 text-sm transition-colors duration-200">'
+                        +     '<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+                        +       '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>'
+                        +     '</svg>'
+                        +     'Fechar'
+                        +   '</button>'
+                        +   '<h4 class="font-bold text-2xl mb-1 text-yellow-300 flex items-center gap-2">'
+                        +     '<svg class="w-6 h-6 text-yellow-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+                        +       '<path d="M3 7v4a1 1 0 0 0 1 1h3"></path><path d="M21 7v4a1 1 0 0 1-1 1h-3"></path><path d="M7 16v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1"></path><circle cx="12" cy="10" r="3"></circle>'
+                        +     '</svg>'
+                        +     'Ferramentas utilizadas'
+                        +   '</h4>'
+                        +   '<p class="text-slate-300 text-sm max-w-[36rem]">Tecnologias e ferramentas empregadas neste projeto.</p>'
+                        +   '<div class="w-full max-w-md grid grid-cols-2 sm:grid-cols-4 gap-3">'
+                        +     '<div class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2"><svg viewBox="0 0 128 128" class="w-8 h-8" aria-hidden="true">...</svg><span class="text-xs text-slate-200">HTML</span></div>'
+                        +     '<div class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2"><svg viewBox="0 0 128 128" class="h-8 w-8" aria-hidden="true">...</svg><span class="text-xs text-slate-200">CSS</span></div>'
+                        +     '<div class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2"><svg viewBox="0 0 128 128" class=" w-8 h-8" aria-hidden="true">...</svg><span class="text-xs text-slate-200">JavaScript</span></div>'
+                        +     '<div class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2"><svg viewBox="0 0 128 128" class="h-8 w-8" aria-hidden="true">...</svg><span class="text-xs text-slate-200">Ferramenta</span></div>'
+                        +   '</div>'
+                        +   '<p class="text-slate-400 text-sm max-w-[36rem]"><strong>Breve descrição:</strong> ' + escapeHtml(p.desc) + '</p>'
+                        +   '<a href="' + encodeURI(link) + '" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto (nova aba)" class="inline-flex items-center gap-2 text-sm font-semibold bg-secondary text-slate-900 px-4 py-2 rounded-md shadow-sm hover:opacity-95 hover:scale-105 transition transform">GitHub do projeto<svg viewBox="0 0 128 128" class="h-5 w-5" aria-hidden="true">...</svg></a>'
+                        +   '<button class="fechar-detalhes mt-2 text-sm text-secondary hover:underline">Fechar ✕</button>'
+                        + '</div>'
+                        + '<button class="ver-mais mt-4 text-sm font-medium text-secondary hover:underline self-start">Mais detalhes →</button>';
+
+                    carousel.appendChild(card);
+
+                    // se houver vídeo, substitui a imagem por miniatura de vídeo e liga o modal
+                    if (p.video) {
+                        const resumo = card.querySelector('.conteudo.resumo');
+                        if (resumo) {
+                            const thumb = document.createElement('div');
+                            thumb.className = 'relative rounded-xl overflow-hidden bg-gradient-to-t from-black/40 to-transparent cursor-pointer group/video-thumb shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition video-thumb';
+                            thumb.dataset.videoSrc = p.video;
+                            if (p.poster) thumb.dataset.poster = p.poster || '';
+                            thumb.innerHTML = ''
+                                + '<video class="rounded-lg w-full h-40 object-cover object-center mx-auto pointer-events-none" preload="metadata" muted playsinline poster="' + encodeURI(p.poster || '') + '">'
+                                +   '<source src="' + encodeURI(p.video) + '" type="video/mp4">'
+                                + '</video>'
+                                + '<div class="absolute inset-0 flex items-center justify-center bg-black/40">'
+                                +   '<button class="flex items-center justify-center w-14 h-14 rounded-full bg-white/10 text-white shadow-md transition-transform transform hover:scale-105" aria-hidden="true">'
+                                +     '<svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v18l15-9L5 3z"></path></svg>'
+                                +   '</button>'
+                                + '</div>'
+                                + '<span class="absolute left-3 bottom-3 text-xs bg-black/50 text-slate-100 px-2 py-1 rounded-md">Video • ' + (p.duration || '') + '</span>';
+
+                            const img = resumo.querySelector('img');
+                            if (img) img.parentNode.replaceChild(thumb, img);
+                            else resumo.appendChild(thumb);
+
+                            thumb.addEventListener('click', function () {
+                                const videoModal = document.getElementById('videoModal');
+                                const modalVideo = document.getElementById('modalVideo');
+                                if (!videoModal || !modalVideo) return;
+                                modalVideo.src = thumb.dataset.videoSrc;
+                                if (thumb.dataset.poster) modalVideo.setAttribute('poster', thumb.dataset.poster);
+                                videoModal.classList.remove('hidden');
+                                modalVideo.play().catch(() => {});
+                            });
+                        }
+                    }
+
+                    // configurar comportamento idêntico aos outros cards
+                    setupCardInteractions(card);
+                });
+
+                // garante handler de fechar do modal (apenas uma vez)
+                const closeBtn = document.getElementById('closeVideoModal');
+                if (closeBtn && !closeBtn.dataset.bound) {
+                    closeBtn.addEventListener('click', function () {
+                        const videoModal = document.getElementById('videoModal');
+                        const modalVideo = document.getElementById('modalVideo');
+                        if (modalVideo) {
+                            modalVideo.pause();
+                            modalVideo.currentTime = 0;
+                            modalVideo.removeAttribute('src');
+                            try { modalVideo.load(); } catch (e) {}
+                        }
+                        if (videoModal) videoModal.classList.add('hidden');
+                    });
+                    closeBtn.dataset.bound = '1';
+                }
+
+                // pequena função para escapar texto simples
+                function escapeHtml(str) {
+                    return String(str || '').replace(/[&<>"']/g, function (m) {
+                        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];
+                    });
+                }
+
+                // anexa listeners que replicam a interação dos cards já existentes
+                function setupCardInteractions(cardRoot) {
+                    const overlay = cardRoot.querySelector('.conteudo.detalhes');
+                    const verMais = cardRoot.querySelector('.ver-mais');
+                    const closeBtns = Array.from(cardRoot.querySelectorAll('.fechar-detalhes'));
+
+                    if (verMais && overlay) {
+                        verMais.addEventListener('click', function () {
+                            overlay.classList.remove('hidden');
+                            // forçar transição para estado visível
+                            requestAnimationFrame(() => {
+                                overlay.classList.remove('scale-95', 'opacity-0');
+                                overlay.classList.add('scale-100', 'opacity-100');
+                            });
+                            // scroll para garantir visibilidade em carrossel horizontal
+                            cardRoot.scrollIntoView({ behavior: 'smooth', inline: 'center' });
+                        });
+                    }
+
+                    closeBtns.forEach(function (btn) {
+                        btn.addEventListener('click', function () {
+                            if (!overlay) return;
+                            overlay.classList.add('scale-95', 'opacity-0');
+                            overlay.classList.remove('scale-100', 'opacity-100');
+                            setTimeout(() => overlay.classList.add('hidden'), 260);
+                        });
+                    });
+
+                    // fechar overlay ao clicar fora
+                    overlay && overlay.addEventListener('click', function (e) {
+                        if (e.target === overlay) {
+                            overlay.classList.add('scale-95', 'opacity-0');
+                            overlay.classList.remove('scale-100', 'opacity-100');
+                            setTimeout(() => overlay.classList.add('hidden'), 260);
+                        }
+                    });
+                }
+            });
+            </script>
     </section>
+
 
 
 
@@ -313,9 +719,10 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px]">
         <h3 class="text-3xl font-bold mb-6 text-secondary">Contato</h3>
         <p class="text-slate-300 mb-6">Vamos conversar?</p>
         <div class="flex flex-wrap gap-6">
-            <a href="mailto:seuemail@email.com" class="hover:text-secondary">📧 Email</a>
-            <a href="https://github.com/seugithub" target="_blank" class="hover:text-secondary">💻 GitHub</a>
-            <a href="https://linkedin.com/in/seulinkedin" target="_blank" class="hover:text-secondary">🔗 LinkedIn</a>
+            <a href="mailto: Etecismael@gmail.com" class="hover:text-secondary">📧 Email</a>
+            <a href="https://github.com/Ismaelmourakeys" target="_blank" class="hover:text-secondary">💻 GitHub</a>
+            <a href="https://www.linkedin.com/in/ismaelmourakeys" target="_blank" class="hover:text-secondary">🔗
+                LinkedIn</a>
         </div>
     </section>
 
