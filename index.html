@@ -249,22 +249,23 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[4
                             <!-- ícones... (mantidos igual ao original) -->
                             <div
                                 class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2">
-                                <svg viewBox="0 0 128 128" class="w-8 h-8" aria-hidden="true">... </svg>
+                                <i class="devicon-html5-plain colored text-3xl"></i>
                                 <span class="text-xs text-slate-200">HTML</span>
                             </div>
                             <div
                                 class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2">
-                                <svg viewBox="0 0 128 128" class="h-8 w-8" aria-hidden="true">... </svg>
+                                <i class="devicon-tailwindcss-plain colored text-3xl"></i>
                                 <span class="text-xs text-slate-200">Tailwind</span>
                             </div>
                             <div
                                 class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2">
-                                <svg viewBox="0 0 128 128" class=" w-8 h-8" aria-hidden="true">... </svg>
+
+                                <i class="devicon-javascript-plain colored text-3xl"></i>
                                 <span class="text-xs text-slate-200">JavaScript</span>
                             </div>
                             <div
                                 class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2">
-                                <svg viewBox="0 0 128 128" class="h-8 w-8" aria-hidden="true">... </svg>
+                                <i class="devicon-firebase-plain colored text-3xl"></i>
                                 <span class="text-xs text-slate-200">Firebase</span>
                             </div>
                         </div>
@@ -281,7 +282,8 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[4
                             rel="noopener noreferrer" aria-label="Abrir projeto MyGluco (nova aba)"
                             class="inline-flex items-center gap-2 text-sm font-semibold bg-secondary text-slate-900 px-4 py-2 rounded-md shadow-sm hover:opacity-95 hover:scale-105 transition transform">
                             GitHub do projeto
-                            <svg viewBox="0 0 128 128" class="h-5 w-5" aria-hidden="true">... </svg>
+
+                            <i class="devicon-github-original colored text-2xl" aria-hidden="true"></i>
                         </a>
 
                         <button class="fechar-detalhes mt-2 text-sm text-secondary hover:underline">
@@ -305,18 +307,20 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[4
                             Aplicativo Mobile – MyGluco
                         </h4>
 
-                        <p class="text-slate-300 mb-4">
+                        <p class="text-slate-300 mb-4 line-clamp-3">
                             Aplicativo mobile desenvolvido em React Native para monitoramento de níveis de glicose no
                             sangue através de gráficos.
                         </p>
 
                         <!-- Miniatura / botão que abre modal (mais moderno e abre modal menor) -->
-                        <div class="relative rounded-xl overflow-hidden bg-gradient-to-t from-black/40 to-transparent cursor-pointer group/video-thumb shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition"
+                        <div class="relative rounded-xl overflow-hidden bg-gradient-to-t from-black/40 to-transparent cursor-pointer group/video-thumb shadow-lg hover:shadow-2xl transform  transition"
                             data-video-src="./assets/video/video_app.mp4" aria-label="Abrir vídeo do app"
                             onclick="(function(){const c=document.querySelector('#videoModal > div'); const v=document.getElementById('modalVideo'); if(c){c.classList.remove('max-w-3xl'); c.classList.add('max-w-xl');} if(v){v.style.maxHeight='60vh'; v.classList.add('rounded-md');}})()">
 
                             <!-- vídeo miniatura (preload metadata para mostrar poster frame) -->
-                            <video class="rounded-lg w-full h-40 object-cover object-center mx-auto pointer-events-none" preload="metadata" muted playsinline poster="./assets/img/UI APP/SplashScreen.jpeg" aria-hidden="true">
+                            <video class="rounded-lg mt-6 h-40 object-cover object-center mx-auto pointer-events-none"
+                                preload="metadata" muted playsinline poster="./assets/img/UI APP/SplashScreen.jpeg"
+                                aria-hidden="true">
                                 <source src="./assets/video/video_app.mp4" type="video/mp4">
                             </video>
 
@@ -335,8 +339,8 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[4
 
                             <!-- pequena legenda -->
                             <span
-                                class="absolute left-3 bottom-3 text-xs bg-black/50 text-slate-100 px-2 py-1 rounded-md">Video
-                                do App • 7:13</span>
+                                class="absolute left-3 bottom-3 text-xs bg-black/50 text-slate-100 px-2 py-1 rounded-md">Clique
+                                Aqui </span>
                         </div>
 
                         <!-- OVERLAY DETALHES (ESTILO MELHORADO) -->
@@ -375,41 +379,56 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[4
                             </p>
 
                             <!-- Grid de ferramentas (resumido) -->
-                            <div class="w-full max-w-md grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <div
+                                class="w-full max-w-md grid grid-cols-2 sm:grid-cols-4 gap-3 overflow-y-auto max-h-[320px] pr-2 scrollbar-hover">
                                 <div
                                     class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2">
-                                    <svg viewBox="0 0 128 128" class="w-8 h-8" aria-hidden="true">... </svg>
+                                    <i class="devicon-reactnative-original colored text-3xl"></i>
                                     <span class="text-xs text-slate-200">React Native</span>
                                 </div>
                                 <div
                                     class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2">
-                                    <svg viewBox="0 0 128 128" class=" w-8 h-8" aria-hidden="true">... </svg>
+                                    <i class="devicon-nodejs-plain colored text-3xl"></i>
                                     <span class="text-xs text-slate-200">Node.js</span>
                                 </div>
                                 <div
                                     class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2">
-                                    <svg viewBox="0 0 128 128" class="h-8 w-8" aria-hidden="true">... </svg>
+                                    <i class="devicon-firebase-plain colored text-3xl"></i>
                                     <span class="text-xs text-slate-200">Firebase</span>
+                                </div>
+
+                                <div
+                                    class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2">
+                                    <i class="devicon-expo-original colored text-3xl"></i>
+                                    <span class="text-xs text-slate-200">Expo Go</span>
                                 </div>
                                 <div
                                     class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2">
-                                    <svg viewBox="0 0 128 128" class="w-8 h-8" aria-hidden="true">... </svg>
+
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
+                                        class="w-8 h-8" />
                                     <span class="text-xs text-slate-200">Figma</span>
                                 </div>
+
                             </div>
 
-                            <p class="text-slate-400 text-sm max-w-[36rem]">
-                                <strong>Breve descrição:</strong> Estrutura com HTML, estilos com Tailwind via CDN e
-                                comportamento com JavaScript; backend/serviços com Firebase.
+                            <p
+                                class="text-slate-400 text-sm max-w-[36rem] overflow-y-auto max-h-[320px] pr-2 scrollbar-hover">
+                                <strong>Breve descrição:</strong>
+                                Projeto mobile desenvolvido com React Native, utilizando o firebase como backend para
+                                autenticação e armazenamento de dados. Também foi utilizado o node.js para instalação do
+                                gerenciador de pacotes, onde foi utilizado o NPM para ajustar as dependências do
+                                projeto. <br>
+                                Expo Go foi utilizado para facilitar o desenvolvimento e testes do aplicativo em
+                                dispositivos móveis. Os primeiros design do aplicativo foi criado no Figma, garantindo
+                                uma interface amigável e intuitiva para os usuários.
                             </p>
 
-                            <a href="https://github.com/Ismaelmourakeys/SiteMygluco" target="_blank"
+                            <a href="https://github.com/tugacompanys/ProjetoTuga" target="_blank"
                                 rel="noopener noreferrer" aria-label="Abrir projeto MyGluco (nova aba)"
                                 class="inline-flex items-center gap-2 text-sm font-semibold bg-secondary text-slate-900 px-4 py-2 rounded-md shadow-sm hover:opacity-95 hover:scale-105 transition transform">
                                 GitHub do projeto
-                                <svg viewBox="0 0 128 128" class="h-5 w-5" aria-hidden="true">
-                                    ...
-                                </svg>
+                                <i class="devicon-github-original colored text-2xl" aria-hidden="true"></i>
                             </a>
 
                             <button class="fechar-detalhes mt-2 text-sm text-secondary hover:underline">
@@ -417,7 +436,7 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[4
                             </button>
                         </div>
 
-                        <button class="ver-mais mt-16 text-sm font-medium text-secondary hover:underline self-start">
+                        <button class="ver-mais mt-10 text-sm font-medium text-secondary hover:underline self-start">
                             Mais detalhes →
                         </button>
                     </div>
@@ -528,175 +547,176 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[4
 
             <!-- novos cartões: serão inseridos dentro do carrossel automaticamente -->
             <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const carousel = document.getElementById('projectsCarousel');
-                if (!carousel) return;
+                document.addEventListener('DOMContentLoaded', function () {
+                    const carousel = document.getElementById('projectsCarousel');
+                    if (!carousel) return;
 
-                const novosProjetos = [
-                    {
-                        title: 'Demo com Vídeo',
-                        desc: 'Vídeo demonstrativo do projeto mostrando funcionalidades e fluxo.',
-                        img: './assets/video/Aplicacao_kivy_py/Aplicacao_kivy_py.jpg',
-                        video: './assets/video/Aplicacao_kivy_py/Aplicacao_py_video.mp4',
-                    },
-            /*
-                    {
-                        title: 'Portfolio Pessoal',
-                        desc: 'Site pessoal com apresentação de projetos, contato e blog.',
-                        img: './assets/img/projeto_portfolio.png',
-                        link: 'https://example.com/portfolio'
-                    },
+                    const novosProjetos = [
+                        {
+                            title: 'Demo com Vídeo',
+                            desc: 'Vídeo demonstrativo do projeto mostrando funcionalidades e fluxo.',
+                            img: './assets/video/Aplicacao_kivy_py/Aplicacao_kivy_py.jpg',
+                            video: './assets/video/Aplicacao_kivy_py/Aplicacao_py_video.mp4',
+                            poster: './assets/video/Aplicacao_kivy_py/Aplicacao_kivy_py.jpg'
+                        },
+                        /*
+                                {
+                                    title: 'Portfolio Pessoal',
+                                    desc: 'Site pessoal com apresentação de projetos, contato e blog.',
+                                    img: './assets/img/projeto_portfolio.png',
+                                    link: 'https://example.com/portfolio'
+                                },
+            
+                                {
+                                    title: 'App de Tarefas',
+                                    desc: 'Aplicativo simples para gestão de tarefas com persistência local.',
+                                    img: './assets/img/projeto_tasks.png',
+                                    link: 'https://example.com/tasks'
+                                }*/
+                    ];
 
-                    {
-                        title: 'App de Tarefas',
-                        desc: 'Aplicativo simples para gestão de tarefas com persistência local.',
-                        img: './assets/img/projeto_tasks.png',
-                        link: 'https://example.com/tasks'
-                    }*/
-                ];  
+                    novosProjetos.forEach(function (p) {
+                        const link = p.link || '#';
+                        const card = document.createElement('div');
+                        card.className = 'project-card relative overflow-hidden bg-slate-800 rounded-2xl p-6 flex flex-col justify-between shadow-lg border border-slate-700/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[420px]';
 
-                novosProjetos.forEach(function (p) {
-                    const link = p.link || '#';
-                    const card = document.createElement('div');
-                    card.className = 'project-card relative overflow-hidden bg-slate-800 rounded-2xl p-6 flex flex-col justify-between shadow-lg border border-slate-700/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[420px]';
+                        card.innerHTML = ''
+                            + '<div class="conteudo resumo">'
+                            //+   '<a href="' + encodeURI(link) + '" target="_blank" rel="noopener noreferrer" class="block">' --- Eu tirei pq quando clicava no video, abria em forma de link 
+                            + '<h4 class="text-xl font-bold mb-2 text-yellow-300">' + escapeHtml(p.title) + '</h4>'
+                            + '<p class="text-slate-300 mb-4">' + escapeHtml(p.desc) + '</p>'
+                            + '<img src="' + encodeURI(p.img || '') + '" class="rounded-lg w-full h-40 object-cover" alt="' + escapeHtml(p.title) + ' Thumbnail" />'
+                            + '</a>'
+                            + '</div>'
+                            + '<div class="conteudo detalhes hidden absolute inset-0 bg-gradient-to-b from-slate-900/90 via-slate-900/80 to-slate-800/70 backdrop-blur-md rounded-2xl p-6 flex flex-col items-center justify-center text-center space-y-4 transform scale-95 opacity-0 transition-all duration-300 ease-out z-30">'
+                            + '<button aria-label="Fechar detalhes" class="fechar-detalhes absolute top-3 right-3 bg-white/6 hover:bg-white/10 text-slate-100 px-3 py-1.5 rounded-md flex items-center gap-2 text-sm transition-colors duration-200">'
+                            + '<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+                            + '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>'
+                            + '</svg>'
+                            + 'Fechar'
+                            + '</button>'
+                            + '<h4 class="font-bold text-2xl mb-1 text-yellow-300 flex items-center gap-2">'
+                            + '<svg class="w-6 h-6 text-yellow-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+                            + '<path d="M3 7v4a1 1 0 0 0 1 1h3"></path><path d="M21 7v4a1 1 0 0 1-1 1h-3"></path><path d="M7 16v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1"></path><circle cx="12" cy="10" r="3"></circle>'
+                            + '</svg>'
+                            + 'Ferramentas utilizadas'
+                            + '</h4>'
+                            + '<p class="text-slate-300 text-sm max-w-[36rem]">Tecnologias e ferramentas empregadas neste projeto.</p>'
+                            + '<div class="w-full max-w-md grid grid-cols-2 sm:grid-cols-4 gap-3">'
+                            + '<div class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2"><svg viewBox="0 0 128 128" class="w-8 h-8" aria-hidden="true">...</svg><span class="text-xs text-slate-200">HTML</span></div>'
+                            + '<div class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2"><svg viewBox="0 0 128 128" class="h-8 w-8" aria-hidden="true">...</svg><span class="text-xs text-slate-200">CSS</span></div>'
+                            + '<div class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2"><svg viewBox="0 0 128 128" class=" w-8 h-8" aria-hidden="true">...</svg><span class="text-xs text-slate-200">JavaScript</span></div>'
+                            + '<div class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2"><svg viewBox="0 0 128 128" class="h-8 w-8" aria-hidden="true">...</svg><span class="text-xs text-slate-200">Ferramenta</span></div>'
+                            + '</div>'
+                            + '<p class="text-slate-400 text-sm max-w-[36rem]"><strong>Breve descrição:</strong> ' + escapeHtml(p.desc) + '</p>'
+                            + '<a href="' + encodeURI(link) + '" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto (nova aba)" class="inline-flex items-center gap-2 text-sm font-semibold bg-secondary text-slate-900 px-4 py-2 rounded-md shadow-sm hover:opacity-95 hover:scale-105 transition transform">GitHub do projeto<svg viewBox="0 0 128 128" class="h-5 w-5" aria-hidden="true">...</svg></a>'
+                            + '<button class="fechar-detalhes mt-2 text-sm text-secondary hover:underline">Fechar ✕</button>'
+                            + '</div>'
+                            + '<button class="ver-mais mt-4 text-sm font-medium text-secondary hover:underline self-start">Mais detalhes →</button>';
 
-                    card.innerHTML = ''
-                        + '<div class="conteudo resumo">'
-                        //+   '<a href="' + encodeURI(link) + '" target="_blank" rel="noopener noreferrer" class="block">'
-                        +     '<h4 class="text-xl font-bold mb-2 text-yellow-300">' + escapeHtml(p.title) + '</h4>'
-                        +     '<p class="text-slate-300 mb-4">' + escapeHtml(p.desc) + '</p>'
-                        +     '<img src="' + encodeURI(p.img || '') + '" class="rounded-lg w-full h-40 object-cover" alt="' + escapeHtml(p.title) + ' Thumbnail" />'
-                        +   '</a>'
-                        + '</div>'
-                        + '<div class="conteudo detalhes hidden absolute inset-0 bg-gradient-to-b from-slate-900/90 via-slate-900/80 to-slate-800/70 backdrop-blur-md rounded-2xl p-6 flex flex-col items-center justify-center text-center space-y-4 transform scale-95 opacity-0 transition-all duration-300 ease-out z-30">'
-                        +   '<button aria-label="Fechar detalhes" class="fechar-detalhes absolute top-3 right-3 bg-white/6 hover:bg-white/10 text-slate-100 px-3 py-1.5 rounded-md flex items-center gap-2 text-sm transition-colors duration-200">'
-                        +     '<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
-                        +       '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>'
-                        +     '</svg>'
-                        +     'Fechar'
-                        +   '</button>'
-                        +   '<h4 class="font-bold text-2xl mb-1 text-yellow-300 flex items-center gap-2">'
-                        +     '<svg class="w-6 h-6 text-yellow-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
-                        +       '<path d="M3 7v4a1 1 0 0 0 1 1h3"></path><path d="M21 7v4a1 1 0 0 1-1 1h-3"></path><path d="M7 16v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1"></path><circle cx="12" cy="10" r="3"></circle>'
-                        +     '</svg>'
-                        +     'Ferramentas utilizadas'
-                        +   '</h4>'
-                        +   '<p class="text-slate-300 text-sm max-w-[36rem]">Tecnologias e ferramentas empregadas neste projeto.</p>'
-                        +   '<div class="w-full max-w-md grid grid-cols-2 sm:grid-cols-4 gap-3">'
-                        +     '<div class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2"><svg viewBox="0 0 128 128" class="w-8 h-8" aria-hidden="true">...</svg><span class="text-xs text-slate-200">HTML</span></div>'
-                        +     '<div class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2"><svg viewBox="0 0 128 128" class="h-8 w-8" aria-hidden="true">...</svg><span class="text-xs text-slate-200">CSS</span></div>'
-                        +     '<div class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2"><svg viewBox="0 0 128 128" class=" w-8 h-8" aria-hidden="true">...</svg><span class="text-xs text-slate-200">JavaScript</span></div>'
-                        +     '<div class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2"><svg viewBox="0 0 128 128" class="h-8 w-8" aria-hidden="true">...</svg><span class="text-xs text-slate-200">Ferramenta</span></div>'
-                        +   '</div>'
-                        +   '<p class="text-slate-400 text-sm max-w-[36rem]"><strong>Breve descrição:</strong> ' + escapeHtml(p.desc) + '</p>'
-                        +   '<a href="' + encodeURI(link) + '" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto (nova aba)" class="inline-flex items-center gap-2 text-sm font-semibold bg-secondary text-slate-900 px-4 py-2 rounded-md shadow-sm hover:opacity-95 hover:scale-105 transition transform">GitHub do projeto<svg viewBox="0 0 128 128" class="h-5 w-5" aria-hidden="true">...</svg></a>'
-                        +   '<button class="fechar-detalhes mt-2 text-sm text-secondary hover:underline">Fechar ✕</button>'
-                        + '</div>'
-                        + '<button class="ver-mais mt-4 text-sm font-medium text-secondary hover:underline self-start">Mais detalhes →</button>';
+                        carousel.appendChild(card);
 
-                    carousel.appendChild(card);
+                        // se houver vídeo, substitui a imagem por miniatura de vídeo e liga o modal
+                        if (p.video) {
+                            const resumo = card.querySelector('.conteudo.resumo');
+                            if (resumo) {
+                                const thumb = document.createElement('div');
+                                thumb.className = 'relative mt-12 rounded-xl overflow-hidden bg-gradient-to-t from-black/40 to-transparent cursor-pointer group/video-thumb shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition video-thumb';
+                                thumb.dataset.videoSrc = p.video;
+                                if (p.poster) thumb.dataset.poster = p.poster || '';
+                                thumb.innerHTML = ''
+                                    + '<video class="rounded-lg w-full h-40 object-cover object-center mx-auto pointer-events-none" preload="metadata" muted playsinline poster="' + encodeURI(p.poster || '') + '">'
+                                    + '<source src="' + encodeURI(p.video) + '" type="video/mp4">'
+                                    + '</video>'
+                                    + '<div class="absolute inset-0 flex items-center justify-center bg-black/40">'
+                                    + '<button class="flex items-center justify-center w-14 h-14 rounded-full bg-white/10 text-white shadow-md transition-transform transform hover:scale-105" aria-hidden="true">'
+                                    + '<svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v18l15-9L5 3z"></path></svg>'
+                                    + '</button>'
+                                    + '</div>'
+                                    + '<span class="absolute left-3 bottom-3 text-xs bg-black/50 text-slate-100 px-2 py-1 rounded-md">Clique Aqui' + (p.duration || '') + '</span>';
 
-                    // se houver vídeo, substitui a imagem por miniatura de vídeo e liga o modal
-                    if (p.video) {
-                        const resumo = card.querySelector('.conteudo.resumo');
-                        if (resumo) {
-                            const thumb = document.createElement('div');
-                            thumb.className = 'relative rounded-xl overflow-hidden bg-gradient-to-t from-black/40 to-transparent cursor-pointer group/video-thumb shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition video-thumb';
-                            thumb.dataset.videoSrc = p.video;
-                            if (p.poster) thumb.dataset.poster = p.poster || '';
-                            thumb.innerHTML = ''
-                                + '<video class="rounded-lg w-full h-40 object-cover object-center mx-auto pointer-events-none" preload="metadata" muted playsinline poster="' + encodeURI(p.poster || '') + '">'
-                                +   '<source src="' + encodeURI(p.video) + '" type="video/mp4">'
-                                + '</video>'
-                                + '<div class="absolute inset-0 flex items-center justify-center bg-black/40">'
-                                +   '<button class="flex items-center justify-center w-14 h-14 rounded-full bg-white/10 text-white shadow-md transition-transform transform hover:scale-105" aria-hidden="true">'
-                                +     '<svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v18l15-9L5 3z"></path></svg>'
-                                +   '</button>'
-                                + '</div>'
-                                + '<span class="absolute left-3 bottom-3 text-xs bg-black/50 text-slate-100 px-2 py-1 rounded-md">Video • ' + (p.duration || '') + '</span>';
+                                const img = resumo.querySelector('img');
+                                if (img) img.parentNode.replaceChild(thumb, img);
+                                else resumo.appendChild(thumb);
 
-                            const img = resumo.querySelector('img');
-                            if (img) img.parentNode.replaceChild(thumb, img);
-                            else resumo.appendChild(thumb);
-
-                            thumb.addEventListener('click', function () {
-                                const videoModal = document.getElementById('videoModal');
-                                const modalVideo = document.getElementById('modalVideo');
-                                if (!videoModal || !modalVideo) return;
-                                modalVideo.src = thumb.dataset.videoSrc;
-                                if (thumb.dataset.poster) modalVideo.setAttribute('poster', thumb.dataset.poster);
-                                videoModal.classList.remove('hidden');
-                                modalVideo.play().catch(() => {});
-                            });
+                                thumb.addEventListener('click', function () {
+                                    const videoModal = document.getElementById('videoModal');
+                                    const modalVideo = document.getElementById('modalVideo');
+                                    if (!videoModal || !modalVideo) return;
+                                    modalVideo.src = thumb.dataset.videoSrc;
+                                    if (thumb.dataset.poster) modalVideo.setAttribute('poster', thumb.dataset.poster);
+                                    videoModal.classList.remove('hidden');
+                                    modalVideo.play().catch(() => { });
+                                });
+                            }
                         }
+
+                        // configurar comportamento idêntico aos outros cards
+                        setupCardInteractions(card);
+                    });
+
+                    // garante handler de fechar do modal (apenas uma vez)
+                    const closeBtn = document.getElementById('closeVideoModal');
+                    if (closeBtn && !closeBtn.dataset.bound) {
+                        closeBtn.addEventListener('click', function () {
+                            const videoModal = document.getElementById('videoModal');
+                            const modalVideo = document.getElementById('modalVideo');
+                            if (modalVideo) {
+                                modalVideo.pause();
+                                modalVideo.currentTime = 0;
+                                modalVideo.removeAttribute('src');
+                                try { modalVideo.load(); } catch (e) { }
+                            }
+                            if (videoModal) videoModal.classList.add('hidden');
+                        });
+                        closeBtn.dataset.bound = '1';
                     }
 
-                    // configurar comportamento idêntico aos outros cards
-                    setupCardInteractions(card);
+                    // pequena função para escapar texto simples
+                    function escapeHtml(str) {
+                        return String(str || '').replace(/[&<>"']/g, function (m) {
+                            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m];
+                        });
+                    }
+
+                    // anexa listeners que replicam a interação dos cards já existentes
+                    function setupCardInteractions(cardRoot) {
+                        const overlay = cardRoot.querySelector('.conteudo.detalhes');
+                        const verMais = cardRoot.querySelector('.ver-mais');
+                        const closeBtns = Array.from(cardRoot.querySelectorAll('.fechar-detalhes'));
+
+                        if (verMais && overlay) {
+                            verMais.addEventListener('click', function () {
+                                overlay.classList.remove('hidden');
+                                // forçar transição para estado visível
+                                requestAnimationFrame(() => {
+                                    overlay.classList.remove('scale-95', 'opacity-0');
+                                    overlay.classList.add('scale-100', 'opacity-100');
+                                });
+                                // scroll para garantir visibilidade em carrossel horizontal
+                                cardRoot.scrollIntoView({ behavior: 'smooth', inline: 'center' });
+                            });
+                        }
+
+                        closeBtns.forEach(function (btn) {
+                            btn.addEventListener('click', function () {
+                                if (!overlay) return;
+                                overlay.classList.add('scale-95', 'opacity-0');
+                                overlay.classList.remove('scale-100', 'opacity-100');
+                                setTimeout(() => overlay.classList.add('hidden'), 260);
+                            });
+                        });
+
+                        // fechar overlay ao clicar fora
+                        overlay && overlay.addEventListener('click', function (e) {
+                            if (e.target === overlay) {
+                                overlay.classList.add('scale-95', 'opacity-0');
+                                overlay.classList.remove('scale-100', 'opacity-100');
+                                setTimeout(() => overlay.classList.add('hidden'), 260);
+                            }
+                        });
+                    }
                 });
-
-                // garante handler de fechar do modal (apenas uma vez)
-                const closeBtn = document.getElementById('closeVideoModal');
-                if (closeBtn && !closeBtn.dataset.bound) {
-                    closeBtn.addEventListener('click', function () {
-                        const videoModal = document.getElementById('videoModal');
-                        const modalVideo = document.getElementById('modalVideo');
-                        if (modalVideo) {
-                            modalVideo.pause();
-                            modalVideo.currentTime = 0;
-                            modalVideo.removeAttribute('src');
-                            try { modalVideo.load(); } catch (e) {}
-                        }
-                        if (videoModal) videoModal.classList.add('hidden');
-                    });
-                    closeBtn.dataset.bound = '1';
-                }
-
-                // pequena função para escapar texto simples
-                function escapeHtml(str) {
-                    return String(str || '').replace(/[&<>"']/g, function (m) {
-                        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];
-                    });
-                }
-
-                // anexa listeners que replicam a interação dos cards já existentes
-                function setupCardInteractions(cardRoot) {
-                    const overlay = cardRoot.querySelector('.conteudo.detalhes');
-                    const verMais = cardRoot.querySelector('.ver-mais');
-                    const closeBtns = Array.from(cardRoot.querySelectorAll('.fechar-detalhes'));
-
-                    if (verMais && overlay) {
-                        verMais.addEventListener('click', function () {
-                            overlay.classList.remove('hidden');
-                            // forçar transição para estado visível
-                            requestAnimationFrame(() => {
-                                overlay.classList.remove('scale-95', 'opacity-0');
-                                overlay.classList.add('scale-100', 'opacity-100');
-                            });
-                            // scroll para garantir visibilidade em carrossel horizontal
-                            cardRoot.scrollIntoView({ behavior: 'smooth', inline: 'center' });
-                        });
-                    }
-
-                    closeBtns.forEach(function (btn) {
-                        btn.addEventListener('click', function () {
-                            if (!overlay) return;
-                            overlay.classList.add('scale-95', 'opacity-0');
-                            overlay.classList.remove('scale-100', 'opacity-100');
-                            setTimeout(() => overlay.classList.add('hidden'), 260);
-                        });
-                    });
-
-                    // fechar overlay ao clicar fora
-                    overlay && overlay.addEventListener('click', function (e) {
-                        if (e.target === overlay) {
-                            overlay.classList.add('scale-95', 'opacity-0');
-                            overlay.classList.remove('scale-100', 'opacity-100');
-                            setTimeout(() => overlay.classList.add('hidden'), 260);
-                        }
-                    });
-                }
-            });
             </script>
     </section>
 

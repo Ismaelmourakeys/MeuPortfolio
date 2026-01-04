@@ -1,7 +1,28 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+
+  /* Estilização personalizada para a barra de rolagem */
+  /* Scrollbar discreta */
+  .scrollbar-hover::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-hover::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 9999px;
+    transition: background-color 0.3s;
+  }
+
+  .scrollbar-hover:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(148, 163, 184, 0.5);
+  }
+
+  .scrollbar-hover::-webkit-scrollbar-track {
+    background: transparent;
   }
