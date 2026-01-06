@@ -7,6 +7,10 @@
     <title>Ismael Moura | Portfólio</title>
     <link rel="icon" type="image/x-icon" href="./assets/img/design_oficial.png" />
     <link rel="stylesheet" href="./portfolio_ismael.css" />
+    <!-- Canva CDN (estilos personalizados) -->
+    <link rel="stylesheet" type="text/css"
+        href="https://www.canva.com/design/DAG9n5VBLvM/V7luzdQwaFY0rmaB0G3aJA/view" />
+    <!-- Devicons CDN -->
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
     <!-- Tailwind CDN -->
@@ -34,7 +38,7 @@
     <!-- HEADER -->
     <header id="header"
         class="fixed top-0 w-full flex justify-between items-center px-8 py-6 transition-all duration-300 z-50">
-        <h1 class="text-3xl font-bold text-secondary">Ismael Moura</h1>
+        <h1 class="text-3xl font-bold text-secondary"> &lt;Ismael Moura&gt;</h1>
         <nav class="hidden md:flex space-x-6 text-lg">
             <a href="#sobre" class="relative text-slate-200 transition-colors duration-300 hover:text-secondary
           after:absolute after:left-1/2 after:bottom-[-4px]
@@ -185,13 +189,15 @@
 
             <!-- CARROSSEL -->
             <div id="projectsCarousel"
-                class="flex items-start gap-6 overflow-x-auto snap-x snap-mandatory pb-6 no-scrollbar">
+                class="flex items-stretch gap-6 overflow-x-auto snap-x snap-mandatory pb-6 no-scrollbar">
+
 
                 <!-- CARD 1 -->
-                <div class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-6 flex flex-col justify-between
+                <div class="project-card relative bg-slate-800 rounded-2xl p-6 flex flex-col gap-4
 shadow-lg border border-slate-700/50
 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl
-snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[420px]">
+snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] h-full min-h-[520px]">
+
 
                     <!-- RESUMO -->
                     <div class="conteudo resumo">
@@ -201,9 +207,12 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[4
                             </h4>
 
                             <p class="text-slate-300 mb-4">
-                                Landing page criada para apresentar o sistema e o aplicativo MyGluco.
-                                Objetivo de captar usuários interessados no app com experiências básicas de sua
-                                funcionalidade.
+                                Landing page desenvolvida para divulgação e apresentação do sistema, do aplicativo
+                                MyGluco, com foco em usabilidade, clareza de informação e experiência do usuário (UX).
+                                A página tem como objetivo principal atrair e engajar usuários sobre para a
+                                concientização da diabetes, apresentando suas funcionalidades, benefícios e diferenciais
+                                de forma
+                                organizada e visualmente atrativa.
                             </p>
 
                             <img src="./assets/img/pagina_principal.png" class="rounded-lg w-full h-40 object-cover" />
@@ -220,7 +229,7 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[4
                         <!-- Botão de fechar (canto) -->
                         <button aria-label="Fechar detalhes" class="fechar-detalhes absolute top-3 right-3
                             bg-white/6 hover:bg-white/10 text-slate-100 px-3 py-1.5 rounded-md
-                            flex items-center gap-2 text-sm transition-colors duration-200">
+                            flex itens-center gap-2 text-sm transition-colors duration-200">
                             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -291,34 +300,38 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[4
                         </button>
                     </div>
 
-                    <button class="ver-mais mt-4 text-sm font-medium text-secondary hover:underline self-start">
+                    <button
+                        class="ver-mais absolute bottom-4 left-4 text-sm font-medium text-secondary hover:underline">
                         Mais detalhes →
                     </button>
                 </div>
 
                 <!-- CARD 2 (VÍDEO) -->
-                <div class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-6 flex flex-col justify-between
+                <div class="project-card relative bg-slate-800 rounded-2xl p-6 flex flex-col gap-4
 shadow-lg border border-slate-700/50
 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl
-snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[420px]">
+snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] h-full min-h-[520px]">
+
 
                     <div class="conteudo resumo">
                         <h4 class="text-xl font-bold mb-2 text-yellow-300">
                             Aplicativo Mobile – MyGluco
                         </h4>
 
-                        <p class="text-slate-300 mb-4 line-clamp-3">
-                            Aplicativo mobile desenvolvido em React Native para monitoramento de níveis de glicose no
-                            sangue através de gráficos.
+                        <p class="text-slate-300 mb-4">
+                            Aplicativo mobile desenvolvido com foco na gestão de diabetes, permitindo aos usuários
+                            monitorar seus niveis de glicose, registrar refeições, atividades físicas e medicamentos. O
+                            app oferece gráficos e relatórios para auxiliar no controle da condição, além de
+                            notificações personalizadas para lembrar os usuários de suas rotinas de saúde.
                         </p>
 
                         <!-- Miniatura / botão que abre modal (mais moderno e abre modal menor) -->
-                        <div class="relative rounded-xl overflow-hidden bg-gradient-to-t from-black/40 to-transparent cursor-pointer group/video-thumb shadow-lg hover:shadow-2xl transform  transition"
+                        <div class="media-wrapper mt-4 relative rounded-xl overflow-hidden bg-gradient-to-t from-black/40 to-transparent cursor-pointer group/video-thumb shadow-lg hover:shadow-2xl transition"
                             data-video-src="./assets/video/video_app.mp4" aria-label="Abrir vídeo do app"
                             onclick="(function(){const c=document.querySelector('#videoModal > div'); const v=document.getElementById('modalVideo'); if(c){c.classList.remove('max-w-3xl'); c.classList.add('max-w-xl');} if(v){v.style.maxHeight='60vh'; v.classList.add('rounded-md');}})()">
 
                             <!-- vídeo miniatura (preload metadata para mostrar poster frame) -->
-                            <video class="rounded-lg mt-6 h-40 object-cover object-center mx-auto pointer-events-none"
+                            <video class="rounded-lg h-40 w-full object-cover object-center mx-auto pointer-events-none"
                                 preload="metadata" muted playsinline poster="./assets/img/UI APP/SplashScreen.jpeg"
                                 aria-hidden="true">
                                 <source src="./assets/video/video_app.mp4" type="video/mp4">
@@ -391,6 +404,13 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[4
                                     <i class="devicon-nodejs-plain colored text-3xl"></i>
                                     <span class="text-xs text-slate-200">Node.js</span>
                                 </div>
+                               
+                                <div
+                                    class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2">
+                                    <i class="devicon-npm-plain colored text-3xl"></i>
+                                    <span class="text-xs text-slate-200">NPM</span>
+                                </div>
+                               
                                 <div
                                     class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2">
                                     <i class="devicon-firebase-plain colored text-3xl"></i>
@@ -402,6 +422,7 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[4
                                     <i class="devicon-expo-original colored text-3xl"></i>
                                     <span class="text-xs text-slate-200">Expo Go</span>
                                 </div>
+
                                 <div
                                     class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2">
 
@@ -436,7 +457,8 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[4
                             </button>
                         </div>
 
-                        <button class="ver-mais mt-10 text-sm font-medium text-secondary hover:underline self-start">
+                        <button
+                            class="ver-mais absolute bottom-4 left-4 text-sm font-medium text-secondary hover:underline">
                             Mais detalhes →
                         </button>
                     </div>
@@ -453,16 +475,20 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[4
 
 
                 <!-- CARD 3 -->
-                <div class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-6 flex flex-col justify-between
+                <div class="project-card relative bg-slate-800 rounded-2xl p-6 flex flex-col gap-4
 shadow-lg border border-slate-700/50
 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl
-snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[420px]">
+snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] h-full min-h-[520px]">
+
+
                     <h4 class="text-xl font-bold mb-2 text-yellow-300">
                         Projetos em Sala – ETEC
                     </h4>
 
                     <p class="text-slate-300 mb-4">
-                        Projetos focados em lógica, HTML, CSS e JS.
+                        Projetos focados em lógica de programação usando HTML, CSS e JS. Desenvolvidos durante as aulas
+                        na ETEC, esses projetos abrangem desde listas de exercícios até sistemas simples de login e
+                        cadastro, proporcionando uma base sólida para o desenvolvimento web.
                     </p>
 
                     <a href="./assets/projetos_DoisBerto/Lista_exercicios.html">
@@ -504,34 +530,36 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[4
                         </p>
 
                         <!-- Grid de ferramentas (resumido) -->
-                        <div class="w-full max-w-md grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        <div class="w-full max-w-md grid grid-flow-col auto-cols-min gap-3 justify-center items-center">
                             <div
-                                class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2">
-                                <svg viewBox="0 0 128 128" class="w-8 h-8" aria-hidden="true">... </svg>
+                                class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-7">
+                                <i class="devicon-html5-plain colored text-3xl"></i>
                                 <span class="text-xs text-slate-200">HTML</span>
                             </div>
                             <div
-                                class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2">
-                                <svg viewBox="0 0 128 128" class="h-8 w-8" aria-hidden="true">... </svg>
+                                class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-7">
+                                <i class="devicon-css3-plain colored text-3xl"></i>
                                 <span class="text-xs text-slate-200">CSS</span>
                             </div>
                             <div
-                                class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2">
-                                <svg viewBox="0 0 128 128" class=" w-8 h-8" aria-hidden="true">... </svg>
+                                class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-4">
+                                <i class="devicon-javascript-plain colored text-3xl"></i>
                                 <span class="text-xs text-slate-200">JavaScript</span>
                             </div>
                         </div>
 
                         <p class="text-slate-400 text-sm max-w-[36rem]">
                             <strong>Breve descrição:</strong> Estrutura com HTML, estilos com css e
-                            comportamento com JavaScript;
+                            comportamento com JavaScript; projetos desenvolvidos em sala de aula na ETEC, com foco em
+                            lógica de programação e desenvolvimento web básico como navegações de páginas, processos de
+                            login e armazenamento de dados local.
                         </p>
 
                         <a href="https://github.com/Ismaelmourakeys/SiteMygluco" target="_blank"
                             rel="noopener noreferrer" aria-label="Abrir projeto MyGluco (nova aba)"
                             class="inline-flex items-center gap-2 text-sm font-semibold bg-secondary text-slate-900 px-4 py-2 rounded-md shadow-sm hover:opacity-95 hover:scale-105 transition transform">
                             GitHub do projeto
-                            <svg viewBox="0 0 128 128" class="h-5 w-5" aria-hidden="true">... </svg>
+                            <i class="devicon-github-original colored text-2xl" aria-hidden="true"></i>
                         </a>
 
                         <button class="fechar-detalhes mt-2 text-sm text-secondary hover:underline">
@@ -539,7 +567,8 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[4
                         </button>
                     </div>
 
-                    <button class="ver-mais mt-4 text-sm font-medium text-secondary hover:underline self-start">
+                    <button
+                        class="ver-mais absolute bottom-4 left-4 text-sm font-medium text-secondary hover:underline">
                         Mais detalhes →
                     </button>
                 </div>
@@ -551,14 +580,43 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[4
                     const carousel = document.getElementById('projectsCarousel');
                     if (!carousel) return;
 
+                    // cria o HTML dos ícones de tecnologia dinamicamente
+                    function techIconsHTML(techs = []) {
+                        return techs.map(tech => `
+                            <div class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2">
+                                ${tech.svg ? tech.svg : `<i class="${tech.icon} text-3xl"></i>`}
+                            <span class="text-xs text-slate-200">${tech.name}</span>
+                            </div>
+                                `).join('');
+                    }
+
+
+                    const icons = {
+                        python: `<svg viewBox="0 0 128 128" class="w-10 h-10">
+<linearGradient id="python-original-a" gradientUnits="userSpaceOnUse" x1="70.252" y1="1237.476" x2="170.659" y2="1151.089" gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)"><stop offset="0" stop-color="#5A9FD4"></stop><stop offset="1" stop-color="#306998"></stop></linearGradient><linearGradient id="python-original-b" gradientUnits="userSpaceOnUse" x1="209.474" y1="1098.811" x2="173.62" y2="1149.537" gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)"><stop offset="0" stop-color="#FFD43B"></stop><stop offset="1" stop-color="#FFE873"></stop></linearGradient><path fill="url(#python-original-a)" d="M63.391 1.988c-4.222.02-8.252.379-11.8 1.007-10.45 1.846-12.346 5.71-12.346 12.837v9.411h24.693v3.137H29.977c-7.176 0-13.46 4.313-15.426 12.521-2.268 9.405-2.368 15.275 0 25.096 1.755 7.311 5.947 12.519 13.124 12.519h8.491V67.234c0-8.151 7.051-15.34 15.426-15.34h24.665c6.866 0 12.346-5.654 12.346-12.548V15.833c0-6.693-5.646-11.72-12.346-12.837-4.244-.706-8.645-1.027-12.866-1.008zM50.037 9.557c2.55 0 4.634 2.117 4.634 4.721 0 2.593-2.083 4.69-4.634 4.69-2.56 0-4.633-2.097-4.633-4.69-.001-2.604 2.073-4.721 4.633-4.721z" transform="translate(0 10.26)"></path><path fill="url(#python-original-b)" d="M91.682 28.38v10.966c0 8.5-7.208 15.655-15.426 15.655H51.591c-6.756 0-12.346 5.783-12.346 12.549v23.515c0 6.691 5.818 10.628 12.346 12.547 7.816 2.297 15.312 2.713 24.665 0 6.216-1.801 12.346-5.423 12.346-12.547v-9.412H63.938v-3.138h37.012c7.176 0 9.852-5.005 12.348-12.519 2.578-7.735 2.467-15.174 0-25.096-1.774-7.145-5.161-12.521-12.348-12.521h-9.268zM77.809 87.927c2.561 0 4.634 2.097 4.634 4.692 0 2.602-2.074 4.719-4.634 4.719-2.55 0-4.633-2.117-4.633-4.719 0-2.595 2.083-4.692 4.633-4.692z" transform="translate(0 10.26)"></path><radialGradient id="python-original-c" cx="1825.678" cy="444.45" r="26.743" gradientTransform="matrix(0 -.24 -1.055 0 532.979 557.576)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#B8B8B8" stop-opacity=".498"></stop><stop offset="1" stop-color="#7F7F7F" stop-opacity="0"></stop></radialGradient><path opacity=".444" fill="url(#python-original-c)" d="M97.309 119.597c0 3.543-14.816 6.416-33.091 6.416-18.276 0-33.092-2.873-33.092-6.416 0-3.544 14.815-6.417 33.092-6.417 18.275 0 33.091 2.872 33.091 6.417z"></path>
+</svg>`,
+
+                        kivy: `<div class="flex items-center justify-center">
+                            <img src="./assets/icones/kivy-logo.svg" alt="Kivy" class="w-8 h-8" />
+                        </div>`
+                    };
+
+
                     const novosProjetos = [
                         {
-                            title: 'Demo com Vídeo',
-                            desc: 'Vídeo demonstrativo do projeto mostrando funcionalidades e fluxo.',
+                            title: 'Aplicação mobile com Kivy Python',
+                            desc: 'Interface desenvolvida utilizando o framework Kivy com Python. O aplicativo oferece funcionalidades interativas e uma interface amigável, demonstrando o potencial do Kivy na criação de aplicações móveis multiplataforma. Projeto desenvolvido em sala de aula na ETEC, com o objetivo de aplicar conceitos de lógica estrutural e utilização de frameworks para desenvolvimento mobile.',
                             img: './assets/video/Aplicacao_kivy_py/Aplicacao_kivy_py.jpg',
                             video: './assets/video/Aplicacao_kivy_py/Aplicacao_py_video.mp4',
-                            poster: './assets/video/Aplicacao_kivy_py/Aplicacao_kivy_py.jpg'
-                        },
+                            poster: './assets/video/Aplicacao_kivy_py/Aplicacao_kivy_py.jpg',
+                            techs: [
+                                { name: 'Python', svg: icons.python },
+                                { name: 'Kivy', svg: icons.kivy },
+                                { name: 'HTML', icon: 'devicon-html5-plain colored' },
+                                { name: 'CSS', icon: 'devicon-css3-plain colored' }
+                            ]
+                        }
+
                         /*
                                 {
                                     title: 'Portfolio Pessoal',
@@ -578,7 +636,7 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[4
                     novosProjetos.forEach(function (p) {
                         const link = p.link || '#';
                         const card = document.createElement('div');
-                        card.className = 'project-card relative overflow-hidden bg-slate-800 rounded-2xl p-6 flex flex-col justify-between shadow-lg border border-slate-700/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[420px]';
+                        card.className = 'project-card relative overflow-hidden bg-slate-800 rounded-2xl p-6 flex flex-col justify-between shadow-lg border border-slate-700/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[520px]';
 
                         card.innerHTML = ''
                             + '<div class="conteudo resumo">'
@@ -603,16 +661,13 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[4
                             + '</h4>'
                             + '<p class="text-slate-300 text-sm max-w-[36rem]">Tecnologias e ferramentas empregadas neste projeto.</p>'
                             + '<div class="w-full max-w-md grid grid-cols-2 sm:grid-cols-4 gap-3">'
-                            + '<div class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2"><svg viewBox="0 0 128 128" class="w-8 h-8" aria-hidden="true">...</svg><span class="text-xs text-slate-200">HTML</span></div>'
-                            + '<div class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2"><svg viewBox="0 0 128 128" class="h-8 w-8" aria-hidden="true">...</svg><span class="text-xs text-slate-200">CSS</span></div>'
-                            + '<div class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2"><svg viewBox="0 0 128 128" class=" w-8 h-8" aria-hidden="true">...</svg><span class="text-xs text-slate-200">JavaScript</span></div>'
-                            + '<div class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2"><svg viewBox="0 0 128 128" class="h-8 w-8" aria-hidden="true">...</svg><span class="text-xs text-slate-200">Ferramenta</span></div>'
+                            + techIconsHTML(p.techs) // insere os ícones de tecnologia aqui
                             + '</div>'
                             + '<p class="text-slate-400 text-sm max-w-[36rem]"><strong>Breve descrição:</strong> ' + escapeHtml(p.desc) + '</p>'
-                            + '<a href="' + encodeURI(link) + '" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto (nova aba)" class="inline-flex items-center gap-2 text-sm font-semibold bg-secondary text-slate-900 px-4 py-2 rounded-md shadow-sm hover:opacity-95 hover:scale-105 transition transform">GitHub do projeto<svg viewBox="0 0 128 128" class="h-5 w-5" aria-hidden="true">...</svg></a>'
+                            + '<a href="' + encodeURI(link) + '" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto (nova aba)" class="inline-flex items-center gap-2 text-sm font-semibold bg-secondary text-slate-900 px-4 py-2 rounded-md shadow-sm hover:opacity-95 hover:scale-105 transition transform">GitHub do projeto <i class="devicon-github-original colored text-2xl" aria-hidden="true"></i></a>'
                             + '<button class="fechar-detalhes mt-2 text-sm text-secondary hover:underline">Fechar ✕</button>'
                             + '</div>'
-                            + '<button class="ver-mais mt-4 text-sm font-medium text-secondary hover:underline self-start">Mais detalhes →</button>';
+                            + '<button class="ver-mais absolute bottom-4 left-4 text-sm font-medium text-secondary hover:underline">Mais detalhes →</button>';
 
                         carousel.appendChild(card);
 
@@ -621,7 +676,7 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[4
                             const resumo = card.querySelector('.conteudo.resumo');
                             if (resumo) {
                                 const thumb = document.createElement('div');
-                                thumb.className = 'relative mt-12 rounded-xl overflow-hidden bg-gradient-to-t from-black/40 to-transparent cursor-pointer group/video-thumb shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition video-thumb';
+                                thumb.className = 'relative mt-4 rounded-xl overflow-hidden bg-gradient-to-t from-black/40 to-transparent cursor-pointer group/video-thumb shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition video-thumb';
                                 thumb.dataset.videoSrc = p.video;
                                 if (p.poster) thumb.dataset.poster = p.poster || '';
                                 thumb.innerHTML = ''
@@ -655,6 +710,7 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[4
                         setupCardInteractions(card);
                     });
 
+
                     // garante handler de fechar do modal (apenas uma vez)
                     const closeBtn = document.getElementById('closeVideoModal');
                     if (closeBtn && !closeBtn.dataset.bound) {
@@ -678,6 +734,7 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[4
                             return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m];
                         });
                     }
+
 
                     // anexa listeners que replicam a interação dos cards já existentes
                     function setupCardInteractions(cardRoot) {
