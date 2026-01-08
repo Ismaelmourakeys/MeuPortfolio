@@ -1,3 +1,5 @@
+
+  /* Removendo a barra de rolagem padrão*/
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
