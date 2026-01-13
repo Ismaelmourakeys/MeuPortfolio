@@ -103,10 +103,10 @@ document.addEventListener('DOMContentLoaded', function () {
     novosProjetos.forEach(function (p) {
         const link = p.link || '#';
         const card = document.createElement('div');
-        card.className = 'project-card relative overflow-hidden bg-slate-800 rounded-2xl p-6 flex flex-col justify-between shadow-lg border border-slate-700/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] min-h-[520px]';
+        card.className = 'project-card relative bg-slate-800 rounded-2xl p-6 flex flex-col shadow-lg border border-slate-700/50 transition-all duration-300hover:-translate-y-2 hover:shadow-2xl snap-start flex-shrink-0 min-h-[460px] sm:min-h-[520px]';
 
         card.innerHTML = ''
-            + '<div class="conteudo resumo">'
+            + '<div class="conteudo resumo flex-1">'
             //+   '<a href="' + encodeURI(link) + '" target="_blank" rel="noopener noreferrer" class="block">' --- Eu tirei pq quando clicava no video, abria em forma de link 
             + '<h4 class="text-xl font-bold mb-2 text-yellow-300">' + escapeHtml(p.title) + '</h4>'
             + '<p class="text-slate-300 mb-4">' + escapeHtml(p.desc) + '</p>'
@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
             + '<div class="w-full max-w-md grid grid-cols-2 sm:grid-cols-4 gap-3">'
             + techIconsHTML(p.techs) // insere os ícones de tecnologia aqui
             + '</div>'
-            + '<p class="text-slate-400 text-sm max-w-[36rem]"><strong>Breve descrição:</strong> ' + escapeHtml(p.desc) + '</p>'
+            + '<p class="text-slate-400 text-sm max-w-[36rem] max-h-[140px] overflow-y-auto pr-2 scrollbar-hover"><strong>Breve descrição:</strong> ' + escapeHtml(p.desc) + '</p>'
             + '<a href="' + encodeURI(link) + '" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto (nova aba)" class="inline-flex items-center gap-2 text-sm font-semibold bg-secondary text-slate-900 px-4 py-2 rounded-md shadow-sm hover:opacity-95 hover:scale-105 transition transform">GitHub do projeto <i class="devicon-github-original colored text-2xl" aria-hidden="true"></i></a>'
             + '<button class="fechar-detalhes mt-2 text-sm text-secondary hover:underline">Fechar ✕</button>'
             + '</div>'
@@ -159,12 +159,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
         carousel.appendChild(card);
 
-
     });
+
+
+
+    // igualar alturas dos cards após inseri-los no DOM
+    function equalizeCardHeights() {
+        const cards = document.querySelectorAll('.project-card');
+        let maxHeight = 0;
+
+        // reset
+        cards.forEach(card => {
+            card.style.height = 'auto';
+        });
+
+        // pega a maior altura
+        cards.forEach(card => {
+            const h = card.offsetHeight;
+            if (h > maxHeight) maxHeight = h;
+        });
+
+        // aplica em todos
+        cards.forEach(card => {
+            card.style.height = maxHeight + 'px';
+        });
+
+
+    }
+
 
     // Depois que todos os cards são criados e inseridos no DOM,
     // chamamos essa função para adicionar os eventos (cliques) nos botões,
     // como "Mais detalhes" e "Fechar"
+    equalizeCardHeights();
     setupCardInteractions();
 
 });

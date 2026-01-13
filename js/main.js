@@ -1,7 +1,7 @@
 // Importação do arquivo menu.js
 import { initMenu, initHeaderScroll, initMenuAnimations } from "./menu.js";
 import { initCarousel } from "./carousel.js";
-import { initScrollAnimation, setupCardInteractions, initCards, } from "./cards.js";
+import { initScrollAnimation, setupCardInteractions, initCards } from "./cards.js";
 import { initVideoModal } from "./videoModal.js";
 
 document.addEventListener("DOMContentLoaded", () => {

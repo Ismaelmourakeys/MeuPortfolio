@@ -18,6 +18,8 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
     <script>
+        // Configuração personalizada do Tailwind do CDN 
+        // Cores personalizadas 
         tailwind.config = {
             theme: {
                 extend: {
@@ -85,14 +87,15 @@
     </div>
 
     <!-- HERO -->
-    <section class="flex flex-col sm:flex-row items-center justify-center px-6 py-20 gap-10">
+    <section class="flex flex-col items-center justify-center px-4 py-14 gap-8 sm:flex-row sm:px-6 sm:py-20">
 
         <!-- IMAGEM -->
-        <img src="./assets/img/design_oficial.png" alt="Avatar" class="w-full sm:w-[400px] h-auto" />
+        <img src="./assets/img/design_oficial.png" alt="Avatar" class="w-[220px] sm:w-[400px] h-auto mx-auto" />
 
 
         <!-- APRESENTAÇÃO -->
-        <div class="flex flex-col text-center sm:text-left sm:items-center max-w-xl">
+        <div class="flex flex-col text-center items-center sm:text-left sm:items-center max-w-xl px-2">
+
 
             <!--<h3 class="text-3xl font-bold mb-20 flex flex-col text-center">Olá... <br> Seja Bem-vindo!</h3>-->
 
@@ -104,7 +107,7 @@
 
             </h2>
 
-            <p class="text-slate-300 mb-8 flex sm:justify-center sm:text-center">
+            <p class="text-slate-300 mb-6 text-sm sm:text-base px-2">
                 Apaixonado por transformar ideias em interfaces acessíveis, funcionais e modernas, com foco na
                 experiência do usuário.
             </p>
@@ -188,19 +191,21 @@
             </button>
 
             <!-- CARROSSEL -->
-            <div id="projectsCarousel"
-                class="flex items-stretch gap-6 overflow-x-auto snap-x snap-mandatory pb-6 no-scrollbar">
+            <div id="projectsCarousel" class="grid grid-flow-col auto-cols-[85%] sm:auto-cols-[60%] md:auto-cols-[420px]
+items-stretch
+gap-4
+overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1">
 
 
                 <!-- CARD 1 -->
-                <div class="project-card relative bg-slate-800 rounded-2xl p-6 flex flex-col gap-4
-shadow-lg border border-slate-700/50
-transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl
-snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] h-full min-h-[520px]">
+                <div class="project-card relative bg-slate-800 rounded-2xl p-6 flex flex-col
+shadow-lg border border-slate-700/50 transition-all duration-300
+hover:-translate-y-2 hover:shadow-2xl snap-start flex-shrink-0 min-h-[460px] sm:min-h-[520px]
+">
 
 
                     <!-- RESUMO -->
-                    <div class="conteudo resumo">
+                    <div class="conteudo resumo flex-1">
                         <a href="https://mygluco.vercel.app" target="_blank" class="block">
                             <h4 class="text-xl font-bold mb-2 text-yellow-300">
                                 Landing Page – MyGluco
@@ -301,16 +306,16 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] h-full m
                     </div>
 
                     <button
-                        class="ver-mais absolute bottom-4 left-4 text-sm font-medium text-secondary hover:underline">
+                        class="ver-mais absolute bottom-3 left-3 text-sm font-medium text-secondary hover:underline">
                         Mais detalhes →
                     </button>
                 </div>
 
                 <!-- CARD 2 (VÍDEO) -->
-                <div class="project-card relative bg-slate-800 rounded-2xl p-6 flex flex-col gap-4
-shadow-lg border border-slate-700/50
-transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl
-snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] h-full min-h-[520px]">
+                <div class="project-card relative bg-slate-800 rounded-2xl p-6 flex flex-col
+shadow-lg border border-slate-700/50 transition-all duration-300
+hover:-translate-y-2 hover:shadow-2xl snap-start flex-shrink-0 min-h-[460px] sm:min-h-[520px]
+">
 
 
                     <div class="conteudo resumo">
@@ -393,7 +398,7 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] h-full m
 
                             <!-- Grid de ferramentas (resumido) -->
                             <div
-                                class="w-full max-w-md grid grid-cols-2 sm:grid-cols-4 gap-3 overflow-y-auto max-h-[320px] pr-2 scrollbar-hover">
+                                class="w-full max-w-md grid grid-cols-2 sm:grid-cols-4 gap-3 overflow-y-auto max-h-[320px] pr-2 scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent scrollbar-hover">
                                 <div
                                     class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2">
                                     <i class="devicon-reactnative-original colored text-3xl"></i>
@@ -434,7 +439,7 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] h-full m
                             </div>
 
                             <p
-                                class="text-slate-400 text-sm max-w-[36rem] overflow-y-auto max-h-[320px] pr-2 scrollbar-hover">
+                                class="text-slate-400 text-sm max-w-[36rem] overflow-y-auto max-h-[320px] pr-2 scrollbar-hover scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent">
                                 <strong>Breve descrição:</strong>
                                 Projeto mobile desenvolvido com React Native, utilizando o firebase como backend para
                                 autenticação e armazenamento de dados. Também foi utilizado o node.js para instalação do
@@ -458,7 +463,7 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] h-full m
                         </div>
 
                         <button
-                            class="ver-mais absolute bottom-4 left-4 text-sm font-medium text-secondary hover:underline">
+                            class="ver-mais absolute bottom-3 left-3 text-sm font-medium text-secondary hover:underline">
                             Mais detalhes →
                         </button>
                     </div>
@@ -475,17 +480,17 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] h-full m
 
 
                 <!-- CARD 3 -->
-                <div class="project-card relative bg-slate-800 rounded-2xl p-6 flex flex-col gap-4
-shadow-lg border border-slate-700/50
-transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl
-snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] h-full min-h-[520px]">
+                <div class="project-card relative bg-slate-800 rounded-2xl p-6 flex flex-col
+shadow-lg border border-slate-700/50 transition-all duration-300
+hover:-translate-y-2 hover:shadow-2xl snap-start flex-shrink-0 min-h-[460px] sm:min-h-[520px]
+">
 
 
-                    <h4 class="text-xl font-bold mb-2 text-yellow-300">
+                    <h4 class="text-lg sm:text-xl font-bold mb-2 text-yellow-300">
                         Projetos em Sala – ETEC
                     </h4>
 
-                    <p class="text-slate-300 mb-4">
+                    <p class="text-slate-300 mb-4 text-sm sm:text-base leading-relaxed">
                         Projetos focados em lógica de programação usando HTML, CSS e JS. Desenvolvidos durante as aulas
                         na ETEC, esses projetos abrangem desde listas de exercícios até sistemas simples de login e
                         cadastro, proporcionando uma base sólida para o desenvolvimento web.
@@ -568,7 +573,7 @@ snap-start min-w-[85%] sm:min-w-[70%] md:min-w-[420px] lg:min-w-[460px] h-full m
                     </div>
 
                     <button
-                        class="ver-mais absolute bottom-4 left-4 text-sm font-medium text-secondary hover:underline">
+                        class="ver-mais absolute bottom-3 left-3 text-sm font-medium text-secondary hover:underline">
                         Mais detalhes →
                     </button>
                 </div>
