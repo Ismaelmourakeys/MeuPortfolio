@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en-US">
 
 <head>
     <meta charset="UTF-8" />
@@ -87,7 +87,7 @@
     </div>
 
     <!-- HERO -->
-    <section class="flex flex-col items-center justify-center px-4 py-14 gap-8 sm:flex-row sm:px-6 sm:py-20">
+    <section class="flex flex-col sm:flex-row items-center justify-center px-6 py-20 gap-4">
 
         <!-- IMAGEM -->
         <img src="./assets/img/design_oficial.png" alt="Avatar" class="w-full sm:w-[400px] h-auto" />
@@ -99,26 +99,34 @@
             <!--<h3 class="text-3xl font-bold mb-20 flex flex-col text-center">Olá... <br> Seja Bem-vindo!</h3>-->
 
             <p class="text-slate-300 mb-4">Olá! Meu nome é <em class="font-bold text-yellow-300">Ismael Moura</em> e</p>
-            <h2 class="text-4xl font-bold mb-4 flex justify-center sm:justify-start gap-2 leading-none">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-4 flex justify-center sm:justify-start gap-2 leading-none">
                 <span>Eu sou</span>
 
                 <span id="typed" class="text-secondary"></span>
 
             </h2>
 
-            <p class="text-slate-300 mb-8 flex sm:justify-center sm:text-center">
+            <p class="text-slate-300 mb-6 text-sm sm:text-center px-2">
                 Apaixonado por transformar ideias em interfaces acessíveis, funcionais e modernas, com foco na
                 experiência do usuário.
             </p>
-            <a href="./assets/docs/Curriculo_IsmaelMoura.pdf" download
-                class="mx-auto bg-secondary text-slate-900 px-6 py-3 rounded-xl font-semibold hover:opacity-90 hover:scale-105 transition">
-                Download do meu Currículo (PDF) </a>
+            <div class="text-center sm:text-left">
+                <a href="./assets/docs/Curriculo_IsmaelMoura.pdf" download class="inline-block bg-secondary text-slate-900 px-6 py-3 rounded-xl font-semibold
+            hover:opacity-90 hover:scale-105 transition">
+                    Download do meu Currículo (PDF)
+                </a>
+            </div>
 
 
-            <h3 class="m-2 mt-14 font-bold text-yellow-300">Redes Sociais:</h3>
-            <div class="flex justify-center sm:justify-start gap-4 mb-4">
-                <a href="https://github.com/Ismaelmourakeys" target="_blank" class="social-icon text-slate-300 hover:text-secondary transition-all duration-300
-          hover:scale-110 hover:-translate-y-1">
+
+            <h3 class="text-center text-sm m-2 mt-14 font-bold text-yellow-300">
+                Redes Sociais:
+            </h3>
+
+            <div class="flex justify-center gap-4 mb-4">
+                <a href="https://github.com/Ismaelmourakeys" target="_blank"
+                    class="social-icon text-slate-300 hover:text-secondary transition-all duration-300 hover:scale-110 hover:-translate-y-1">
+
                     <!-- GitHub -->
                     <svg class="w-6 h-6 hover:scale-105 transform" fill="currentColor" viewBox="0 0 24 24">
                         <path
@@ -194,14 +202,13 @@
             <div id="projectsCarousel" class="grid grid-flow-col auto-cols-[85%] sm:auto-cols-[60%] md:auto-cols-[420px]
 items-stretch
 gap-4
-overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1">
+overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1 ">
 
 
                 <!-- CARD 1 -->
-                <div class="project-card relative bg-slate-800 rounded-2xl p-6 flex flex-col
-shadow-lg border border-slate-700/50 transition-all duration-300
-hover:-translate-y-2 hover:shadow-2xl snap-start flex-shrink-0 min-h-[460px] sm:min-h-[520px]
-">
+                <div
+                    class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-6 flex flex-col shadow-lg border border-slate-700/50">
+
 
 
                     <!-- RESUMO -->
@@ -220,7 +227,10 @@ hover:-translate-y-2 hover:shadow-2xl snap-start flex-shrink-0 min-h-[460px] sm:
                                 organizada e visualmente atrativa.
                             </p>
 
-                            <img src="./assets/img/pagina_principal.png" class="rounded-lg w-full h-40 object-cover" />
+                            <div class="relative w-full h-40 overflow-hidden rounded-lg mt-4">
+                                <img src="./assets/img/pagina_principal.png" alt="Preview do projeto"
+                                    class="absolute inset-0 w-full h-full object-cover" />
+                            </div>
                         </a>
                     </div>
 
@@ -312,10 +322,9 @@ hover:-translate-y-2 hover:shadow-2xl snap-start flex-shrink-0 min-h-[460px] sm:
                 </div>
 
                 <!-- CARD 2 (VÍDEO) -->
-                <div class="project-card relative bg-slate-800 rounded-2xl p-6 flex flex-col
-shadow-lg border border-slate-700/50 transition-all duration-300
-hover:-translate-y-2 hover:shadow-2xl snap-start flex-shrink-0 min-h-[460px] sm:min-h-[520px]
-">
+                <div
+                    class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-6 flex flex-col shadow-lg border border-slate-700/50">
+
 
 
                     <div class="conteudo resumo">
@@ -336,11 +345,12 @@ hover:-translate-y-2 hover:shadow-2xl snap-start flex-shrink-0 min-h-[460px] sm:
                             onclick="(function(){const c=document.querySelector('#videoModal > div'); const v=document.getElementById('modalVideo'); if(c){c.classList.remove('max-w-3xl'); c.classList.add('max-w-xl');} if(v){v.style.maxHeight='60vh'; v.classList.add('rounded-md');}})()">
 
                             <!-- vídeo miniatura (preload metadata para mostrar poster frame) -->
-                            <video class="rounded-lg h-40 w-full object-cover object-center mx-auto pointer-events-none"
-                                preload="metadata" muted playsinline poster="./assets/img/UI APP/SplashScreen.jpeg"
-                                aria-hidden="true">
-                                <source src="./assets/video/video_app.mp4" type="video/mp4">
-                            </video>
+                            <div class="relative w-full h-40 overflow-hidden rounded-lg">
+                                <video class="absolute inset-0 w-full h-full object-cover" preload="metadata" muted
+                                    playsinline poster="./assets/img/UI APP/SplashScreen.jpeg">
+                                    <source src="./assets/video/video_app.mp4" type="video/mp4">
+                                </video>
+                            </div>
 
                             <!-- overlay moderno com botão circular -->
                             <div
@@ -480,10 +490,9 @@ hover:-translate-y-2 hover:shadow-2xl snap-start flex-shrink-0 min-h-[460px] sm:
 
 
                 <!-- CARD 3 -->
-                <div class="project-card relative bg-slate-800 rounded-2xl p-6 flex flex-col
-shadow-lg border border-slate-700/50 transition-all duration-300
-hover:-translate-y-2 hover:shadow-2xl snap-start flex-shrink-0 min-h-[460px] sm:min-h-[520px]
-">
+                <div
+                    class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-6 flex flex-col shadow-lg border border-slate-700/50">
+
 
 
                     <h4 class="text-lg sm:text-xl font-bold mb-2 text-yellow-300">
@@ -491,13 +500,18 @@ hover:-translate-y-2 hover:shadow-2xl snap-start flex-shrink-0 min-h-[460px] sm:
                     </h4>
 
                     <p class="text-slate-300 mb-4 text-sm sm:text-base leading-relaxed">
-                        Projetos focados em lógica de programação usando HTML, CSS e JS. Desenvolvidos durante as aulas
-                        na ETEC, esses projetos abrangem desde listas de exercícios até sistemas simples de login e
+                        Aqui é um mix de projetos simples, focados em lógica de programação usando HTML, CSS e JS.
+                        Desenvolvidos durante as aulas na ETEC, esses projetos abrangem desde listas de exercícios até
+                        sistemas simples de login e
                         cadastro, proporcionando uma base sólida para o desenvolvimento web.
                     </p>
 
                     <a href="./assets/projetos_DoisBerto/Lista_exercicios.html">
-                        <img src="./assets/img/Projetos_Sala.png" class="rounded-lg w-full h-40 object-cover" />
+
+                        <div class="relative w-full h-40 overflow-hidden rounded-lg mt-4">
+                            <img src="./assets/img/Projetos_Sala.png" alt="Projetos em Sala"
+                                class="absolute inset-0 w-full h-full object-cover" />
+                        </div>
                     </a>
 
                     <!-- OVERLAY DETALHES (ESTILO MELHORADO) -->
@@ -586,8 +600,9 @@ hover:-translate-y-2 hover:shadow-2xl snap-start flex-shrink-0 min-h-[460px] sm:
         <h3 class="text-3xl font-bold mb-6 text-secondary">Hobbies</h3>
         <ul class="list-disc list-inside text-slate-300 space-y-2">
             <li>Estudar novas tecnologias</li>
-            <li>Design de interfaces</li>
-            <li>Projetos pessoais</li>
+            <li>Praticar desenvolvimento de interfaces</li>
+            <li>Desenvolver projetos pessoais</li>
+            <li>Ouvir e estudar música</li>
             <li>Aprender inglês</li>
         </ul>
     </section>

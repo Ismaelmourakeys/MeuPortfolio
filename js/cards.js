@@ -52,16 +52,16 @@ const novosProjetos = [
         ]
     },
 
-    
+
+    /*{
+        title: 'Portfolio Pessoal',
+        desc: 'Site pessoal com apresentação de projetos, contato e blog.',
+        img: './assets/img/projeto_portfolio.png',
+        link: 'https://example.com/portfolio'
+    },
+
+
             {
-                title: 'Portfolio Pessoal',
-                desc: 'Site pessoal com apresentação de projetos, contato e blog.',
-                img: './assets/img/projeto_portfolio.png',
-                link: 'https://example.com/portfolio'
-            },
-    
- 
-    /*        {
                 title: 'App de Tarefas',
                 desc: 'Aplicativo simples para gestão de tarefas com persistência local.',
                 img: './assets/img/projeto_tasks.png',
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
     novosProjetos.forEach(function (p) {
         const link = p.link || '#';
         const card = document.createElement('div');
-        card.className = 'project-card relative bg-slate-800 rounded-2xl p-6 flex flex-col shadow-lg border border-slate-700/50 transition-all duration-300hover:-translate-y-2 hover:shadow-2xl snap-start flex-shrink-0 min-h-[460px] sm:min-h-[520px]';
+        card.className = 'project-card relative overflow-hidden bg-slate-800 rounded-2xl p-6 flex flex-col shadow-lg border border-slate-700/50';
 
         card.innerHTML = ''
             + '<div class="conteudo resumo flex-1">'
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
             + '<a href="' + encodeURI(link) + '" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto (nova aba)" class="inline-flex items-center gap-2 text-sm font-semibold bg-secondary text-slate-900 px-4 py-2 rounded-md shadow-sm hover:opacity-95 hover:scale-105 transition transform">GitHub do projeto <i class="devicon-github-original colored text-2xl" aria-hidden="true"></i></a>'
             + '<button class="fechar-detalhes mt-2 text-sm text-secondary hover:underline">Fechar ✕</button>'
             + '</div>'
-            + '<button class="ver-mais absolute bottom-4 left-4 text-sm font-medium text-secondary hover:underline">Mais detalhes →</button>';
+            + '<button class="ver-mais absolute bottom-3 left-4 text-sm font-medium text-secondary hover:underline">Mais detalhes →</button>';
 
         carousel.appendChild(card);
 
@@ -172,27 +172,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // igualar alturas dos cards após inseri-los no DOM
     function equalizeCardHeights() {
+        if (window.innerWidth < 640) return; // ⛔ NÃO iguala no mobile
+
         const cards = document.querySelectorAll('.project-card');
         let maxHeight = 0;
 
-        // reset
         cards.forEach(card => {
             card.style.height = 'auto';
         });
 
-        // pega a maior altura
         cards.forEach(card => {
             const h = card.offsetHeight;
             if (h > maxHeight) maxHeight = h;
         });
 
-        // aplica em todos
         cards.forEach(card => {
             card.style.height = maxHeight + 'px';
         });
-
-
     }
+
 
 
     // Depois que todos os cards são criados e inseridos no DOM,
