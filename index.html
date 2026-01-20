@@ -90,7 +90,7 @@
     <section class="flex flex-col sm:flex-row items-center justify-center px-6 py-20 gap-4">
 
         <!-- IMAGEM -->
-        <img src="./assets/img/design_oficial.png" alt="Avatar" class="w-full sm:w-[400px] h-auto" />
+        <img src="./assets/img/design_oficial.png" alt="Avatar" class="w-full sm:w-[450px] h-auto" />
 
 
         <!-- APRESENTAÇÃO -->
@@ -159,19 +159,129 @@
 
 
     <!-- SOBRE -->
-    <section id="sobre" class="px-8 py-20 bg-slate-800">
+    <section id="sobre" class="px-6 py-20 bg-slate-800">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <!-- CARD FOTO -->
+            <div class="relative group">
+                <div
+                    class="relative bg-gradient-to-b from-slate-900/50 to-transparent rounded-3xl p-6 shadow-2xl ring-1 ring-white/10 backdrop-blur-sm transition-transform duration-300 group-hover:-translate-y-2 md:bottom-40">
+                    <img src="assets/img/Foto referência.jpg" alt="Foto de Ismael Moura"
+                        class="w-48 h-50 rounded-2xl object-cover mx-auto border-4 border-secondary shadow-xl transition-transform duration-500 group-hover:scale-105" />
 
-        <h3 class="text-3xl font-bold mb-6 text-secondary">Sobre mim</h3>
-        <p class="max-w-3xl text-slate-300">
-            "Sou desenvolvedor front-end. Tenho experiência com HTML, CSS, JavaScript e
-            React Native, criando interfaces funcionais, modernas e focadas na melhor experiência possível para o
-            usuário. Atualmente estou estudando Tailwind, React para aplicações web e sigo ampliando meus conhecimentos
-            para acompanhar as
-            necessidades do mercado — e estou totalmente pronto para aprender o que for preciso para contribuir com a
-            empresa. Aqui você encontra meus projetos, estudos e experimentos que refletem minha curiosidade e dedicação
-            ao aprendizado contínuo."
-        </p>
+                    <div class="mt-6 text-center">
+                        <h4 class="text-xl font-semibold text-secondary">Ismael Moura</h4>
+                        <p class="text-sm text-slate-300 mt-1">Desenvolvedor Front‑end</p>
+                    </div>
+                </div>
+
+                <!-- DECORATIVE SHAPE -->
+                <div
+                    class="hidden md:block absolute -right-6 -bottom-6 w-28 h-28 rounded-lg bg-gradient-to-tr from-secondary/30 to-yellow-300/10 blur-xl pointer-events-none">
+                </div>
+            </div>
+
+            <!-- CONTEÚDO -->
+            <div class="text-slate-200">
+                <div class="flex flex-col gap-4">
+                    <h3 class="text-3xl font-bold text-secondary">Sobre mim</h3>
+
+                    <div class="space-y-4 text-slate-300 leading-relaxed text-sm sm:text-base">
+                        <p>
+                            "Sou uma pessoa curiosa, dedicada e motivada pelo aprendizado constante. Minha trajetória
+                            profissional começou fora da área de tecnologia, com experiências como <strong>músico</strong>, atuando como
+                            professor de música, tocando em igrejas e casamentos, além de produzir algumas gravações.
+                            Também trabalhei com <strong>atendimento ao cliente</strong>, onde desenvolvi habilidades importantes como
+                            comunicação, organização, responsabilidade e trabalho em equipe.</p>
+                        <p>
+                            Com o tempo, e com o incentivo de uma profissional e amiga que atua na área de
+                            desenvolvimento, despertei um grande interesse pela tecnologia e pela criação de soluções
+                            que realmente impactam a vida das pessoas. Foi assim que iniciei meus estudos em
+                            programação, explorando desenvolvimento web, lógica de programação e criação de interfaces,
+                            sempre buscando unir design, funcionalidade e uma boa experiência para o usuário.</p>
+                        <p>
+                            Atualmente, estou focado em evoluir como desenvolvedor, estudando e praticando tecnologias
+                            como <strong>HTML, CSS, JavaScript</strong> e frameworks modernos, além de versionamento com <strong>Git</strong> e <strong>GitHub.</strong>
+                            Gosto de aprender na prática, transformando ideias em projetos reais voltados para
+                            organização, saúde e produtividade, com o objetivo de ingressar na área de desenvolvimento
+                            de software e contribuir com projetos que façam a diferença."</p>
+
+                        <!-- BADGES / SKILLS -->
+                        <div class="flex flex-wrap gap-3 mt-2">
+                            <span
+                                class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
+                                <i class="devicon-html5-plain colored"></i> HTML
+                            </span>
+                            <span
+                                class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
+                                <i class="devicon-css3-plain colored"></i> CSS
+                            </span>
+                            <span
+                                class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
+                                <i class="devicon-javascript-plain colored"></i> JavaScript
+                            </span>
+                            <span
+                                class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
+                                <i class="devicon-python-plain colored"></i> Python
+                            </span>
+                            <span
+                                class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
+                                <i class="devicon-firebase-plain colored"></i> Firebase
+                            </span>
+                            <span
+                                class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
+                                <i class="devicon-react-original colored"></i> React Native
+                            </span>
+                            <span
+                                class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
+                                <i class="devicon-nodejs-plain colored"></i> Node.js
+                            </span>
+                            <span
+                                class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
+                                <i class="devicon-tailwindcss-plain colored"></i> Tailwind
+                            </span>
+                            <span
+                                class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
+                                <i class="devicon-git-plain colored"></i> Git
+                            </span>
+                            <span
+                                class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
+                                <i class="devicon-github-original colored"></i> GitHub
+                            </span>
+                        </div>
+
+                        <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+
+                            <div class="bg-white/5 border border-white/10 rounded-2xl p-4 hover:bg-white/10 transition">
+                                <h5 class="text-secondary font-semibold">Front-end</h5>
+                                <p class="text-xs text-slate-400 mt-1">Interfaces modernas e acessíveis</p>
+                            </div>
+
+                            <div class="bg-white/5 border border-white/10 rounded-2xl p-4 hover:bg-white/10 transition">
+                                <h5 class="text-secondary font-semibold">Mobile</h5>
+                                <p class="text-xs text-slate-400 mt-1">Apps com React Native</p>
+                            </div>
+
+                            <div class="bg-white/5 border border-white/10 rounded-2xl p-4 hover:bg-white/10 transition">
+                                <h5 class="text-secondary font-semibold">UI / UX</h5>
+                                <p class="text-xs text-slate-400 mt-1">Experiência focada no usuário</p>
+                            </div>
+
+                        </div>
+
+                        <!-- CTA -->
+                        <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                            <a href="#contato" class="inline-flex items-center gap-2 bg-secondary text-slate-900 mt-4
+                            px-6 py-3 rounded-xl text-sm font-semibold
+                            hover:scale-105 hover:opacity-90 transition">
+                                Entrar em contato
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
     </section>
+
 
     <!-- PROJETOS -->
     <section id="projetos" class="px-8 py-20">
