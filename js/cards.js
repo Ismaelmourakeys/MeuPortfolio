@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const link = p.link || '#';
         const card = document.createElement('div');
         card.className = 'project-card data-animate relative overflow-hidden bg-slate-800 rounded-2xl p-6 flex flex-col shadow-lg border border-slate-700/50';
-        card.setAttribute('data-animate', '');
+        card.setAttribute('data-animate', 'left');
 
         card.innerHTML = ''
             + '<div class="conteudo resumo flex-1">'

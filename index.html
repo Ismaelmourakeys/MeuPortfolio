@@ -87,14 +87,14 @@
     </div>
 
     <!-- HERO -->
-    <section class="flex flex-col sm:flex-row items-center justify-center px-6 py-20 gap-4" data-animate>
+    <section class="flex flex-col sm:flex-row items-center justify-center px-6 py-20 gap-4" data-animate="left">
 
         <!-- IMAGEM -->
-        <img src="./assets/img/design_oficial.png" alt="Avatar" class="w-full sm:w-[450px] h-auto" />
+        <img src="./assets/img/design_oficial.png" alt="Avatar" class="w-full sm:w-[450px] h-auto" data-animate="left"/>
 
 
         <!-- APRESENTAÇÃO -->
-        <div class="flex flex-col text-center sm:text-left sm:items-center max-w-xl">
+        <div class="flex flex-col text-center sm:text-left sm:items-center max-w-xl" >
 
             <!--<h3 class="text-3xl font-bold mb-20 flex flex-col text-center">Olá... <br> Seja Bem-vindo!</h3>-->
 
@@ -159,10 +159,10 @@
 
 
     <!-- SOBRE -->
-    <section id="sobre" class="px-6 py-20 bg-slate-800" data-animate>
+    <section id="sobre" class="px-6 py-20 bg-slate-800" data-animate="left">
         <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <!-- CARD FOTO -->
-<div class="relative group" data-animate>
+<div class="relative group">
   <div
     class="
       relative
@@ -192,8 +192,7 @@
         shadow-xl
         transition-transform duration-500
         group-hover:scale-105
-      "
-    />
+      "/>
 
     <div class="mt-6 text-center">
       <h4 class="text-xl font-semibold text-secondary">Ismael Moura</h4>
@@ -214,7 +213,7 @@
                     <h3 class="text-3xl font-bold text-secondary text-center items-center sm:text-start">Sobre mim</h3>
 
                     <div
-                        class="space-y-4 text-slate-300 leading-relaxed text-center items-center sm:text-start text-sm sm:text-base scrollbar-track-transparent scrollbar-thin scrollbar-hover max-h-96 overflow-y-auto pr-2">
+                        class="space-y-4 text-slate-300 leading-relaxed text-center items-center sm:text-start text-sm sm:text-base scrollbar-track-transparent scrollbar-thin scrollbar-hover max-h-72 overflow-y-auto pr-2">
                         <p>
                             "Sou uma pessoa curiosa, dedicada e motivada pelo aprendizado constante. Minha trajetória
                             profissional começou fora da área de tecnologia, com experiências como
@@ -319,7 +318,7 @@
 
     <!-- PROJETOS -->
     <section id="projetos" class="px-8 py-20">
-        <h3 class="text-3xl font-bold mb-10 text-secondary">Projetos</h3>
+        <h3 class="text-3xl font-bold mb-10 text-secondary" data-animate="up">Projetos</h3>
 
         <div class="relative group">
 
@@ -351,7 +350,7 @@ overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1">
 
                 <!-- CARD 1 -->
                 <div
-                    class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-10 flex flex-col shadow-lg border border-slate-700/50" data-animate>
+                    class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-10 flex flex-col shadow-lg border border-slate-700/50" data-animate="left">
 
 
 
@@ -467,7 +466,7 @@ overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1">
 
                 <!-- CARD 2 (VÍDEO) -->
                 <div
-                    class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-10 flex flex-col shadow-lg border border-slate-700/50" data-animate>
+                    class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-10 flex flex-col shadow-lg border border-slate-700/50" data-animate="left">
 
 
 
@@ -635,7 +634,7 @@ overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1">
 
                 <!-- CARD 3 -->
                 <div
-                    class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-10 flex flex-col shadow-lg border border-slate-700/50" data-animate>
+                    class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-10 flex flex-col shadow-lg border border-slate-700/50" data-animate="left">
 
 
                     <h4 class="text-lg sm:text-xl font-bold mb-2 text-yellow-300">
@@ -739,7 +738,7 @@ overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1">
 
 
     <!-- HOBBIES -->
-    <section id="hobbies" class="px-8 py-20 bg-slate-800" data-animate>
+    <section id="hobbies" class="px-8 py-20 bg-slate-800" data-animate="up">
         <h3 class="text-3xl font-bold mb-6 text-secondary">Hobbies</h3>
         <ul class="list-disc list-inside text-slate-300 space-y-2">
             <li>Estudar novas tecnologias</li>
@@ -751,7 +750,7 @@ overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1">
     </section>
 
     <!-- CONTATO -->
-    <section id="contato" class="px-8 py-20" data-animate>
+    <section id="contato" class="px-8 py-20" data-animate="left" data-animate-once>
         <h3 class="text-3xl font-bold mb-6 text-secondary">Contato</h3>
         <p class="text-slate-300 mb-6">Vamos conversar?</p>
         <div class="flex flex-wrap gap-6">
@@ -763,7 +762,7 @@ overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1">
     </section>
 
     <!-- FOOTER -->
-    <footer class="text-center py-6 text-slate-400 text-sm bg-slate-950" data-animate>
+    <footer class="text-center py-6 text-slate-400 text-sm bg-slate-950" data-animate="left" data-animate-once>
         © 2026 Ismael Moura. Todos os direitos reservados.
     </footer>
 
