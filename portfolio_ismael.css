@@ -1,30 +1,93 @@
+/* Removendo a barra de rolagem padrão*/
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
 
-  /* Removendo a barra de rolagem padrão*/
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
+/* Estilização personalizada para a barra de rolagem */
+/* Scrollbar discreta */
+.scrollbar-hover::-webkit-scrollbar {
+  width: 6px;
+}
 
-  /* Estilização personalizada para a barra de rolagem */
-  /* Scrollbar discreta */
-  .scrollbar-hover::-webkit-scrollbar {
-    width: 6px;
-  }
+.scrollbar-hover::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 9999px;
+  transition: background-color 0.3s;
+}
 
-  .scrollbar-hover::-webkit-scrollbar-thumb {
-    background-color: transparent;
-    border-radius: 9999px;
-    transition: background-color 0.3s;
-  }
+.scrollbar-hover:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(148, 163, 184, 0.5);
+}
 
-  .scrollbar-hover:hover::-webkit-scrollbar-thumb {
-    background-color: rgba(148, 163, 184, 0.5);
-  }
+.scrollbar-hover::-webkit-scrollbar-track {
+  background: transparent;
+}
 
-  .scrollbar-hover::-webkit-scrollbar-track {
-    background: transparent;
-  }
+
+/* SCROLL ANIMATION */
+
+/* Removendo a barra de rolagem padrão*/
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Estilização personalizada para a barra de rolagem */
+/* Scrollbar discreta */
+.scrollbar-hover::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-hover::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 9999px;
+  transition: background-color 0.3s;
+}
+
+.scrollbar-hover:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(148, 163, 184, 0.5);
+}
+
+.scrollbar-hover::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+/* SCROLL ANIMATION */
+[data-animate] {
+  opacity: 0;
+  transition: opacity 1.0s ease, transform 1.0s ease;
+}
+
+[data-animate="up"] {
+  transform: translateY(24px);
+}
+
+[data-animate="left"] {
+  transform: translateX(-32px);
+}
+
+[data-animate="right"] {
+  transform: translateX(32px);
+}
+
+[data-animate].is-visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+[data-animate="u"] {
+  transform: translateY(32px);
+}
+[data-animate="u"].is-visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}

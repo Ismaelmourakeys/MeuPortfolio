@@ -87,7 +87,7 @@
     </div>
 
     <!-- HERO -->
-    <section class="flex flex-col sm:flex-row items-center justify-center px-6 py-20 gap-4">
+    <section class="flex flex-col sm:flex-row items-center justify-center px-6 py-20 gap-4" data-animate>
 
         <!-- IMAGEM -->
         <img src="./assets/img/design_oficial.png" alt="Avatar" class="w-full sm:w-[450px] h-auto" />
@@ -99,7 +99,7 @@
             <!--<h3 class="text-3xl font-bold mb-20 flex flex-col text-center">Olá... <br> Seja Bem-vindo!</h3>-->
 
             <p class="text-slate-300 mb-4">Olá! Meu nome é <em class="font-bold text-yellow-300">Ismael Moura</em> e</p>
-            <h2 class="text-3xl sm:text-4xl font-bold mb-4 flex justify-center sm:justify-start gap-2 leading-none">
+            <h2 class="text-2xl sm:text-4xl font-bold mb-4 flex justify-center sm:justify-start gap-2 leading-none">
                 <span>Eu sou</span>
 
                 <span id="typed" class="text-secondary"></span>
@@ -159,39 +159,71 @@
 
 
     <!-- SOBRE -->
-    <section id="sobre" class="px-6 py-20 bg-slate-800">
+    <section id="sobre" class="px-6 py-20 bg-slate-800" data-animate>
         <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <!-- CARD FOTO -->
-            <div class="relative group">
-                <div
-                    class="relative bg-gradient-to-b from-slate-900/50 to-transparent rounded-3xl p-6 shadow-2xl ring-1 ring-white/10 backdrop-blur-sm transition-transform duration-300 group-hover:-translate-y-2 md:bottom-40">
-                    <img src="assets/img/Foto referência.jpg" alt="Foto de Ismael Moura"
-                        class="w-48 h-50 rounded-2xl object-cover mx-auto border-4 border-secondary shadow-xl transition-transform duration-500 group-hover:scale-105" />
+<div class="relative group" data-animate>
+  <div
+    class="
+      relative
+      mx-auto md:mx-0
+      md:absolute md:-bottom-48
+      w-72 sm:w-80 md:w-96
+      bg-gradient-to-b from-slate-900/50 to-transparent
+      rounded-3xl
+      p-6 md:p-10
+      shadow-2xl
+      ring-1 ring-white/10
+      backdrop-blur-sm
+      transition-transform duration-300
+      group-hover:-translate-y-2
+    "
+  >
+    <img
+      src="assets/img/Foto referência.jpg"
+      alt="Foto de Ismael Moura"
+      class="
+        w-56
+        h-full
+        rounded-2xl
+        object-cover
+        mx-auto
+        border-4 border-secondary
+        shadow-xl
+        transition-transform duration-500
+        group-hover:scale-105
+      "
+    />
 
-                    <div class="mt-6 text-center">
-                        <h4 class="text-xl font-semibold text-secondary">Ismael Moura</h4>
-                        <p class="text-sm text-slate-300 mt-1">Desenvolvedor Front‑end</p>
-                    </div>
-                </div>
+    <div class="mt-6 text-center">
+      <h4 class="text-xl font-semibold text-secondary">Ismael Moura</h4>
+      <p class="text-sm text-slate-300 mt-1">Desenvolvedor Front-end</p>
+    </div>
+  </div>
 
-                <!-- DECORATIVE SHAPE -->
-                <div
-                    class="hidden md:block absolute -right-6 -bottom-6 w-28 h-28 rounded-lg bg-gradient-to-tr from-secondary/30 to-yellow-300/10 blur-xl pointer-events-none">
-                </div>
-            </div>
+  <!-- DECORATIVE SHAPE -->
+  <div
+    class="hidden md:block absolute -right-6 -bottom-6 w-28 h-28 rounded-lg bg-gradient-to-tr from-secondary/30 to-yellow-300/10 blur-xl pointer-events-none"
+  ></div>
+</div>
+
 
             <!-- CONTEÚDO -->
             <div class="text-slate-200">
                 <div class="flex flex-col gap-4">
-                    <h3 class="text-3xl font-bold text-secondary">Sobre mim</h3>
+                    <h3 class="text-3xl font-bold text-secondary text-center items-center sm:text-start">Sobre mim</h3>
 
-                    <div class="space-y-4 text-slate-300 leading-relaxed text-sm sm:text-base">
+                    <div
+                        class="space-y-4 text-slate-300 leading-relaxed text-center items-center sm:text-start text-sm sm:text-base scrollbar-track-transparent scrollbar-thin scrollbar-hover max-h-96 overflow-y-auto pr-2">
                         <p>
                             "Sou uma pessoa curiosa, dedicada e motivada pelo aprendizado constante. Minha trajetória
-                            profissional começou fora da área de tecnologia, com experiências como <strong>músico</strong>, atuando como
+                            profissional começou fora da área de tecnologia, com experiências como
+                            <strong>músico</strong>, atuando como
                             professor de música, tocando em igrejas e casamentos, além de produzir algumas gravações.
-                            Também trabalhei com <strong>atendimento ao cliente</strong>, onde desenvolvi habilidades importantes como
-                            comunicação, organização, responsabilidade e trabalho em equipe.</p>
+                            Também trabalhei com <strong>atendimento ao cliente</strong>, onde desenvolvi habilidades
+                            importantes como
+                            comunicação, organização, responsabilidade e trabalho em equipe.
+                        </p>
                         <p>
                             Com o tempo, e com o incentivo de uma profissional e amiga que atua na área de
                             desenvolvimento, despertei um grande interesse pela tecnologia e pela criação de soluções
@@ -200,86 +232,88 @@
                             sempre buscando unir design, funcionalidade e uma boa experiência para o usuário.</p>
                         <p>
                             Atualmente, estou focado em evoluir como desenvolvedor, estudando e praticando tecnologias
-                            como <strong>HTML, CSS, JavaScript</strong> e frameworks modernos, além de versionamento com <strong>Git</strong> e <strong>GitHub.</strong>
+                            como <strong>HTML, CSS, JavaScript</strong> e frameworks modernos, além de versionamento com
+                            <strong>Git</strong> e <strong>GitHub.</strong>
                             Gosto de aprender na prática, transformando ideias em projetos reais voltados para
                             organização, saúde e produtividade, com o objetivo de ingressar na área de desenvolvimento
-                            de software e contribuir com projetos que façam a diferença."</p>
+                            de software e contribuir com projetos que façam a diferença."
+                        </p>
+                    </div>
+                    <!-- BADGES / SKILLS -->
+                    <div class="flex flex-wrap gap-3 mt-4 no-scrollbar items-center justify-center sm:justify-start ">
+                        <span
+                            class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
+                            <i class="devicon-html5-plain colored"></i> HTML
+                        </span>
+                        <span
+                            class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
+                            <i class="devicon-css3-plain colored"></i> CSS
+                        </span>
+                        <span
+                            class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
+                            <i class="devicon-javascript-plain colored"></i> JavaScript
+                        </span>
+                        <span
+                            class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
+                            <i class="devicon-python-plain colored"></i> Python
+                        </span>
+                        <span
+                            class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
+                            <i class="devicon-firebase-plain colored"></i> Firebase
+                        </span>
+                        <span
+                            class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
+                            <i class="devicon-react-original colored"></i> React Native
+                        </span>
+                        <span
+                            class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
+                            <i class="devicon-nodejs-plain colored"></i> Node.js
+                        </span>
+                        <span
+                            class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
+                            <i class="devicon-tailwindcss-plain colored"></i> Tailwind
+                        </span>
+                        <span
+                            class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
+                            <i class="devicon-git-plain colored"></i> Git
+                        </span>
+                        <span
+                            class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
+                            <i class="devicon-github-original colored"></i> GitHub
+                        </span>
+                    </div>
 
-                        <!-- BADGES / SKILLS -->
-                        <div class="flex flex-wrap gap-3 mt-2">
-                            <span
-                                class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
-                                <i class="devicon-html5-plain colored"></i> HTML
-                            </span>
-                            <span
-                                class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
-                                <i class="devicon-css3-plain colored"></i> CSS
-                            </span>
-                            <span
-                                class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
-                                <i class="devicon-javascript-plain colored"></i> JavaScript
-                            </span>
-                            <span
-                                class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
-                                <i class="devicon-python-plain colored"></i> Python
-                            </span>
-                            <span
-                                class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
-                                <i class="devicon-firebase-plain colored"></i> Firebase
-                            </span>
-                            <span
-                                class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
-                                <i class="devicon-react-original colored"></i> React Native
-                            </span>
-                            <span
-                                class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
-                                <i class="devicon-nodejs-plain colored"></i> Node.js
-                            </span>
-                            <span
-                                class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
-                                <i class="devicon-tailwindcss-plain colored"></i> Tailwind
-                            </span>
-                            <span
-                                class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
-                                <i class="devicon-git-plain colored"></i> Git
-                            </span>
-                            <span
-                                class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
-                                <i class="devicon-github-original colored"></i> GitHub
-                            </span>
+                    <div class="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+
+                        <div class="bg-white/5 border border-white/10 rounded-2xl p-4 hover:bg-white/10 transition">
+                            <h5 class="text-secondary font-semibold">Front-end</h5>
+                            <p class="text-xs text-slate-400 mt-1">Interfaces modernas e acessíveis</p>
                         </div>
 
-                        <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
-
-                            <div class="bg-white/5 border border-white/10 rounded-2xl p-4 hover:bg-white/10 transition">
-                                <h5 class="text-secondary font-semibold">Front-end</h5>
-                                <p class="text-xs text-slate-400 mt-1">Interfaces modernas e acessíveis</p>
-                            </div>
-
-                            <div class="bg-white/5 border border-white/10 rounded-2xl p-4 hover:bg-white/10 transition">
-                                <h5 class="text-secondary font-semibold">Mobile</h5>
-                                <p class="text-xs text-slate-400 mt-1">Apps com React Native</p>
-                            </div>
-
-                            <div class="bg-white/5 border border-white/10 rounded-2xl p-4 hover:bg-white/10 transition">
-                                <h5 class="text-secondary font-semibold">UI / UX</h5>
-                                <p class="text-xs text-slate-400 mt-1">Experiência focada no usuário</p>
-                            </div>
-
+                        <div class="bg-white/5 border border-white/10 rounded-2xl p-4 hover:bg-white/10 transition">
+                            <h5 class="text-secondary font-semibold">Mobile</h5>
+                            <p class="text-xs text-slate-400 mt-1">Apps com React Native</p>
                         </div>
 
-                        <!-- CTA -->
-                        <div class="mt-6 flex flex-wrap gap-3 justify-center">
-                            <a href="#contato" class="inline-flex items-center gap-2 bg-secondary text-slate-900 mt-4
+                        <div class="bg-white/5 border border-white/10 rounded-2xl p-4 hover:bg-white/10 transition">
+                            <h5 class="text-secondary font-semibold">UI / UX</h5>
+                            <p class="text-xs text-slate-400 mt-1">Experiência focada no usuário</p>
+                        </div>
+
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                        <a href="#contato" class="inline-flex items-center gap-2 bg-secondary text-slate-900 mt-0
                             px-6 py-3 rounded-xl text-sm font-semibold
                             hover:scale-105 hover:opacity-90 transition">
-                                Entrar em contato
-                            </a>
+                            Entrar em contato
+                        </a>
 
-                        </div>
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 
 
@@ -312,12 +346,12 @@
             <div id="projectsCarousel" class="grid grid-flow-col auto-cols-[85%] sm:auto-cols-[60%] md:auto-cols-[420px]
 items-stretch
 gap-4
-overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1 ">
+overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1">
 
 
                 <!-- CARD 1 -->
                 <div
-                    class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-6 flex flex-col shadow-lg border border-slate-700/50">
+                    class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-10 flex flex-col shadow-lg border border-slate-700/50" data-animate>
 
 
 
@@ -433,7 +467,7 @@ overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1 ">
 
                 <!-- CARD 2 (VÍDEO) -->
                 <div
-                    class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-6 flex flex-col shadow-lg border border-slate-700/50">
+                    class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-10 flex flex-col shadow-lg border border-slate-700/50" data-animate>
 
 
 
@@ -601,8 +635,7 @@ overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1 ">
 
                 <!-- CARD 3 -->
                 <div
-                    class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-6 flex flex-col shadow-lg border border-slate-700/50">
-
+                    class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-10 flex flex-col shadow-lg border border-slate-700/50" data-animate>
 
 
                     <h4 class="text-lg sm:text-xl font-bold mb-2 text-yellow-300">
@@ -706,7 +739,7 @@ overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1 ">
 
 
     <!-- HOBBIES -->
-    <section id="hobbies" class="px-8 py-20 bg-slate-800">
+    <section id="hobbies" class="px-8 py-20 bg-slate-800" data-animate>
         <h3 class="text-3xl font-bold mb-6 text-secondary">Hobbies</h3>
         <ul class="list-disc list-inside text-slate-300 space-y-2">
             <li>Estudar novas tecnologias</li>
@@ -718,7 +751,7 @@ overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1 ">
     </section>
 
     <!-- CONTATO -->
-    <section id="contato" class="px-8 py-20">
+    <section id="contato" class="px-8 py-20" data-animate>
         <h3 class="text-3xl font-bold mb-6 text-secondary">Contato</h3>
         <p class="text-slate-300 mb-6">Vamos conversar?</p>
         <div class="flex flex-wrap gap-6">
@@ -730,8 +763,8 @@ overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1 ">
     </section>
 
     <!-- FOOTER -->
-    <footer class="text-center py-6 text-slate-400 text-sm bg-slate-950">
-        © 2025 Ismael Moura. Todos os direitos reservados.
+    <footer class="text-center py-6 text-slate-400 text-sm bg-slate-950" data-animate>
+        © 2026 Ismael Moura. Todos os direitos reservados.
     </footer>
 
 </body>

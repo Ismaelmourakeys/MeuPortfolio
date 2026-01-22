@@ -1,8 +1,9 @@
 // Importação do arquivo menu.js
 import { initMenu, initHeaderScroll, initMenuAnimations } from "./menu.js";
 import { initCarousel } from "./carousel.js";
-import { initScrollAnimation, setupCardInteractions, initCards } from "./cards.js";
+import { setupCardInteractions, initCards } from "./cards.js";
 import { initVideoModal } from "./videoModal.js";
+import { initScrollAnimation } from "./animation.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -31,6 +32,7 @@ new Typed('#typed', {
     backSpeed: 60,
     loop: true
 });
+
 
 
 

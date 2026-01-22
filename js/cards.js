@@ -1,7 +1,7 @@
 // cria o HTML dos ícones de tecnologia dinamicamente
 function techIconsHTML(techs = []) {
     return techs.map(tech => `
-        <div class="tech-icon-card flex flex-col items-center justify-center gap-2 bg-white/5 rounded-xl w-24 h-24 p-2 text-center transition hover:bg-white/10">
+        <div class="tech-icon-card data-animate flex flex-col items-center justify-center gap-2 bg-white/5 rounded-xl w-24 h-24 p-2 text-center transition hover:bg-white/10">
             <div class="flex items-center justify-center w-full h-full">
                 ${tech.svg ? tech.svg : `<i class="${tech.icon} text-3xl"></i>`}
             </div>
@@ -108,7 +108,8 @@ document.addEventListener('DOMContentLoaded', function () {
     novosProjetos.forEach(function (p) {
         const link = p.link || '#';
         const card = document.createElement('div');
-        card.className = 'project-card relative overflow-hidden bg-slate-800 rounded-2xl p-6 flex flex-col shadow-lg border border-slate-700/50';
+        card.className = 'project-card data-animate relative overflow-hidden bg-slate-800 rounded-2xl p-6 flex flex-col shadow-lg border border-slate-700/50';
+        card.setAttribute('data-animate', '');
 
         card.innerHTML = ''
             + '<div class="conteudo resumo flex-1">'
