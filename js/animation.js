@@ -69,7 +69,7 @@ export function initScrollAnimation() {
         scale(${0.98 + progress * 0.02})
       `;
 
-      el.style.filter = `blur(${(1 - progress) * 1}px)`;
+      //el.style.filter = `blur(${(1 - progress) * 1}px)`;
 
       // ✅ marca como finalizado
       if (progress === 1 && el.dataset.animateOnce) {

@@ -90,11 +90,12 @@
     <section class="flex flex-col sm:flex-row items-center justify-center px-6 py-20 gap-4" data-animate="left">
 
         <!-- IMAGEM -->
-        <img src="./assets/img/design_oficial.png" alt="Avatar" class="w-full sm:w-[450px] h-auto" data-animate="left"/>
+        <img src="./assets/img/design_oficial.png" alt="Avatar" class="w-full sm:w-[450px] h-auto"
+            data-animate="left" />
 
 
         <!-- APRESENTAÇÃO -->
-        <div class="flex flex-col text-center sm:text-left sm:items-center max-w-xl" >
+        <div class="flex flex-col text-center sm:text-left sm:items-center max-w-xl">
 
             <!--<h3 class="text-3xl font-bold mb-20 flex flex-col text-center">Olá... <br> Seja Bem-vindo!</h3>-->
 
@@ -162,9 +163,8 @@
     <section id="sobre" class="px-6 py-20 bg-slate-800" data-animate="left">
         <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <!-- CARD FOTO -->
-<div class="relative group">
-  <div
-    class="
+            <div class="relative group">
+                <div class="
       relative
       mx-auto md:mx-0
       md:absolute md:-bottom-48
@@ -177,12 +177,8 @@
       backdrop-blur-sm
       transition-transform duration-300
       group-hover:-translate-y-2
-    "
-  >
-    <img
-      src="assets/img/Foto referência.jpg"
-      alt="Foto de Ismael Moura"
-      class="
+    ">
+                    <img src="assets/img/Foto referência.jpg" alt="Foto de Ismael Moura" class="
         w-56
         h-full
         rounded-2xl
@@ -192,19 +188,19 @@
         shadow-xl
         transition-transform duration-500
         group-hover:scale-105
-      "/>
+      " />
 
-    <div class="mt-6 text-center">
-      <h4 class="text-xl font-semibold text-secondary">Ismael Moura</h4>
-      <p class="text-sm text-slate-300 mt-1">Desenvolvedor Front-end</p>
-    </div>
-  </div>
+                    <div class="mt-6 text-center">
+                        <h4 class="text-xl font-semibold text-secondary">Ismael Moura</h4>
+                        <p class="text-sm text-slate-300 mt-1">Desenvolvedor Front-end</p>
+                    </div>
+                </div>
 
-  <!-- DECORATIVE SHAPE -->
-  <div
-    class="hidden md:block absolute -right-6 -bottom-6 w-28 h-28 rounded-lg bg-gradient-to-tr from-secondary/30 to-yellow-300/10 blur-xl pointer-events-none"
-  ></div>
-</div>
+                <!-- DECORATIVE SHAPE -->
+                <div
+                    class="hidden md:block absolute -right-6 -bottom-6 w-28 h-28 rounded-lg bg-gradient-to-tr from-secondary/30 to-yellow-300/10 blur-xl pointer-events-none">
+                </div>
+            </div>
 
 
             <!-- CONTEÚDO -->
@@ -219,7 +215,7 @@
                             profissional começou fora da área de tecnologia, com experiências como
                             <strong>músico</strong>, atuando como
                             professor de música, tocando em igrejas e casamentos, além de produzir algumas gravações.
-                            Também trabalhei com <strong>atendimento ao cliente</strong>, onde desenvolvi habilidades
+                            Também trabalhei com <strong>atendimento</strong>, onde desenvolvi habilidades
                             importantes como
                             comunicação, organização, responsabilidade e trabalho em equipe.
                         </p>
@@ -349,8 +345,8 @@ overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1">
 
 
                 <!-- CARD 1 -->
-                <div
-                    class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-10 flex flex-col shadow-lg border border-slate-700/50" data-animate="left">
+                <div class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-10 flex flex-col shadow-lg border border-slate-700/50"
+                    data-animate="left">
 
 
 
@@ -465,8 +461,8 @@ overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1">
                 </div>
 
                 <!-- CARD 2 (VÍDEO) -->
-                <div
-                    class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-10 flex flex-col shadow-lg border border-slate-700/50" data-animate="left">
+                <div class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-10 flex flex-col shadow-lg border border-slate-700/50"
+                    data-animate="left">
 
 
 
@@ -633,8 +629,8 @@ overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1">
 
 
                 <!-- CARD 3 -->
-                <div
-                    class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-10 flex flex-col shadow-lg border border-slate-700/50" data-animate="left">
+                <div class="project-card relative overflow-hidden bg-slate-800 rounded-2xl p-10 flex flex-col shadow-lg border border-slate-700/50"
+                    data-animate="left">
 
 
                     <h4 class="text-lg sm:text-xl font-bold mb-2 text-yellow-300">
@@ -736,9 +732,31 @@ overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1">
             </div>
     </section>
 
+    <section id="certificados" class="px-6 py-20 bg-white/10 border border-white/20" data-animate="left">
+        <h3 class="text-3xl font-bold text-secondary mb-8">Certificados</h3>
+
+        <div id="certificados-grid" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        </div>
+
+        <!-- MODAL CERTIFICADO -->
+        <div id="certificado-modal"
+            class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden items-center justify-center z-50">
+            <div class="relative max-w-4xl w-full px-4">
+                <button id="close-certificado"
+                    class="absolute -top-10 right-0 text-white text-3xl hover:text-secondary">
+                    ✕
+                </button>
+
+                <img id="certificado-modal-img" src="" alt="Certificado"
+                    class="w-full max-h-[80vh] object-contain rounded-xl shadow-2xl" />
+            </div>
+        </div>
+
+    </section>
+
 
     <!-- HOBBIES -->
-    <section id="hobbies" class="px-8 py-20 bg-slate-800" data-animate="up">
+    <section id="hobbies" class="px-8 py-20 bg-slate-800" data-animate="left">
         <h3 class="text-3xl font-bold mb-6 text-secondary">Hobbies</h3>
         <ul class="list-disc list-inside text-slate-300 space-y-2">
             <li>Estudar novas tecnologias</li>
@@ -748,6 +766,7 @@ overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1">
             <li>Aprender inglês</li>
         </ul>
     </section>
+
 
     <!-- CONTATO -->
     <section id="contato" class="px-8 py-20" data-animate="left" data-animate-once>
@@ -760,6 +779,7 @@ overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1">
                 LinkedIn</a>
         </div>
     </section>
+
 
     <!-- FOOTER -->
     <footer class="text-center py-6 text-slate-400 text-sm bg-slate-950" data-animate="left" data-animate-once>

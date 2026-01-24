@@ -4,6 +4,7 @@ import { initCarousel } from "./carousel.js";
 import { setupCardInteractions, initCards } from "./cards.js";
 import { initVideoModal } from "./videoModal.js";
 import { initScrollAnimation } from "./animation.js";
+import { initCertificados } from "./certificações.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -22,6 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
     setupCardInteractions();
     initCards();
     initScrollAnimation();
+
+    //Certificados
+    initCertificados();
 });
 
 
