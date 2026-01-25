@@ -5,9 +5,25 @@ import { setupCardInteractions, initCards } from "./cards.js";
 import { initVideoModal } from "./videoModal.js";
 import { initScrollAnimation } from "./animation.js";
 import { initCertificados } from "./certificações.js";
+//import { setLanguage } from "./lang_control/i18nController.js";
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    /* Controle de idioma
+    const languageSelect = document.getElementById("languageSelect");
+    const savedLang = localStorage.getItem("lang") || "pt";
+
+    setLanguage(savedLang);
+    languageSelect.value = savedLang;
+
+    languageSelect.addEventListener("change", (e) => {
+        const lang = e.target.value;
+        setLanguage(lang);
+        localStorage.setItem("lang", lang);
+    });*/
+    
     //MENU + HEADER com scroll + ANIMAÇÕES de menu 
     initMenu();
     initHeaderScroll();
@@ -36,8 +52,6 @@ new Typed('#typed', {
     backSpeed: 60,
     loop: true
 });
-
-
 
 
 
