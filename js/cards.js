@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
     novosProjetos.forEach(function (p) {
         const link = p.link || '#';
         const card = document.createElement('div');
-        card.className = 'project-card data-animate relative overflow-hidden bg-slate-800 rounded-2xl p-6 flex flex-col shadow-lg border border-slate-700/50';
+        card.className = 'project-card relative overflow-hidden bg-slate-800 rounded-2xl px-7 py-8 sm:p-6 md:p-10 flex flex-col shadow-lg border border-slate-700/50';
         card.setAttribute('data-animate', 'left');
 
         card.innerHTML = ''
