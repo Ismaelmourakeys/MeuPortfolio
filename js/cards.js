@@ -44,11 +44,10 @@ const novosProjetos = [
         img: './assets/video/Aplicacao_kivy_py/Aplicacao_kivy_py.jpg',
         video: './assets/video/Aplicacao_kivy_py/Aplicacao_py_video.mp4',
         poster: './assets/video/Aplicacao_kivy_py/Aplicacao_kivy_py.jpg',
+        link: 'https://github.com/Ismaelmourakeys/PythonKivy.git',
         techs: [
             { name: 'Python', svg: icons.python },
             { name: 'Kivy', svg: icons.kivy },
-            //{ name: 'HTML', icon: 'devicon-html5-plain colored' },
-            //{ name: 'CSS', icon: 'devicon-css3-plain colored' }
         ]
     },
 
