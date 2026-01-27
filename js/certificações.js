@@ -1,9 +1,9 @@
 export function initCertificados() {
   const certificados = [
     {
-      titulo: 'Curso de HTML',
-      instituicao: 'Ada Tech',
-      imagem: 'assets/img/certificados/Ada_Tech_HTML.png'
+      titulo: 'Bootcamp Nexa + AWS - Fundamentos de IA Generativa com BedRock',
+      instituicao: 'DIO.',
+      imagem: 'assets/img/certificados/Bootcamp_AWS-Fundamentos.png',
     },
     {
       titulo: 'Curso de Inglês Beginner 1-2',
@@ -16,19 +16,36 @@ export function initCertificados() {
       imagem: 'assets/img/certificados/Fundação Bradesco_Site Simples.PNG'
     },
     {
-      titulo: 'Curso de Python',
-      instituicao: 'Santander Open Academy',
-      imagem: 'assets/img/certificados/Python_Santander Open Academy.PNG'
-    },
-    {
       titulo: 'Imersão Front-end 2° edição',
       instituicao: 'Alura',
       imagem: 'assets/img/certificados/Alura_Imesão Front-end 2° edição.PNG'
     },
+    
     {
-      titulo: 'Bootcamp Nexa + AWS - Fundamentos de IA Generativa com BedRock',
-      instituicao: 'DIO.',
-      imagem: 'assets/img/certificados/Bootcamp_AWS-Fundamentos.png',
+      titulo: 'Curso de HTML',
+      instituicao: 'Ada Tech',
+      imagem: 'assets/img/certificados/Ada_Tech_HTML.png'
+    },
+    {
+      titulo: 'Curso de Python',
+      instituicao: 'Santander Open Academy',
+      imagem: 'assets/img/certificados/Python_Santander Open Academy.PNG'
+    },
+    
+    {
+      titulo: 'Curso Complementar de Inglês',
+      instituicao: 'Wirzard',
+      imagem: 'assets/img/certificados/Wizard_certificado.jpeg',
+    },
+    {
+      titulo: 'Informática Essencial',
+      instituicao: 'Microlins',
+      imagem: 'assets/img/certificados/Microlins_Informatica.jpeg',
+    },
+    {
+      titulo: 'Atendente de Farmácia',
+      instituicao: 'Microlins',
+      imagem: 'assets/img/certificados/Microlins_Auxiliar.jpeg',
     },
   ];
 

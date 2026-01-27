@@ -52,7 +52,7 @@ label {
 /* Campos de entrada */
 input[type="text"],
 input[type="password"] {
-    padding: 12px;
+    padding: 14px;
     border: solid #ccc;
     border-radius: 8px;
     font-size: 15px;
