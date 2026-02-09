@@ -6,8 +6,8 @@ export function initCertificados() {
       imagem: 'assets/img/certificados/Bootcamp_AWS-Fundamentos.png',
     },
     {
-      titulo: 'Curso de Inglês Beginner 1-2',
-      instituicao: 'Fluency Academy',
+      titulo: 'Curso de Inglês - Beginner 1',
+      instituicao: 'FluencyPass',
       imagem: 'assets/img/certificados/Fluency Academy_beginner-1-2.PNG'
     },
     {
