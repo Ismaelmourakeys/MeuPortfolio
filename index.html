@@ -7,25 +7,21 @@
     <title>Ismael Moura | Portfólio</title>
     <link rel="icon" type="image/x-icon" href="./assets/img/design_oficial.png" />
     <link rel="stylesheet" href="./portfolio_ismael.css" />
-    <!-- Canva CDN (estilos personalizados) -->
     <link rel="stylesheet" type="text/css"
         href="https://www.canva.com/design/DAG9n5VBLvM/V7luzdQwaFY0rmaB0G3aJA/view" />
-    <!-- Devicons CDN -->
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
-    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
     <script>
         // Configuração personalizada do Tailwind do CDN 
-        // Cores personalizadas 
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#fff', // Branco 
-                        secondary: '#61dafb', // verde
+                        primary: '#fff',
+                        secondary: '#61dafb',
                     }
                 }
             }
@@ -37,40 +33,44 @@
 
 <body class="bg-slate-700 text-slate-100 font-sans">
 
-    <!-- HEADER -->
     <header id="header"
         class="fixed top-0 w-full flex justify-between items-center px-8 py-6 transition-all duration-300 z-50">
         <h1 class="text-3xl font-bold text-secondary"> &lt;Ismael Moura&gt;</h1>
         <nav class="hidden md:flex space-x-6 text-lg">
             <a href="#sobre" class="relative text-slate-200 transition-colors duration-300 hover:text-secondary
-          after:absolute after:left-1/2 after:bottom-[-4px]
-          after:h-[2px] after:w-0 after:bg-secondary
-          after:transition-all after:duration-300
-          hover:after:w-full hover:after:left-0">Sobre</a>
+            after:absolute after:left-1/2 after:bottom-[-4px]
+            after:h-[2px] after:w-0 after:bg-secondary
+            after:transition-all after:duration-300
+            hover:after:w-full hover:after:left-0">
+                Sobre</a>
             <a href="#projetos" class="relative text-slate-200 transition-colors duration-300 hover:text-secondary
-          after:absolute after:left-1/2 after:bottom-[-4px]
-          after:h-[2px] after:w-0 after:bg-secondary
-          after:transition-all after:duration-300
-          hover:after:w-full hover:after:left-0">Projetos</a>
+            after:absolute after:left-1/2 after:bottom-[-4px]
+            after:h-[2px] after:w-0 after:bg-secondary
+            after:transition-all after:duration-300
+            hover:after:w-full hover:after:left-0">
+                Projetos</a>
             <a href="#certificados" class="relative text-slate-200 transition-colors duration-300 hover:text-secondary
-        after:absolute after:left-1/2 after:bottom-[-4px]
-        after:h-[2px] after:w-0 after:bg-secondary
-        after:transition-all after:duration-300
-        hover:after:w-full hover:after:left-0">Certificações</a>
+            after:absolute after:left-1/2 after:bottom-[-4px]
+            after:h-[2px] after:w-0 after:bg-secondary
+            after:transition-all after:duration-300
+            hover:after:w-full hover:after:left-0">
+                Certificações</a>
             <a href="#hobbies" class="relative text-slate-200 transition-colors duration-300 hover:text-secondary
-          after:absolute after:left-1/2 after:bottom-[-4px]
-          after:h-[2px] after:w-0 after:bg-secondary
-          after:transition-all after:duration-300
-          hover:after:w-full hover:after:left-0">Hobbies</a>
+            after:absolute after:left-1/2 after:bottom-[-4px]
+            after:h-[2px] after:w-0 after:bg-secondary
+            after:transition-all after:duration-300
+            hover:after:w-full hover:after:left-0">
+                Hobbies</a>
             <a href="#contato" class="relative text-slate-200 transition-colors duration-300 hover:text-secondary
-          after:absolute after:left-1/2 after:bottom-[-4px]
-          after:h-[2px] after:w-0 after:bg-secondary
-          after:transition-all after:duration-300
-          hover:after:w-full hover:after:left-0">Contato</a>
+            after:absolute after:left-1/2 after:bottom-[-4px]
+            after:h-[2px] after:w-0 after:bg-secondary
+            after:transition-all after:duration-300
+            hover:after:w-full hover:after:left-0">
+                Contato</a>
         </nav>
 
 
-        <!-- Menu Hamburguer (visível em telas menores) -->
+        <!-- Menu Hamburguer -->
         <div class="md:hidden flex items-center">
             <button id="menuToggle" class="relative w-10 h-10 flex flex-col justify-center items-center gap-1.5">
                 <span class="line w-6 h-0.5 bg-secondary transition-all duration-300"></span>
@@ -94,28 +94,31 @@
         -->
     </header>
 
-    <!-- Menu Mobile (inicialmente escondido) -->
+    <!-- Menu Mobile -->
     <div id="mobileMenu" class="md:hidden fixed top-[88px] left-0 w-full bg-slate-800/95 backdrop-blur-md
          p-6 space-y-6 text-center
          transform -translate-y-6 opacity-0 pointer-events-none
          transition-all duration-300 ease-out z-50">
-        <a href="#sobre" class="menu-link block text-sm hover:text-secondary transition-all duration-300">Sobre</a>
-        <a href="#projetos"
-            class="menu-link block text-sm hover:text-secondary transition-all duration-300">Projetos</a>
-        <a href="#certificados"
-            class="menu-link block text-sm hover:text-secondary transition-all duration-300">Certificações</a>
-        <a href="#hobbies" class="menu-link block text-sm hover:text-secondary transition-all duration-300">Hobbies</a>
-        <a href="#contato" class="menu-link block text-sm hover:text-secondary transition-all duration-300">Contato</a>
+        <a href="#sobre" class="menu-link block text-sm hover:text-secondary transition-all duration-300">
+            Sobre</a>
+        <a href="#projetos" class="menu-link block text-sm hover:text-secondary transition-all duration-300">
+            Projetos</a>
+        <a href="#certificados" class="menu-link block text-sm hover:text-secondary transition-all duration-300">
+            Certificações</a>
+        <a href="#hobbies" class="menu-link block text-sm hover:text-secondary transition-all duration-300">
+            Hobbies</a>
+        <a href="#contato" class="menu-link block text-sm hover:text-secondary transition-all duration-300">
+            Contato</a>
     </div>
 
     <!-- HERO -->
     <section class="flex flex-col sm:flex-row items-center justify-center px-6 py-20 gap-4" data-animate="left">
 
-        <!-- IMAGEM -->
+        <!-- MEU DESENHO DE POGRAMAÇÃO -->
         <img src="./assets/img/design_oficial.png" alt="Avatar" class="w-full sm:w-[450px] h-auto"
             data-animate="left" />
 
-<!--    
+        <!--    
         <video 
             autoplay 
             loop 
@@ -146,8 +149,8 @@
                 experiência do usuário.
             </p>
             <div class="text-center sm:text-left">
-                <a href="./assets/docs/Curriculo_IsmaelMoura.pdf" download class="inline-block bg-secondary text-slate-900 px-6 py-3 rounded-xl font-semibold
-            hover:opacity-90 hover:scale-105 transition">
+                <a href="./assets/docs/Curriculo_IsmaelMoura.pdf" download
+                    class="inline-block bg-secondary text-slate-900 px-6 py-3 rounded-xl font-semibold hover:opacity-90 hover:scale-105 transition">
                     Download do meu Currículo (PDF)
                 </a>
             </div>
@@ -169,8 +172,8 @@
                     </svg>
                 </a>
 
-                <a href="https://www.instagram.com/ismaelmourakeys/" target="_blank" class="social-icon text-slate-300 hover:text-secondary transition-all duration-300
-          hover:scale-110 hover:-translate-y-1">
+                <a href="https://www.instagram.com/ismaelmourakeys/" target="_blank"
+                    class="social-icon text-slate-300 hover:text-secondary transition-all duration-300 hover:scale-110 hover:-translate-y-1">
                     <!-- Instagram -->
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                         <path
@@ -178,8 +181,8 @@
                     </svg>
                 </a>
 
-                <a href="https://www.linkedin.com/in/Ismaelmourakeys" target="_blank" class="social-icon text-slate-300 hover:text-secondary transition-all duration-300
-          hover:scale-110 hover:-translate-y-1">
+                <a href="https://www.linkedin.com/in/Ismaelmourakeys" target="_blank"
+                    class="social-icon text-slate-300 hover:text-secondary transition-all duration-300 hover:scale-110 hover:-translate-y-1">
                     <!-- LinkedIn -->
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                         <path
@@ -193,36 +196,19 @@
     </section>
 
 
-    <!-- SOBRE -->
+    <!-- SOBRE MIM-->
     <section id="sobre" class="px-6 py-20 bg-slate-800" data-animate="left">
         <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <!-- CARD FOTO -->
+            <!-- CARD PRINCIPAL COM A MINHA FOTO -->
             <div class="relative group">
-                <div class="
-      relative
-      mx-auto md:mx-0
-      md:absolute md:-bottom-48
-      w-72 sm:w-80 md:w-96
-      bg-gradient-to-b from-slate-900/50 to-transparent
-      rounded-3xl
-      p-6 md:p-10
-      shadow-2xl
-      ring-1 ring-white/10
-      backdrop-blur-sm
-      transition-transform duration-300
-      group-hover:-translate-y-2
-    ">
+                <div
+                    class=" relative mx-auto md:mx-0 md:absolute md:-bottom-48 w-72 
+                    sm:w-80 md:w-96 bg-gradient-to-b from-slate-900/50 to-transparent rounded-3xl 
+                    p-6 md:p-10 shadow-2xl ring-1 ring-white/10 backdrop-blur-sm transition-transform duration-300 group-hover:-translate-y-2 ">
+
                     <img src="assets/img/Foto referência.jpg" alt="Foto de Ismael Moura" class="
-        w-56
-        h-full
-        rounded-2xl
-        object-cover
-        mx-auto
-        border-4 border-secondary
-        shadow-xl
-        transition-transform duration-500
-        group-hover:scale-105
-      " />
+                    w-56 h-full rounded-2xl object-cover mx-auto border-4 border-secondary
+                    shadow-xl transition-transform duration-500 group-hover:scale-105" />
 
                     <div class="mt-6 text-center">
                         <h4 class="text-xl font-semibold text-secondary">Ismael Moura</h4>
@@ -230,14 +216,14 @@
                     </div>
                 </div>
 
-                <!-- DECORATIVE SHAPE -->
+                <!-- SHAPE DECORATIVO -->
                 <div
                     class="hidden md:block absolute -right-6 -bottom-6 w-28 h-28 rounded-lg bg-gradient-to-tr from-secondary/30 to-yellow-300/10 blur-xl pointer-events-none">
                 </div>
             </div>
 
 
-            <!-- CONTEÚDO -->
+
             <div class="text-slate-200">
                 <div class="flex flex-col gap-4">
                     <h3 class="text-3xl font-bold text-secondary text-center items-center sm:text-start">Sobre mim</h3>
@@ -257,7 +243,8 @@
                         </p>
 
                         <p>
-                            Com o tempo, e com o incentivo de uma amiga e profissional da área de desenvolvimento, passei a me
+                            Com o tempo, e com o incentivo de uma amiga e profissional da área de desenvolvimento,
+                            passei a me
                             interessar pela
                             tecnologia e pela criação de soluções que realmente impactam a vida das pessoas. Esse
                             interesse me levou a
@@ -282,7 +269,8 @@
                             desenvolvimento de software e contribuir com projetos que façam a diferença.
                         </p>
                     </div>
-                    <!-- BADGES / SKILLS -->
+
+                    <!-- SKILLS -->
                     <div class="flex flex-wrap gap-3 mt-4 no-scrollbar items-center justify-center sm:justify-start ">
                         <span
                             class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-100 border border-white/10 hover:border-secondary/50 hover:bg-secondary/10 transition-all cursor-default">
@@ -345,7 +333,7 @@
 
                     </div>
 
-                    <!-- CTA -->
+
                     <div class="mt-6 flex flex-wrap gap-3 justify-center">
                         <a href="#contato" class="inline-flex items-center gap-2 bg-secondary text-slate-900 mt-0
                             px-6 py-3 rounded-xl text-sm font-semibold
@@ -360,45 +348,42 @@
     </section>
 
 
-    <!-- PROJETOS -->
+
     <section id="projetos" class="px-8 py-20">
         <h3 class="text-3xl font-bold mb-10 text-secondary" data-animate="up">Projetos</h3>
 
         <div class="relative group">
 
-            <!-- Botões desktop -->
+            <!-- Botões de "ESQUERDA" e "DIREITA" do carousel -->
             <button id="prevBtn" class="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2
-      w-11 h-11 items-center justify-center rounded-full
-      bg-white/10 border border-white/20 backdrop-blur
-      text-white text-lg
-      opacity-0 group-hover:opacity-100
-      transition-all duration-300 shadow-xl z-20">
+            w-11 h-11 items-center justify-center rounded-full
+            bg-white/10 border border-white/20 backdrop-blur
+            text-white text-lg
+            opacity-0 group-hover:opacity-100
+            transition-all duration-300 shadow-xl z-20">
                 ❮
             </button>
 
             <button id="nextBtn" class="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2
-      w-11 h-11 items-center justify-center rounded-full
-      bg-white/10 border border-white/20 backdrop-blur
-      text-white text-lg
-      opacity-0 group-hover:opacity-100
-      transition-all duration-300 shadow-xl z-20">
+            w-11 h-11 items-center justify-center rounded-full
+            bg-white/10 border border-white/20 backdrop-blur
+            text-white text-lg
+            opacity-0 group-hover:opacity-100
+            transition-all duration-300 shadow-xl z-20">
                 ❯
             </button>
 
             <!-- CARROSSEL -->
-            <div id="projectsCarousel" class="grid grid-flow-col auto-cols-[85%] sm:auto-cols-[60%] md:auto-cols-[420px]
-items-stretch
-gap-4
-overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1">
+            <div id="projectsCarousel"
+                class="grid grid-flow-col auto-cols-[85%] sm:auto-cols-[60%] md:auto-cols-[420px] items-stretch gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1">
 
 
                 <!-- CARD 1 -->
-                <div class="project-card relative overflow-hidden bg-slate-800 rounded-2xl px-7 py-6 sm:p-6 md:p-10 w-full h-auto
- flex flex-col shadow-lg border border-slate-700/50 " data-animate="left">
+                <div class="project-card relative overflow-hidden bg-slate-800 rounded-2xl px-7 py-6 sm:p-6 md:p-10 w-full h-auto flex flex-col shadow-lg border border-slate-700/50 "
+                    data-animate="left">
 
 
 
-                    <!-- RESUMO -->
                     <div class="conteudo resumo flex-1">
                         <a href="https://mygluco.vercel.app" target="_blank" class="block">
                             <h4 class="text-xl font-bold mb-2 text-yellow-300">
@@ -421,12 +406,12 @@ overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1">
                         </a>
                     </div>
 
-                    <!-- OVERLAY DETALHES (ESTILO MELHORADO) -->
+                    <!-- OVERLAY DE DETALHES  -->
                     <div class="conteudo detalhes hidden absolute inset-0
-    bg-gradient-to-b from-slate-900/90 via-slate-900/80 to-slate-800/70
-    backdrop-blur-md rounded-2xl
-    p-6 flex flex-col items-center justify-center text-center space-y-4
-    transform scale-95 opacity-0 transition-all duration-300 ease-out z-30">
+                        bg-gradient-to-b from-slate-900/90 via-slate-900/80 to-slate-800/70
+                        backdrop-blur-md rounded-2xl
+                        p-6 flex flex-col items-center justify-center text-center space-y-4
+                        transform scale-95 opacity-0 transition-all duration-300 ease-out z-30">
 
                         <!-- Botão de fechar (canto) -->
                         <button aria-label="Fechar detalhes" class="fechar-detalhes absolute top-3 right-3
@@ -457,7 +442,7 @@ overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1">
 
                         <!-- Grid de ferramentas -->
                         <div class="w-full max-w-md grid grid-cols-2 sm:grid-cols-4 gap-3">
-                            <!-- ícones... (mantidos igual ao original) -->
+
                             <div
                                 class="flex flex-col items-center justify-center gap-2 bg-white/5 rounded-lg py-3 px-2">
                                 <i class="devicon-html5-plain colored text-3xl"></i>
@@ -481,7 +466,7 @@ overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1">
                             </div>
                         </div>
 
-                        <!-- Texto adicional -->
+
                         <p class="text-slate-400 text-sm max-w-[36rem]">
                             <strong>Breve descrição:</strong> Estrutura com HTML, estilos com Tailwind via CDN e
                             comportamento com
@@ -508,7 +493,7 @@ overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1">
                     </button>
                 </div>
 
-                <!-- CARD 2 (VÍDEO) -->
+                <!-- CARD 2 (COM VÍDEO) -->
                 <div class="project-card relative overflow-hidden bg-slate-800 rounded-2xl px-7 py-6 sm:p-6 md:p-10 w-full h-auto
                 flex flex-col shadow-lg border border-slate-700/50 " data-animate="left">
 
@@ -538,7 +523,7 @@ overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1">
                                 </video>
                             </div>
 
-                            <!-- overlay moderno com botão circular -->
+
                             <div
                                 class="absolute inset-0 flex items-center justify-center bg-black/40 group-hover/bg-black/50 transition">
                                 <button
@@ -551,18 +536,18 @@ overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1">
                                 </button>
                             </div>
 
-                            <!-- pequena legenda -->
+
                             <span
                                 class="absolute left-3 bottom-3 text-xs bg-black/50 text-slate-100 px-2 py-1 rounded-md">Clique
                                 Aqui </span>
                         </div>
 
-                        <!-- OVERLAY DETALHES (ESTILO MELHORADO) -->
+                        <!-- OVERLAY DE DETALHES -->
                         <div class="conteudo detalhes hidden absolute inset-0
-    bg-gradient-to-b from-slate-900/90 via-slate-900/80 to-slate-800/70
-    backdrop-blur-md rounded-2xl
-    p-6 flex flex-col items-center justify-center text-center space-y-4
-    transform scale-95 opacity-0 transition-all duration-300 ease-out z-30">
+                            bg-gradient-to-b from-slate-900/90 via-slate-900/80 to-slate-800/70
+                            backdrop-blur-md rounded-2xl
+                            p-6 flex flex-col items-center justify-center text-center space-y-4
+                            transform scale-95 opacity-0 transition-all duration-300 ease-out z-30">
 
                             <!-- Botão de fechar (canto) -->
                             <button aria-label="Fechar detalhes" class="fechar-detalhes absolute top-3 right-3
@@ -675,7 +660,7 @@ overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1">
                 </div>
 
 
-                <!-- CARD 3 -->
+                <!-- CARD 3, APARTIR DO 4° CARD É NO JAVASCRIPT -->
                 <div class="project-card relative overflow-hidden bg-slate-800 rounded-2xl px-7 py-6 sm:p-6 md:p-10 w-full h-auto
                 flex flex-col shadow-lg border border-slate-700/50 " data-animate="left">
 
@@ -699,12 +684,12 @@ overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1">
                         </div>
                     </a>
 
-                    <!-- OVERLAY DETALHES (ESTILO MELHORADO) -->
+                    <!-- OVERLAY DE DETALHES -->
                     <div class="conteudo detalhes hidden absolute inset-0
-    bg-gradient-to-b from-slate-900/90 via-slate-900/80 to-slate-800/70
-    backdrop-blur-md rounded-2xl
-    p-6 flex flex-col items-center justify-center text-center space-y-4
-    transform scale-95 opacity-0 transition-all duration-300 ease-out z-30">
+                        bg-gradient-to-b from-slate-900/90 via-slate-900/80 to-slate-800/70
+                        backdrop-blur-md rounded-2xl
+                        p-6 flex flex-col items-center justify-center text-center space-y-4
+                        transform scale-95 opacity-0 transition-all duration-300 ease-out z-30">
 
                         <!-- Botão de fechar (canto) -->
                         <button aria-label="Fechar detalhes" class="fechar-detalhes absolute top-3 right-3
@@ -785,7 +770,7 @@ overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1">
         <div id="certificados-grid" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6">
         </div>
 
-        <!-- MODAL CERTIFICADO -->
+        <!-- MODAL PARA OS MEUS CERTIFICADOS -->
         <div id="certificado-modal"
             class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden items-center justify-center z-50">
             <div class="relative max-w-4xl w-full px-4">
@@ -802,7 +787,6 @@ overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1">
     </section>
 
 
-    <!-- HOBBIES -->
     <section id="hobbies" class="px-8 py-20 bg-slate-800" data-animate="left">
         <h3 class="text-3xl font-bold mb-6 text-secondary">Hobbies</h3>
         <ul class="list-disc list-inside text-slate-300 space-y-2">
@@ -815,7 +799,6 @@ overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1">
     </section>
 
 
-    <!-- CONTATO -->
     <section id="contato" class="px-8 py-20" data-animate="left" data-animate-once>
         <h3 class="text-3xl font-bold mb-6 text-secondary">Contato</h3>
         <p class="text-slate-300 mb-6">Vamos conversar?</p>
@@ -834,15 +817,22 @@ overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar px-1">
     </footer>
 
 </body>
-
-<!-- Scripts JS -->
-<!--
-    menu.js	controla o menu (abrir / fechar)
-    carousel.js	controla o carrossel
-    cards.js	controla os cards (ver mais, overlay)
-    videoModal.js	controla o modal de vídeo
-    main.js	chama todos os outros
--->
 <script type="module" src="./js/main.js"></script>
 
 </html>
+
+<!-- PASTA JS -->
+<!--
+    menu.js	- controla o menu (abrir / fechar)
+    carousel.js - controla a dinamica do carrossel
+    cards.js - controla os cards (ver mais, overlay)
+    animation.js - controla as animações de entrada dos elementos
+    videoModal.js - controla o modal de vídeo dos cards
+    certificaço.js - controla a seção de certificados (carregar dinamicamente e modal)
+    main.js - faz a junção de todos acima sendo o arquivo principal
+    
+    FUTURAS IMPLEMENTAÇÕES:
+    i18nController.js - controla a idioma do site (opção de idioma, tradução dinâmica)
+    lang.js - arquivo de tradução para o i18nController.js, que é colocado em cada class do 
+    elemento que deve ser traduzido, com a chave de tradução correspondente (ex: class="data-i18n key-home-title") e o i18nController.js faz a troca dinâmica do texto com base na chave e no idioma selecionado.)
+-->
