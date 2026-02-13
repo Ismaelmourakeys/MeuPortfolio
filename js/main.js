@@ -53,7 +53,22 @@ new Typed('#typed', {
     loop: true
 });
 
+/*
+<!-- PASTA JS -->
+    menu.js	- controla o menu (abrir / fechar)
+    carousel.js - controla a dinamica do carrossel
+    cards.js - controla os cards (ver mais, overlay)
+    animation.js - controla as animações de entrada dos elementos
+    videoModal.js - controla o modal de vídeo dos cards
+    certificaço.js - controla a seção de certificados (carregar dinamicamente e modal)
+    main.js - faz a junção de todos acima sendo o arquivo principal
+    
+    FUTURAS IMPLEMENTAÇÕES:
+    i18nController.js - controla a idioma do site (opção de idioma, tradução dinâmica)
+    lang.js - arquivo de tradução para o i18nController.js, que é colocado em cada class do 
+    elemento que deve ser traduzido, com a chave de tradução correspondente (ex: class="data-i18n key-home-title") e o i18nController.js faz a troca dinâmica do texto com base na chave e no idioma selecionado.)
 
+*/
 
 
 
