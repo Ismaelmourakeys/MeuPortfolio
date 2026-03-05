@@ -1,17 +1,20 @@
+//Usamos export para poder importar essa função no main.js dos carrosséis
+
 export function initCarousel() {
+
+    // Controles do carrossel
     const carousel = document.getElementById("projectsCarousel");
     const prev = document.getElementById("prevBtn");
     const next = document.getElementById("nextBtn");
     const dotsContainer = document.getElementById("carouselDots");
 
-    if (!carousel || !prev || !next || !dotsContainer) {
+    if (!carousel || !prev || !next) {
         console.warn("Não foi possível localizar os elementos do carrossel.");
         return;
     }
 
     const scrollAmount = 460;
 
-    // botões do carrossel
     next.addEventListener("click", () => {
         carousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
     });
@@ -21,7 +24,8 @@ export function initCarousel() {
     });
 
 
-    /* -------------------------------- */
+
+  /* -------------------------------- */
     /* Criar dots baseado no scroll real */
     /* -------------------------------- */
 
