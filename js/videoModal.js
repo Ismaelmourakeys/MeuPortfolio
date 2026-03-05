@@ -12,15 +12,18 @@ export function initVideoModal() {
         const closeBtn = document.getElementById('closeVideoModal');
 
         // open when clicking any element with data-video-src
-        document.querySelectorAll('[data-video-src]').forEach(el => {
-            el.addEventListener('click', () => {
-                const src = el.getAttribute('data-video-src');
-                if (!src) return;
-                modalVideo.src = src;
-                modal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-                modalVideo.play().catch(() => { /* ignore play promise */ });
-            });
+        document.addEventListener('click', (e) => {
+            const el = e.target.closest('[data-video-src]');
+            if (!el) return;
+
+            const src = el.getAttribute('data-video-src');
+            if (!src) return;
+
+            modalVideo.src = src;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+
+            modalVideo.play().catch(() => { });
         });
 
         function closeModal() {
