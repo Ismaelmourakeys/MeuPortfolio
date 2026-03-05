@@ -307,7 +307,7 @@ export function setupCardInteractions() {
     cards.forEach(card => {
         const btnVerMais = card.querySelector(".ver-mais");
         const overlay = card.querySelector(".conteudo.detalhes");
-        const btnsFechar = card.querySelectorAll(".fechar-detalhes");
+        const btnsFechar = card.querySelectorAll(".fechar-detalhes");  
 
         if (!btnVerMais || !overlay) return;
 
