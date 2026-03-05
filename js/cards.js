@@ -40,7 +40,7 @@ const icons = {
 const novosProjetos = [
     {
         title: 'Aplicação mobile com Kivy Python',
-        desc: 'Interface desenvolvida utilizando o framework Kivy com Python. O aplicativo oferece funcionalidades interativas e uma interface amigável, demonstrando o potencial do Kivy na criação de aplicações móveis multiplataforma. Projeto desenvolvido em sala de aula na ETEC, com o objetivo de aplicar conceitos de lógica estrutural e utilização de frameworks para desenvolvimento mobile.',
+        desc: 'Aplicação desenvolvida com Python e o framework Kivy, demonstrando a criação de interfaces interativas para aplicativos móveis multiplataforma. Projeto acadêmico desenvolvido na ETEC com foco em lógica de programação e uso de frameworks.',
         img: './assets/video/Aplicacao_kivy_py/Aplicacao_kivy_py.jpg',
         video: './assets/video/Aplicacao_kivy_py/Aplicacao_py_video.mp4',
         poster: './assets/video/Aplicacao_kivy_py/Aplicacao_kivy_py.jpg',
@@ -96,111 +96,209 @@ export function initCards() {
         return;
     }
 
-}
+    novosProjetos.forEach((p, index) => {
 
-
-document.addEventListener('DOMContentLoaded', function () {
-    const carousel = document.getElementById('projectsCarousel');
-    if (!carousel) return;
-
-
-    novosProjetos.forEach(function (p) {
         const link = p.link || '#';
+
         const card = document.createElement('div');
-        card.className = 'project-card relative overflow-hidden bg-slate-800 rounded-2xl px-7 py-8 sm:p-6 md:p-10 flex flex-col shadow-lg border border-slate-700/50';
+
+        card.className = `
+project-card group/card relative flex flex-col
+bg-gradient-to-br from-slate-800/90 to-slate-900/90
+border border-slate-700/50 rounded-2xl overflow-hidden
+shadow-[0_8px_32px_rgba(0,0,0,0.4)]
+hover:border-sky-400/30 hover:shadow-[0_16px_48px_rgba(0,0,0,0.5)]
+transition-all duration-300 snap-start
+animate-fadeUp
+`;
+
         card.setAttribute('data-animate', 'left');
 
-        card.innerHTML = ''
-            + '<div class="conteudo resumo flex-1">'
-            //+   '<a href="' + encodeURI(link) + '" target="_blank" rel="noopener noreferrer" class="block">' --- Eu tirei pq quando clicava no video, abria em forma de link 
-            + '<h4 class="text-xl font-bold mb-2 text-yellow-300">' + escapeHtml(p.title) + '</h4>'
-            + '<p class="text-slate-300 mb-4">' + escapeHtml(p.desc) + '</p>'
-            + (p.video
-                ? `
-    <div class="relative group cursor-pointer" data-video-src="${p.video}">
-        <video class="rounded-lg w-full h-40 object-cover object-center pointer-events-none"
-               preload="metadata"
-               muted
-               playsinline
-               poster="${p.poster || ''}">
-            <source src="${p.video}" type="video/mp4">
-        </video>
-        <div class="absolute inset-0 flex items-center justify-center bg-black/40">
-            <button class="flex items-center justify-center w-14 h-14 rounded-full bg-white/10 text-white shadow-md transition-transform transform hover:scale-105">
-                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M5 3v18l15-9L5 3z"></path>
-                </svg>
-            </button>
-        </div>
-    </div>
-    `
-                : `<img src="${encodeURI(p.img || '')}" class="rounded-lg w-full h-40 object-cover" alt="${escapeHtml(p.title)} Thumbnail" />`
-            )
+        /* delay progressivo igual ao HTML */
+        card.style.animationDelay = `${index * 80}ms`;
 
-            + '</a>'
-            + '</div>'
-            + '<div class="conteudo detalhes hidden absolute inset-0 bg-gradient-to-b from-slate-900/90 via-slate-900/80 to-slate-800/70 backdrop-blur-md rounded-2xl p-6 flex flex-col items-center justify-center text-center space-y-4 transform scale-95 opacity-0 transition-all duration-300 ease-out z-30">'
-            + '<button aria-label="Fechar detalhes" class="fechar-detalhes absolute top-3 right-3 bg-white/6 hover:bg-white/10 text-slate-100 px-3 py-1.5 rounded-md flex items-center gap-2 text-sm transition-colors duration-200">'
-            + '<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
-            + '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>'
-            + '</svg>'
-            + 'Fechar'
-            + '</button>'
-            + '<h4 class="font-bold text-2xl mb-1 text-yellow-300 flex items-center gap-2">'
-            + '<svg class="w-6 h-6 text-yellow-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
-            + '<path d="M3 7v4a1 1 0 0 0 1 1h3"></path><path d="M21 7v4a1 1 0 0 1-1 1h-3"></path><path d="M7 16v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1"></path><circle cx="12" cy="10" r="3"></circle>'
-            + '</svg>'
-            + 'Ferramentas utilizadas'
-            + '</h4>'
-            + '<p class="text-slate-300 text-sm max-w-[36rem]">Tecnologias e ferramentas empregadas neste projeto.</p>'
-            + '<div class="w-full flex justify-center">'
-            + '<div class="flex flex-row items-center justify-center gap-3 rounded-lg py-3 px-4">'
-            + techIconsHTML(p.techs)
-            + '   </div>'
-            + '</div>'
-            + '<p class="text-slate-400 text-sm max-w-[36rem] max-h-[140px] overflow-y-auto pr-2 scrollbar-hover"><strong>Breve descrição:</strong> ' + escapeHtml(p.desc) + '</p>'
-            + '<a href="' + encodeURI(link) + '" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto (nova aba)" class="inline-flex items-center gap-2 text-sm font-semibold bg-secondary text-slate-900 px-4 py-2 rounded-md shadow-sm hover:opacity-95 hover:scale-105 transition transform">GitHub do projeto <i class="devicon-github-original colored text-2xl" aria-hidden="true"></i></a>'
-            + '<button class="fechar-detalhes mt-2 text-sm text-secondary hover:underline">Fechar ✕</button>'
-            + '</div>'
-            + '<button class="ver-mais absolute bottom-3 left-4 text-sm font-medium text-secondary hover:underline">Mais detalhes →</button>';
+        card.innerHTML = `
+<!-- top accent -->
+<div class="h-px w-full bg-gradient-to-r from-transparent via-sky-400/50 to-transparent
+opacity-0 group-hover/card:opacity-100 transition-opacity duration-300"></div>
+
+<div class="conteudo resumo flex flex-col flex-1 p-6">
+
+    <!-- tag + ícone externo -->
+    <div class="flex items-start justify-between gap-3 mb-3">
+        <span class="font-mono text-[0.65rem] tracking-widest uppercase
+        text-sky-400 bg-sky-400/10 border border-sky-400/25
+        px-2.5 py-1 rounded-full">
+            ${escapeHtml(p.tag || 'Projeto')}
+        </span>
+
+        ${link !== '#' ? `
+        <a href="${encodeURI(link)}" target="_blank"
+        class="text-slate-500 hover:text-secondary transition-colors duration-200">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+        </a>
+        ` : ''}
+    </div>
+
+    <!-- título -->
+    ${link !== '#' ? `
+    <a href="${encodeURI(link)}" target="_blank" class="block group/link mb-3">
+        <h4 class="font-syne text-lg font-bold text-yellow-300
+        group-hover/link:text-yellow-200 transition-colors duration-200">
+            ${escapeHtml(p.title)}
+        </h4>
+    </a>
+    ` : `
+    <h4 class="font-syne text-lg font-bold text-yellow-300 mb-3">
+        ${escapeHtml(p.title)}
+    </h4>
+    `}
+
+    <p class="text-slate-400 text-sm leading-relaxed mb-4 flex-1">
+        ${escapeHtml(p.desc)}
+    </p>
+
+    <!-- preview -->
+    ${p.video ? `
+        <div class="media-wrapper relative w-full h-40 rounded-xl overflow-hidden ring-1 ring-white/8 cursor-pointer
+        group/video" data-video-src="${p.video}">
+            <video class="absolute inset-0 w-full h-full object-cover"
+                preload="metadata" muted playsinline poster="${p.poster || ''}">
+                <source src="${p.video}" type="video/mp4">
+            </video>
+
+            <div class="absolute inset-0 bg-black/40
+            group-hover/video:bg-black/55 transition-colors duration-300
+            flex items-center justify-center">
+
+                <div class="flex items-center justify-center w-14 h-14 rounded-full
+                bg-white/10 border border-white/20 backdrop-blur-sm
+                group-hover/video:bg-white/20 group-hover/video:scale-110
+                transition-all duration-300">
+
+                    <svg class="w-6 h-6 text-white ml-1" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M5 3v18l15-9L5 3z"/>
+                    </svg>
+
+                </div>
+            </div>
+
+            <span class="absolute bottom-2 left-2 font-mono text-[0.65rem] tracking-wider
+            bg-black/60 text-slate-300 px-2 py-1 rounded-md">
+                Ver vídeo
+            </span>
+        </div>
+    ` : `
+        <a href="${encodeURI(link)}" target="_blank" class="block">
+            <div class="relative w-full h-40 rounded-xl overflow-hidden ring-1 ring-white/8">
+                <img src="${encodeURI(p.img || '')}"
+                alt="${escapeHtml(p.title)}"
+                class="absolute inset-0 w-full h-full object-cover
+                transition-transform duration-500 group-hover/card:scale-105"/>
+
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+            </div>
+        </a>
+    `}
+</div>
+
+<!-- footer -->
+<div class="flex items-center justify-between px-6 py-4 border-t border-white/5 ">
+    <div class="flex gap-2 w-full max-w-[30%] overflow-x-auto sm:max-w-[15%]">
+        ${p.techs.map(t => t.svg ? t.svg : `<i class="${t.icon} colored text-lg "></i>`).join('')}
+    </div>
+
+    <button class="ver-mais font-mono text-xs text-secondary tracking-widest
+    hover:text-sky-300 transition-colors duration-200 flex items-center gap-1">
+        Detalhes
+        <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+    </button>
+</div>
+
+<!-- overlay detalhes -->
+<div class="conteudo detalhes hidden absolute inset-0
+bg-slate-900/95 backdrop-blur-md rounded-2xl
+p-6 flex flex-col items-center justify-center text-center gap-4
+scale-95 opacity-0 transition-all duration-300 z-30 animate-popUp overflow-y-auto">
+
+    <button class="fechar-detalhes absolute top-4 right-4
+    flex items-center gap-1.5 font-mono text-xs text-slate-400
+    hover:text-slate-100 transition-colors duration-200">
+        ✕ fechar
+    </button>
+
+    <p class="font-mono text-xs tracking-widest uppercase text-secondary">
+        Ferramentas utilizadas
+    </p>
+
+    <h4 class="font-syne text-xl font-bold text-yellow-300">
+        ${escapeHtml(p.title)}
+    </h4>
+
+    <div class="flex justify-center gap-4 w-full max-w-xs mx-auto">
+    ${techIconsHTML(p.techs)}
+</div>
+
+    <p class="text-slate-400 text-xs leading-relaxed max-w-xs flex flex-col items-center justify-center gap-2">
+        ${escapeHtml(p.overlayDesc || p.desc)}
+    </p>
+
+    ${link !== '#' ? `
+    <a href="${encodeURI(link)}" target="_blank"
+    class="inline-flex items-center gap-2 bg-secondary text-slate-900
+    font-syne font-bold text-sm px-5 py-2.5 rounded-xl
+    hover:brightness-110 hover:scale-105 transition-all duration-300">
+        <i class="devicon-github-original text-xl"></i>
+        GitHub do projeto
+    </a>
+    ` : ''}
+
+    <button class="fechar-detalhes font-mono text-xs text-slate-500
+    hover:text-secondary transition-colors">
+        Fechar ✕
+    </button>
+</div>
+`;
 
         carousel.appendChild(card);
 
     });
 
-
-
+    
+    
     // igualar alturas dos cards após inseri-los no DOM
-    function equalizeCardHeights() {
-        if (window.innerWidth < 640) return; // ⛔ NÃO iguala no mobile
+function equalizeCardHeights() {
+    if (window.innerWidth < 640) return; // ⛔ NÃO iguala no mobile
 
-        const cards = document.querySelectorAll('.project-card');
-        let maxHeight = 0;
+    const cards = document.querySelectorAll('.project-card');
+    let maxHeight = 0;
 
-        cards.forEach(card => {
-            card.style.height = 'auto';
-        });
+    cards.forEach(card => {
+        card.style.height = 'auto';
+    });
 
-        cards.forEach(card => {
-            const h = card.offsetHeight;
-            if (h > maxHeight) maxHeight = h;
-        });
+    cards.forEach(card => {
+        const h = card.offsetHeight;
+        if (h > maxHeight) maxHeight = h;
+    });
+    
+    cards.forEach(card => {
+        card.style.height = maxHeight + 'px';
+    });
+}
 
-        cards.forEach(card => {
-            card.style.height = maxHeight + 'px';
-        });
-    }
-
-
-
-    // Depois que todos os cards são criados e inseridos no DOM,
-    // chamamos essa função para adicionar os eventos (cliques) nos botões,
-    // como "Mais detalhes" e "Fechar"
-    equalizeCardHeights();
-    setupCardInteractions();
-
-});
-
+// Depois que todos os cards são criados e inseridos no DOM,
+// chamamos essa função para adicionar os eventos (cliques) nos botões,
+// como "Mais detalhes" e "Fechar"
+equalizeCardHeights();
+setupCardInteractions();
+}
 
 
 export function setupCardInteractions() {

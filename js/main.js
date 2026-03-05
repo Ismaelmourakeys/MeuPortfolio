@@ -1,5 +1,6 @@
 // Importação do arquivo menu.js
 import { initMenu, initHeaderScroll, initMenuAnimations } from "./menu.js";
+import { initSaudacao } from "./saudacao.js";
 import { initCarousel } from "./carousel.js";
 import { setupCardInteractions, initCards } from "./cards.js";
 import { initVideoModal } from "./videoModal.js";
@@ -28,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initMenu();
     initHeaderScroll();
     initMenuAnimations();
+    initSaudacao();
 
     //CARROSSEL 
     initCarousel();
@@ -44,14 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
     initCertificados();
 });
 
-
-// Efeito de digitação animado
-new Typed('#typed', {
-    strings: ['Desenvolvedor', 'Designer', 'Estudante'],
-    typeSpeed: 100,
-    backSpeed: 60,
-    loop: true
-});
 
 /*
 <!-- PASTA JS -->

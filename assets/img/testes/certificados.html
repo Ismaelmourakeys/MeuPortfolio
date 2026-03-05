@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certificados</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            syne: ['Syne', 'sans-serif'],
+            mono: ['DM Mono', 'monospace'],
+          },
+          colors: {
+            secondary: '#38bdf8',
+          },
+          keyframes: {
+            fadeUp: {
+              '0%':   { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeIn: {
+              '0%':   { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            popUp: {
+              '0%':   { opacity: '0', transform: 'scale(0.93) translateY(14px)' },
+              '100%': { opacity: '1', transform: 'scale(1) translateY(0)' },
+            },
+          },
+          animation: {
+            fadeUp: 'fadeUp 0.5s cubic-bezier(0.22,1,0.36,1) both',
+            fadeIn: 'fadeIn 0.25s ease both',
+            popUp:  'popUp 0.3s cubic-bezier(0.22,1,0.36,1) both',
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-slate-900">
+
+<!-- ═══════════════════════════════════════════════ SECTION -->
+<section
+  id="certificados"
+  class="relative px-6 py-24 overflow-hidden bg-gradient-to-b from-slate-800 to-slate-900"
+  data-animate="left"
+>
+
+  <!-- grid overlay (pure tailwind bg-[image]) -->
+  <div class="pointer-events-none absolute inset-0
+              bg-[linear-gradient(rgba(56,189,248,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(56,189,248,0.04)_1px,transparent_1px)]
+              bg-[size:48px_48px]"></div>
+
+  <!-- glow orb -->
+  <div class="pointer-events-none absolute -top-32 -right-32 w-96 h-96
+              rounded-full bg-[radial-gradient(circle,rgba(56,189,248,0.09),transparent_70%)]"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto">
+
+    <!-- heading -->
+    <p class="font-mono text-xs tracking-[0.25em] uppercase text-secondary mb-2">/ conquistas</p>
+
+    <h3 class="font-syne text-4xl sm:text-5xl font-extrabold text-slate-100 leading-tight mb-2">
+      Certifi<span class="text-secondary">cados</span>
+    </h3>
+
+    <p class="font-mono text-sm text-slate-500 mb-14">Formações e certificações profissionais</p>
+
+    <!-- GRID -->
+    <div id="certificados-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ MODAL -->
+  <div
+    id="certificado-modal"
+    class="fixed inset-0 bg-black/80 backdrop-blur-md hidden items-center justify-center z-50 p-4 animate-fadeIn"
+  >
+    <div class="relative max-w-4xl w-full animate-popUp">
+
+      <button
+        id="close-certificado"
+        class="absolute -top-10 right-0 flex items-center gap-2
+               font-mono text-xs tracking-widest text-slate-400
+               hover:text-slate-100 transition-colors duration-200"
+      >
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+        fechar
+      </button>
+
+      <img
+        id="certificado-modal-img"
+        src="" alt="Certificado"
+        class="w-full max-h-[85vh] object-contain rounded-2xl shadow-2xl border border-white/10"
+      />
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════ JS -->
+<script>
+  /* Demo data — substitua pelos seus dados reais */
+  const certs = [
+    { name: "Desenvolvimento Web Full Stack", issuer: "Alura", date: "Jan 2024", category: "Dev",    img: "https://placehold.co/800x560/1e293b/38bdf8?text=Full+Stack&font=syne" },
+    { name: "Machine Learning com Python",    issuer: "Coursera · Andrew Ng", date: "Mar 2024", category: "IA",     img: "https://placehold.co/800x560/1e293b/f59e0b?text=ML+Python&font=syne" },
+    { name: "UI/UX Design Foundations",       issuer: "Google Certificate",   date: "Jun 2023", category: "Design", img: "https://placehold.co/800x560/1e293b/a78bfa?text=UX+Design&font=syne" },
+    { name: "AWS Cloud Practitioner",         issuer: "Amazon Web Services",  date: "Nov 2023", category: "Cloud",  img: "https://placehold.co/800x560/1e293b/34d399?text=AWS&font=syne" },
+    { name: "React & TypeScript Avançado",    issuer: "Rocketseat",           date: "Ago 2023", category: "Dev",    img: "https://placehold.co/800x560/1e293b/60a5fa?text=React+TS&font=syne" },
+    { name: "Scrum Master Certified",         issuer: "SCRUMstudy",           date: "Fev 2024", category: "Gestão", img: "https://placehold.co/800x560/1e293b/f472b6?text=Scrum&font=syne" },
+  ];
+
+  const categoryColors = {
+    Dev:    "text-sky-400 bg-sky-400/10 border-sky-400/25",
+    IA:     "text-amber-400 bg-amber-400/10 border-amber-400/25",
+    Design: "text-violet-400 bg-violet-400/10 border-violet-400/25",
+    Cloud:  "text-emerald-400 bg-emerald-400/10 border-emerald-400/25",
+    Gestão: "text-pink-400 bg-pink-400/10 border-pink-400/25",
+  };
+
+  const grid    = document.getElementById('certificados-grid');
+  const modal   = document.getElementById('certificado-modal');
+  const modalImg = document.getElementById('certificado-modal-img');
+  const closeBtn = document.getElementById('close-certificado');
+
+  certs.forEach((c, i) => {
+    const delay = `${i * 80}ms`;
+    const badgeCls = categoryColors[c.category] ?? "text-slate-400 bg-slate-400/10 border-slate-400/25";
+
+    const card = document.createElement('div');
+
+    card.className = [
+      // layout
+      "group relative flex flex-col overflow-hidden cursor-pointer",
+      // bg + border
+      "bg-gradient-to-br from-slate-800/95 to-slate-900/95",
+      "border border-slate-700/50 rounded-2xl",
+      // transition
+      "transition-all duration-300 ease-out",
+      // hover
+      "hover:-translate-y-1.5 hover:border-sky-400/40",
+      "hover:shadow-[0_24px_48px_rgba(0,0,0,0.45),0_0_0_1px_rgba(56,189,248,0.15)]",
+      // staggered fade-up
+      "animate-fadeUp",
+    ].join(' ');
+
+    card.style.animationDelay = delay;
+
+    card.innerHTML = `
+      <!-- top accent line -->
+      <div class="absolute top-0 inset-x-0 h-px
+                  bg-gradient-to-r from-transparent via-sky-400 to-transparent
+                  opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+      <!-- thumbnail -->
+      <div class="relative w-full aspect-video overflow-hidden bg-slate-950">
+        <img
+          src="${c.img}" alt="${c.name}" loading="lazy"
+          class="w-full h-full object-cover
+                 brightness-75 saturate-90
+                 group-hover:brightness-100 group-hover:saturate-110 group-hover:scale-105
+                 transition-all duration-500 ease-out"
+        />
+        <!-- overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent
+                    flex items-center justify-center
+                    opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <span class="flex items-center gap-1.5
+                       text-sky-400 text-xs font-mono tracking-widest
+                       border border-sky-400/50 bg-sky-400/10 backdrop-blur-sm
+                       px-4 py-2 rounded-full
+                       translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M1 12S5 4 12 4s11 8 11 8-4 8-11 8S1 12 1 12z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+            Ver certificado
+          </span>
+        </div>
+      </div>
+
+      <!-- body -->
+      <div class="flex flex-col flex-1 p-5 gap-3">
+
+        <!-- badge -->
+        <span class="self-start flex items-center gap-1.5 text-[0.68rem] font-mono tracking-widest uppercase
+                     border rounded-full px-2.5 py-1 ${badgeCls}">
+          <svg class="w-2.5 h-2.5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l2.9 6.1L22 9.2l-5 4.9 1.2 6.9L12 17.8l-6.2 3.2L7 14.1 2 9.2l7.1-1.1z"/>
+          </svg>
+          ${c.category}
+        </span>
+
+        <p class="font-syne font-bold text-slate-100 text-[1rem] leading-snug">${c.name}</p>
+        <p class="font-mono text-xs text-slate-500">${c.issuer}</p>
+
+        <!-- footer -->
+        <div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between">
+          <span class="font-mono text-[0.7rem] text-slate-600">${c.date}</span>
+          <span class="flex items-center justify-center w-7 h-7 rounded-full
+                       border border-slate-700 text-slate-500
+                       group-hover:border-sky-400/50 group-hover:text-sky-400
+                       transition-colors duration-300">
+            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17L17 7M7 7h10v10"/>
+            </svg>
+          </span>
+        </div>
+      </div>
+    `;
+
+    card.addEventListener('click', () => {
+      modalImg.src = c.img;
+      modalImg.alt = c.name;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    });
+
+    grid.appendChild(card);
+  });
+
+  function closeModal() {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    setTimeout(() => { modalImg.src = ''; }, 300);
+  }
+
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+</body>
+</html>
