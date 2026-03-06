@@ -151,54 +151,59 @@ export function initCertificados() {
 
 
   // ── carousel: prev / next ─────────────────────
-  prevBtn?.addEventListener('click', () =>
-    grid.scrollBy({ left: -SCROLL_AMOUNT, behavior: 'smooth' }));
-  nextBtn?.addEventListener('click', () =>
-    grid.scrollBy({ left: SCROLL_AMOUNT, behavior: 'smooth' }));
+ // ── carousel: prev / next ─────────────────────
+function getScrollAmount() {
+    return grid.firstElementChild?.offsetWidth + 20 ?? 340;
+}
 
+prevBtn?.addEventListener('click', () =>
+    grid.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' }));
+nextBtn?.addEventListener('click', () =>
+    grid.scrollBy({ left: getScrollAmount(), behavior: 'smooth' }));
 
-  // ── dots ──────────────────────────────────────
-const total = certificados.length;
-const MAX_DOTS = 8;
-
+/* -------------------------------- */
+/* Criar dots baseado no scroll real */
+/* -------------------------------- */
 function createDots() {
     dotsContainer.innerHTML = '';
 
-    for (let i = 1; i < MAX_DOTS; i++) {
+    const scrollAmount = getScrollAmount();
+    const dotsCount = Math.ceil(
+        (grid.scrollWidth - grid.clientWidth) / scrollAmount
+    ) + 1;
+
+    for (let i = 0; i < dotsCount; i++) {
         const dot = document.createElement('button');
-        dot.className = 'h-2 w-2 rounded-full bg-slate-600 transition-all duration-300';
+        dot.className = 'w-2 h-2 rounded-full bg-slate-600 transition-all duration-300';
+        dot.addEventListener('click', () => {
+            grid.scrollTo({ left: i * scrollAmount, behavior: 'smooth' });
+        });
         dotsContainer.appendChild(dot);
     }
 
     updateDots();
 }
 
+/* -------------------------------- */
+/* Atualizar dot ativo              */
+/* -------------------------------- */
 function updateDots() {
+    const scrollAmount = getScrollAmount();
     const dots = dotsContainer.querySelectorAll('button');
-    const current = Math.round(grid.scrollLeft / SCROLL_AMOUNT);
-
-    let start = current - 1;
-    if (start < 0) start = 0;
-    if (start + MAX_DOTS > total) start = Math.max(0, total - MAX_DOTS);
+    const index = Math.round(grid.scrollLeft / scrollAmount);
 
     dots.forEach((dot, i) => {
-        const cardIndex = start + i;
-        const isActive  = cardIndex === current;
-        const isEdge    = (cardIndex === 0 && current > 1) ||
-                          (cardIndex === total - 1 && current < total - 2);
-
-        dot.classList.toggle('bg-sky-400',   isActive);
-        dot.classList.toggle('w-6',           isActive);
-        dot.classList.toggle('bg-slate-600', !isActive);
-        dot.classList.toggle('w-2',          !isActive);
-        dot.classList.toggle('scale-75',      isEdge && !isActive);
-
-        dot.onclick = () =>
-            grid.scrollTo({ left: cardIndex * SCROLL_AMOUNT, behavior: 'smooth' });
+        if (i === index) {
+            dot.classList.remove('bg-slate-600', 'w-2');
+            dot.classList.add('bg-sky-400', 'w-6');
+        } else {
+            dot.classList.remove('bg-sky-400', 'w-6');
+            dot.classList.add('bg-slate-600', 'w-2');
+        }
     });
 }
 
-createDots();
 grid.addEventListener('scroll', updateDots);
-window.addEventListener('resize', createDots);
+window.addEventListener('resize', createDots); // recalcula ao mudar tela
+createDots();
 }
