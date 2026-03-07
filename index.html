@@ -976,62 +976,63 @@
         </div>
     </div>
 
-    <section id="certificados" class="px-6 py-20 bg-gradient-to-b from-slate-800 to-slate-900" data-animate="left">
+    <!-- ══ CERTIFICADOS ══════════════════════════════ -->
+    <section id="certificados" class="px-8 py-20 bg-gradient-to-b from-slate-800 to-slate-900" data-animate="left">
 
-        <div class="max-w-6xl mx-auto">
-
-            <div class="max-w-6xl  justify-start relative lg:right-10"> 
-
-            <div class="flex items-center gap-3 mb-6 relative left-[-4px]">
-                <span
-                    class="w-8 h-8 rounded-lg bg-secondary/10 border border-secondary/30 flex items-center justify-center">
-                    <span class="font-mono text-secondary text-xs font-bold">&lt;/&gt;</span>
-                </span>
-                <p class="font-mono text-xs tracking-[0.25em] uppercase text-secondary mb-2">/ conquistas</p>
-            </div>
-
-            <h3 class="font-syne text-4xl sm:text-5xl font-extrabold text-slate-100 leading-tight mb-10">
-                Meus<span class="text-secondary"> Certificados</span>
-            </h3>
-            </div>
-            <!-- carousel wrapper -->
-            <div class="relative group">
-
-                <!-- btn prev -->
-                <button id="certPrevBtn" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 z-20
-                       w-11 h-11 items-center justify-center rounded-full
-                       bg-slate-800 border border-slate-600
-                       text-slate-300 hover:text-secondary hover:border-secondary/50
-                       opacity-0 group-hover:opacity-100
-                       transition-all duration-300 shadow-xl">
-                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M15 18l-6-6 6-6" />
-                    </svg>
-                </button>
-
-                <!-- btn next -->
-                <button id="certNextBtn" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 z-20
-                       w-11 h-11 items-center justify-center rounded-full
-                       bg-slate-800 border border-slate-600
-                       text-slate-300 hover:text-secondary hover:border-secondary/50
-                       opacity-0 group-hover:opacity-100
-                       transition-all duration-300 shadow-xl">
-                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M9 18l6-6-6-6" />
-                    </svg>
-                </button>
-
-                <!-- carousel track -->
-                <div id="certificados-grid" class="grid grid-flow-col auto-cols-[88%] sm:auto-cols-[45%] lg:auto-cols-[320px]
-                        gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4
-                        [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]
-                        items-stretch">
-                </div>
-
-                <!-- dots -->
-                <div id="certificados-dots" class="flex justify-center gap-2 mt-6"></div>
-            </div>
+        <div class="flex gap-3">
+            <span
+                class="w-8 h-8 rounded-lg bg-secondary/10 border border-secondary/30 flex items-center justify-center">
+                <span class="font-mono text-secondary text-xs font-bold">&lt;/&gt;</span>
+            </span>
+            <p class="font-mono text-xs tracking-[0.25em] uppercase text-secondary mb-2">/ Conquistas</p>
         </div>
+
+        <h3 class="font-syne text-4xl sm:text-5xl font-extrabold text-slate-100 leading-tight m-4">
+            Meus<span class="text-secondary"> Certificados</span>
+        </h3>
+
+        <p class="font-mono text-sm text-slate-500 mb-12 animate-fadeUp [animation-delay:120ms]" data-animate="up">
+            Confira alguns dos meus certificados e conquistas.
+        </p>
+
+        <!-- carousel wrapper -->
+        <div class="relative group">
+
+            <!-- btn prev -->
+            <button id="certPrevBtn" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 z-20
+               w-11 h-11 items-center justify-center rounded-full
+               bg-slate-800 border border-slate-600
+               text-slate-300 hover:text-secondary hover:border-secondary/50
+               opacity-0 group-hover:opacity-100
+               transition-all duration-300 shadow-xl">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6" />
+                </svg>
+            </button>
+
+            <!-- btn next -->
+            <button id="certNextBtn" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 z-20
+               w-11 h-11 items-center justify-center rounded-full
+               bg-slate-800 border border-slate-600
+               text-slate-300 hover:text-secondary hover:border-secondary/50
+               opacity-0 group-hover:opacity-100
+               transition-all duration-300 shadow-xl">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6" />
+                </svg>
+            </button>
+
+            <!-- carousel track -->
+            <div id="certificados-grid" class="grid grid-flow-col auto-cols-[88%] sm:auto-cols-[65%] md:auto-cols-[420px]
+                    gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4
+                    [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]
+                    px-1 items-stretch">
+            </div>
+
+            <!-- dots -->
+            <div class="flex justify-center gap-2 mt-6" id="certificados-dots"></div>
+
+        </div><!-- /group -->
 
         <!-- MODAL -->
         <div id="certificado-modal"
@@ -1050,12 +1051,29 @@
                     class="w-full max-h-[85vh] object-contain rounded-2xl shadow-2xl border border-white/10" />
             </div>
         </div>
+
     </section>
 
-    
+
     <section id="hobbies" class="px-8 py-20 bg-slate-800" data-animate="left">
-        <h3 class="text-3xl font-bold mb-6 text-secondary">Hobbies</h3>
-        <ul class="list-disc list-inside text-slate-300 space-y-2">
+        <div class="flex items-center gap-3 mb-6 relative left-[-4px]">
+            <span
+                class="w-8 h-8 rounded-lg bg-secondary/10 border border-secondary/30 flex items-center justify-center">
+                <span class="font-mono text-secondary text-xs font-bold">&lt;/&gt;</span>
+            </span>
+
+            <p class="font-mono text-xs tracking-[0.25em] uppercase text-secondary mb-2"> / Me conheça Melhor</p>
+        </div>
+
+        <h3 class="font-syne text-4xl sm:text-5xl font-extrabold text-slate-100 leading-tight m-4">
+            Meus<span class="text-secondary"> Hobbies</span>
+        </h3>
+
+        <p class="font-mono text-sm text-slate-500 mb-12 animate-fadeUp [animation-delay:120ms]" data-animate="up">
+            Confira alguns dos meus hobbies, interesses.
+        </p>
+        <ul class="list-disc list-inside text-slate-300 space-y-2 max-w-xl animate-fadeUp [animation-delay:160ms]"
+            data-animate="up">
             <li>Estudar novas tecnologias</li>
             <li>Praticar desenvolvimento de interfaces</li>
             <li>Desenvolver projetos pessoais</li>

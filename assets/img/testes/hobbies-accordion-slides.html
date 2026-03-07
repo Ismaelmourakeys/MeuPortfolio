@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hobbies Accordion + Slides</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { syne: ['Syne','sans-serif'], mono: ['DM Mono','monospace'] },
+          colors: { secondary: '#38bdf8' },
+        },
+      },
+    }
+  </script>
+  <style>
+    /* accordion expand */
+    .accordion-body {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.45s cubic-bezier(0.22,1,0.36,1);
+    }
+    .accordion-body.open { grid-template-rows: 1fr; }
+    .accordion-body > div { overflow: hidden; }
+
+    .accordion-item.open .acc-icon { transform: rotate(45deg); }
+    .acc-icon { transition: transform 0.35s cubic-bezier(0.22,1,0.36,1); }
+
+    .acc-bar { width: 0; transition: width 0.5s cubic-bezier(0.22,1,0.36,1) 0.1s; }
+    .accordion-item.open .acc-bar { width: 100%; }
+
+    /* slide fade */
+    .slide { 
+      position: absolute; inset: 0;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      pointer-events: none;
+    }
+    .slide.active { opacity: 1; pointer-events: auto; }
+
+    /* dot active */
+    .slide-dot { transition: all 0.3s ease; }
+    .slide-dot.active { background: #38bdf8; width: 20px; }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100">
+
+<section id="hobbies" class="relative px-6 py-24 overflow-hidden bg-slate-800">
+
+  <div class="pointer-events-none absolute inset-0
+              bg-[linear-gradient(rgba(56,189,248,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(56,189,248,0.03)_1px,transparent_1px)]
+              bg-[size:52px_52px]"></div>
+  <div class="pointer-events-none absolute -bottom-40 -right-40 w-[500px] h-[500px]
+              bg-[radial-gradient(circle,rgba(56,189,248,0.06),transparent_70%)]"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+    <!-- ── heading ──────────────────────────────── -->
+    <div class="flex flex-col gap-6 lg:sticky lg:top-24">
+      <div>
+        <p class="font-mono text-xs tracking-[0.25em] uppercase text-secondary mb-2">/ sobre mim</p>
+        <h3 class="font-syne text-4xl sm:text-5xl font-extrabold text-slate-100 leading-tight">
+          Meus <span class="text-secondary">Hobbies</span>
+        </h3>
+      </div>
+      <p class="text-slate-400 text-sm font-mono leading-relaxed max-w-sm">
+        Além do código, algumas coisas que me movem no dia a dia.
+      </p>
+      <div class="flex items-end gap-2 select-none">
+        <span class="font-syne text-8xl font-extrabold leading-none" style="color:rgba(56,189,248,0.07)">05</span>
+        <span class="font-mono text-xs text-slate-600 mb-3 tracking-widest">paixões</span>
+      </div>
+      <div class="flex flex-col gap-2">
+        <p class="font-mono text-[0.65rem] text-slate-600 tracking-widest uppercase">clique para explorar</p>
+        <div id="progressBar"
+             class="h-px bg-gradient-to-r from-sky-400 to-violet-400 rounded-full transition-all duration-500"
+             style="width:20%"></div>
+      </div>
+    </div>
+
+    <!-- ── accordion ────────────────────────────── -->
+    <div class="flex flex-col gap-2" id="accordionList">
+
+      <!-- ══ ITEM 1 ══ -->
+      <div class="accordion-item open group rounded-2xl border border-slate-700/60 bg-slate-900/40 overflow-hidden transition-all duration-300"
+           data-color="sky">
+        <button class="acc-trigger w-full flex items-center gap-4 px-5 py-4 text-left">
+          <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-sky-400/10 border border-sky-400/20 flex items-center justify-center transition-all duration-300">
+            <svg class="w-5 h-5 text-sky-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="7" y="7" width="10" height="10" rx="1"/>
+              <path d="M7 9H4M7 12H4M7 15H4M17 9h3M17 12h3M17 15h3M9 7V4M12 7V4M15 7V4M9 17v3M12 17v3M15 17v3"/>
+            </svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="font-mono text-[0.6rem] text-sky-400 tracking-widest uppercase mb-0.5">aprendizado</p>
+            <h4 class="font-syne font-bold text-slate-100 text-base">Estudar novas tecnologias</h4>
+          </div>
+          <div class="acc-icon flex-shrink-0 w-7 h-7 rounded-full border border-slate-600 flex items-center justify-center text-slate-400">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
+        </button>
+        <div class="px-5"><div class="acc-bar h-px bg-sky-400/40 rounded-full"></div></div>
+        <div class="accordion-body open">
+          <div>
+            <div class="px-5 py-4 flex flex-col gap-4">
+              <p class="text-slate-400 text-sm font-mono leading-relaxed">
+                Sempre explorando frameworks, linguagens e ferramentas. Cada descoberta abre novas possibilidades.
+              </p>
+
+              <!-- slideshow -->
+              <div class="slideshow relative w-full h-44 rounded-xl overflow-hidden bg-slate-950"
+                   data-interval="3000">
+                <div class="slide active">
+                  <img src="https://placehold.co/600x280/0f172a/38bdf8?text=React+Study&font=syne" class="w-full h-full object-cover"/>
+                </div>
+                <div class="slide">
+                  <img src="https://placehold.co/600x280/0f172a/818cf8?text=Tailwind+CSS&font=syne" class="w-full h-full object-cover"/>
+                </div>
+                <div class="slide">
+                  <img src="https://placehold.co/600x280/0f172a/34d399?text=Node.js&font=syne" class="w-full h-full object-cover"/>
+                </div>
+                <!-- dots -->
+                <div class="slide-dots absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10"></div>
+              </div>
+
+              <div class="flex flex-wrap gap-2">
+                <span class="font-mono text-[0.65rem] text-sky-400 bg-sky-400/10 border border-sky-400/20 px-2.5 py-1 rounded-full">React</span>
+                <span class="font-mono text-[0.65rem] text-sky-400 bg-sky-400/10 border border-sky-400/20 px-2.5 py-1 rounded-full">Tailwind</span>
+                <span class="font-mono text-[0.65rem] text-sky-400 bg-sky-400/10 border border-sky-400/20 px-2.5 py-1 rounded-full">Python</span>
+                <span class="font-mono text-[0.65rem] text-sky-400 bg-sky-400/10 border border-sky-400/20 px-2.5 py-1 rounded-full">Node.js</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ ITEM 2 ══ -->
+      <div class="accordion-item group rounded-2xl border border-slate-700/60 bg-slate-900/40 overflow-hidden transition-all duration-300"
+           data-color="violet">
+        <button class="acc-trigger w-full flex items-center gap-4 px-5 py-4 text-left">
+          <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-violet-400/10 border border-violet-400/20 flex items-center justify-center transition-all duration-300">
+            <svg class="w-5 h-5 text-violet-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+            </svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="font-mono text-[0.6rem] text-violet-400 tracking-widest uppercase mb-0.5">UI / UX</p>
+            <h4 class="font-syne font-bold text-slate-100 text-base">Praticar desenvolvimento de interfaces</h4>
+          </div>
+          <div class="acc-icon flex-shrink-0 w-7 h-7 rounded-full border border-slate-600 flex items-center justify-center text-slate-400">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
+        </button>
+        <div class="px-5"><div class="acc-bar h-px bg-violet-400/40 rounded-full"></div></div>
+        <div class="accordion-body">
+          <div>
+            <div class="px-5 py-4 flex flex-col gap-4">
+              <p class="text-slate-400 text-sm font-mono leading-relaxed">
+                Criar interfaces acessíveis, bonitas e funcionais. Design e código andam sempre juntos.
+              </p>
+
+              <!-- slideshow: 2 imagens -->
+              <div class="slideshow relative w-full h-44 rounded-xl overflow-hidden bg-slate-950"
+                   data-interval="2800">
+                <div class="slide active">
+                  <img src="https://placehold.co/600x280/0f172a/a78bfa?text=Figma+Design&font=syne" class="w-full h-full object-cover"/>
+                </div>
+                <div class="slide">
+                  <img src="https://placehold.co/600x280/0f172a/c084fc?text=UI+Components&font=syne" class="w-full h-full object-cover"/>
+                </div>
+                <div class="slide-dots absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10"></div>
+              </div>
+
+              <div class="flex flex-wrap gap-2">
+                <span class="font-mono text-[0.65rem] text-violet-400 bg-violet-400/10 border border-violet-400/20 px-2.5 py-1 rounded-full">Figma</span>
+                <span class="font-mono text-[0.65rem] text-violet-400 bg-violet-400/10 border border-violet-400/20 px-2.5 py-1 rounded-full">CSS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ ITEM 3 ══ -->
+      <div class="accordion-item group rounded-2xl border border-slate-700/60 bg-slate-900/40 overflow-hidden transition-all duration-300"
+           data-color="emerald">
+        <button class="acc-trigger w-full flex items-center gap-4 px-5 py-4 text-left">
+          <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-emerald-400/10 border border-emerald-400/20 flex items-center justify-center transition-all duration-300">
+            <svg class="w-5 h-5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="font-mono text-[0.6rem] text-emerald-400 tracking-widest uppercase mb-0.5">criação</p>
+            <h4 class="font-syne font-bold text-slate-100 text-base">Desenvolver projetos pessoais</h4>
+          </div>
+          <div class="acc-icon flex-shrink-0 w-7 h-7 rounded-full border border-slate-600 flex items-center justify-center text-slate-400">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
+        </button>
+        <div class="px-5"><div class="acc-bar h-px bg-emerald-400/40 rounded-full"></div></div>
+        <div class="accordion-body">
+          <div>
+            <div class="px-5 py-4 flex flex-col gap-4">
+              <p class="text-slate-400 text-sm font-mono leading-relaxed">
+                Do rascunho ao deploy — transformar ideias em projetos reais é o que mais me ensina.
+              </p>
+
+              <!-- slideshow: 4 imagens -->
+              <div class="slideshow relative w-full h-44 rounded-xl overflow-hidden bg-slate-950"
+                   data-interval="2500">
+                <div class="slide active">
+                  <img src="https://placehold.co/600x280/0f172a/34d399?text=MyGluco+App&font=syne" class="w-full h-full object-cover"/>
+                </div>
+                <div class="slide">
+                  <img src="https://placehold.co/600x280/0f172a/10b981?text=Landing+Page&font=syne" class="w-full h-full object-cover"/>
+                </div>
+                <div class="slide">
+                  <img src="https://placehold.co/600x280/0f172a/6ee7b7?text=Portfolio&font=syne" class="w-full h-full object-cover"/>
+                </div>
+                <div class="slide">
+                  <img src="https://placehold.co/600x280/0f172a/a7f3d0?text=ETEC+Projects&font=syne" class="w-full h-full object-cover"/>
+                </div>
+                <div class="slide-dots absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10"></div>
+              </div>
+
+              <div class="flex flex-wrap gap-2">
+                <span class="font-mono text-[0.65rem] text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 px-2.5 py-1 rounded-full">GitHub</span>
+                <span class="font-mono text-[0.65rem] text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 px-2.5 py-1 rounded-full">Vercel</span>
+                <span class="font-mono text-[0.65rem] text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 px-2.5 py-1 rounded-full">Firebase</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ ITEM 4 ══ -->
+      <div class="accordion-item group rounded-2xl border border-slate-700/60 bg-slate-900/40 overflow-hidden transition-all duration-300"
+           data-color="yellow">
+        <button class="acc-trigger w-full flex items-center gap-4 px-5 py-4 text-left">
+          <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-yellow-400/10 border border-yellow-400/20 flex items-center justify-center transition-all duration-300">
+            <svg class="w-5 h-5 text-yellow-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+            </svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="font-mono text-[0.6rem] text-yellow-400 tracking-widest uppercase mb-0.5">música</p>
+            <h4 class="font-syne font-bold text-slate-100 text-base">Ouvir e estudar música</h4>
+          </div>
+          <div class="acc-icon flex-shrink-0 w-7 h-7 rounded-full border border-slate-600 flex items-center justify-center text-slate-400">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
+        </button>
+        <div class="px-5"><div class="acc-bar h-px bg-yellow-400/40 rounded-full"></div></div>
+        <div class="accordion-body">
+          <div>
+            <div class="px-5 py-4 flex flex-col gap-4">
+              <p class="text-slate-400 text-sm font-mono leading-relaxed">
+                Músico de coração. Toco em igrejas e eventos — a música me acompanha em tudo.
+              </p>
+
+              <!-- slideshow: 2 imagens -->
+              <div class="slideshow relative w-full h-44 rounded-xl overflow-hidden bg-slate-950"
+                   data-interval="3200">
+                <div class="slide active">
+                  <img src="https://placehold.co/600x280/0f172a/facc15?text=Teclado&font=syne" class="w-full h-full object-cover"/>
+                </div>
+                <div class="slide">
+                  <img src="https://placehold.co/600x280/0f172a/fbbf24?text=Igreja+%26+Eventos&font=syne" class="w-full h-full object-cover"/>
+                </div>
+                <div class="slide-dots absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10"></div>
+              </div>
+
+              <div class="flex flex-wrap gap-2">
+                <span class="font-mono text-[0.65rem] text-yellow-400 bg-yellow-400/10 border border-yellow-400/20 px-2.5 py-1 rounded-full">Teclado</span>
+                <span class="font-mono text-[0.65rem] text-yellow-400 bg-yellow-400/10 border border-yellow-400/20 px-2.5 py-1 rounded-full">Teoria musical</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ ITEM 5 ══ -->
+      <div class="accordion-item group rounded-2xl border border-slate-700/60 bg-slate-900/40 overflow-hidden transition-all duration-300"
+           data-color="pink">
+        <button class="acc-trigger w-full flex items-center gap-4 px-5 py-4 text-left">
+          <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-pink-400/10 border border-pink-400/20 flex items-center justify-center transition-all duration-300">
+            <svg class="w-5 h-5 text-pink-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M5 8l6 6M4 14l6-6 2-3M2 5h12M7 2h1"/>
+              <rect x="14" y="11" width="8" height="11" rx="1"/>
+              <path d="M18 11V7a4 4 0 0 0-4-4v0"/>
+            </svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="font-mono text-[0.6rem] text-pink-400 tracking-widest uppercase mb-0.5">idiomas</p>
+            <h4 class="font-syne font-bold text-slate-100 text-base">Aprender inglês</h4>
+          </div>
+          <div class="acc-icon flex-shrink-0 w-7 h-7 rounded-full border border-slate-600 flex items-center justify-center text-slate-400">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
+        </button>
+        <div class="px-5"><div class="acc-bar h-px bg-pink-400/40 rounded-full"></div></div>
+        <div class="accordion-body">
+          <div>
+            <div class="px-5 py-4 flex flex-col gap-4">
+              <p class="text-slate-400 text-sm font-mono leading-relaxed">
+                Estudando inglês para acessar conteúdos técnicos na fonte e me preparar para o mercado internacional.
+              </p>
+
+              <!-- slideshow: 3 imagens -->
+              <div class="slideshow relative w-full h-44 rounded-xl overflow-hidden bg-slate-950"
+                   data-interval="3000">
+                <div class="slide active">
+                  <img src="https://placehold.co/600x280/0f172a/f472b6?text=FluencyPass&font=syne" class="w-full h-full object-cover"/>
+                </div>
+                <div class="slide">
+                  <img src="https://placehold.co/600x280/0f172a/ec4899?text=Wizard&font=syne" class="w-full h-full object-cover"/>
+                </div>
+                <div class="slide">
+                  <img src="https://placehold.co/600x280/0f172a/db2777?text=Duolingo&font=syne" class="w-full h-full object-cover"/>
+                </div>
+                <div class="slide-dots absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10"></div>
+              </div>
+
+              <div class="flex flex-wrap gap-2">
+                <span class="font-mono text-[0.65rem] text-pink-400 bg-pink-400/10 border border-pink-400/20 px-2.5 py-1 rounded-full">FluencyPass</span>
+                <span class="font-mono text-[0.65rem] text-pink-400 bg-pink-400/10 border border-pink-400/20 px-2.5 py-1 rounded-full">Wizard</span>
+                <span class="font-mono text-[0.65rem] text-pink-400 bg-pink-400/10 border border-pink-400/20 px-2.5 py-1 rounded-full">Duolingo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /accordion -->
+  </div>
+</section>
+
+<script>
+  /* ── accordion ─────────────────────────────── */
+  const items = document.querySelectorAll('.accordion-item');
+  const progressBar = document.getElementById('progressBar');
+
+  const colorMap = {
+    sky:     'border-sky-400/40 bg-sky-400/5',
+    violet:  'border-violet-400/40 bg-violet-400/5',
+    emerald: 'border-emerald-400/40 bg-emerald-400/5',
+    yellow:  'border-yellow-400/40 bg-yellow-400/5',
+    pink:    'border-pink-400/40 bg-pink-400/5',
+  };
+
+  function updateProgress() {
+    const open = document.querySelectorAll('.accordion-item.open').length;
+    progressBar.style.width = `${(open / items.length) * 100}%`;
+  }
+
+  items.forEach(item => {
+    const trigger  = item.querySelector('.acc-trigger');
+    const body     = item.querySelector('.accordion-body');
+    const color    = item.dataset.color;
+    const base     = 'border-slate-700/60 bg-slate-900/40';
+
+    trigger.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      if (isOpen) {
+        item.classList.remove('open', ...colorMap[color].split(' '));
+        item.classList.add(...base.split(' '));
+        body.classList.remove('open');
+      } else {
+        item.classList.add('open', ...colorMap[color].split(' '));
+        item.classList.remove(...base.split(' '));
+        body.classList.add('open');
+        // inicia slideshow ao abrir
+        initSlideshow(item.querySelector('.slideshow'));
+      }
+      updateProgress();
+    });
+  });
+
+  updateProgress();
+
+  /* ── slideshows ────────────────────────────── */
+  const timers = new Map();
+
+  function initSlideshow(el) {
+    if (!el || timers.has(el)) return; // já inicializado
+
+    const slides   = el.querySelectorAll('.slide');
+    const dotsWrap = el.querySelector('.slide-dots');
+    const interval = parseInt(el.dataset.interval) || 3000;
+    let current = 0;
+
+    // criar dots
+    slides.forEach((_, i) => {
+      const d = document.createElement('button');
+      d.className = `slide-dot h-1.5 w-1.5 rounded-full bg-white/30 ${i === 0 ? 'active' : ''}`;
+      if (i === 0) d.style.width = '20px';
+      d.addEventListener('click', () => { goSlide(i); resetTimer(); });
+      dotsWrap.appendChild(d);
+    });
+
+    const dots = dotsWrap.querySelectorAll('.slide-dot');
+
+    function goSlide(idx) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      dots[current].style.width = '6px';
+
+      current = (idx + slides.length) % slides.length;
+
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+      dots[current].style.width = '20px';
+    }
+
+    function resetTimer() {
+      clearInterval(timers.get(el));
+      const id = setInterval(() => goSlide(current + 1), interval);
+      timers.set(el, id);
+    }
+
+    resetTimer();
+  }
+
+  // inicia slideshow do primeiro item (já aberto)
+  document.querySelectorAll('.accordion-item.open .slideshow').forEach(initSlideshow);
+</script>
+</body>
+</html>

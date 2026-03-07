@@ -151,59 +151,61 @@ export function initCertificados() {
 
 
   // ── carousel: prev / next ─────────────────────
- // ── carousel: prev / next ─────────────────────
-function getScrollAmount() {
-    return grid.firstElementChild?.offsetWidth + 20 ?? 340;
-}
+  // ── carousel: prev / next ─────────────────────
+  function getScrollAmount() {
+    const card = grid.firstElementChild;
+    if (!card) return 440;
+    const gap = parseFloat(window.getComputedStyle(grid).gap) || 20;
+    return card.offsetWidth + gap;
+  }
 
-prevBtn?.addEventListener('click', () =>
+  prevBtn?.addEventListener('click', () =>
     grid.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' }));
-nextBtn?.addEventListener('click', () =>
+  nextBtn?.addEventListener('click', () =>
     grid.scrollBy({ left: getScrollAmount(), behavior: 'smooth' }));
 
-/* -------------------------------- */
-/* Criar dots baseado no scroll real */
-/* -------------------------------- */
-function createDots() {
+  /* -------------------------------- */
+  /* Criar dots baseado no scroll real */
+  /* -------------------------------- */
+  function createDots() {
     dotsContainer.innerHTML = '';
 
     const scrollAmount = getScrollAmount();
-    const dotsCount = Math.ceil(
-        (grid.scrollWidth - grid.clientWidth) / scrollAmount
-    ) + 1;
+    const scrollable = grid.scrollWidth - grid.clientWidth;
+    const dotsCount = scrollable <= 0 ? 1 : Math.round(scrollable / scrollAmount) + 1;
 
     for (let i = 0; i < dotsCount; i++) {
-        const dot = document.createElement('button');
-        dot.className = 'w-2 h-2 rounded-full bg-slate-600 transition-all duration-300';
-        dot.addEventListener('click', () => {
-            grid.scrollTo({ left: i * scrollAmount, behavior: 'smooth' });
-        });
-        dotsContainer.appendChild(dot);
+      const dot = document.createElement('button');
+      dot.className = 'w-2 h-2 rounded-full bg-slate-600 transition-all duration-300';
+      dot.addEventListener('click', () => {
+        grid.scrollTo({ left: i * scrollAmount, behavior: 'smooth' });
+      });
+      dotsContainer.appendChild(dot);
     }
 
     updateDots();
-}
+  }
 
-/* -------------------------------- */
-/* Atualizar dot ativo              */
-/* -------------------------------- */
-function updateDots() {
+  /* -------------------------------- */
+  /* Atualizar dot ativo              */
+  /* -------------------------------- */
+  function updateDots() {
     const scrollAmount = getScrollAmount();
     const dots = dotsContainer.querySelectorAll('button');
     const index = Math.round(grid.scrollLeft / scrollAmount);
 
     dots.forEach((dot, i) => {
-        if (i === index) {
-            dot.classList.remove('bg-slate-600', 'w-2');
-            dot.classList.add('bg-sky-400', 'w-6');
-        } else {
-            dot.classList.remove('bg-sky-400', 'w-6');
-            dot.classList.add('bg-slate-600', 'w-2');
-        }
+      if (i === index) {
+        dot.classList.remove('bg-slate-600', 'w-2');
+        dot.classList.add('bg-sky-400', 'w-6');
+      } else {
+        dot.classList.remove('bg-sky-400', 'w-6');
+        dot.classList.add('bg-slate-600', 'w-2');
+      }
     });
-}
+  }
 
-grid.addEventListener('scroll', updateDots);
-window.addEventListener('resize', createDots); // recalcula ao mudar tela
-createDots();
+  grid.addEventListener('scroll', updateDots);
+  window.addEventListener('resize', createDots);
+  createDots();
 }
