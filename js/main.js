@@ -6,44 +6,84 @@ import { setupCardInteractions, initCards } from "./cards.js";
 import { initVideoModal } from "./videoModal.js";
 import { initScrollAnimation } from "./animation.js";
 import { initCertificados } from "./certificacoes.js";
+import { initHobbies } from "./hobbies.js";
+import { initLoader } from "./loader.js";
 //import { setLanguage } from "./lang_control/i18nController.js";
 
 
+// Função para carregar componentes
+async function loadComponents() {
+  const includes = document.querySelectorAll("[data-include]");
 
-document.addEventListener("DOMContentLoaded", () => {
+  for (const el of includes) {
+    const file = el.getAttribute("data-include");
+    const response = await fetch(file + '?v=' + Date.now(), { cache: 'no-store' });
+    const html = await response.text();
 
-    /* Controle de idioma
-    const languageSelect = document.getElementById("languageSelect");
-    const savedLang = localStorage.getItem("lang") || "pt";
+    const template = document.createElement('template');
+    template.innerHTML = html.trim();
+    el.replaceWith(template.content.cloneNode(true));
+  }
+}
 
-    setLanguage(savedLang);
-    languageSelect.value = savedLang;
 
-    languageSelect.addEventListener("change", (e) => {
-        const lang = e.target.value;
-        setLanguage(lang);
-        localStorage.setItem("lang", lang);
-    });*/
-    
-    //MENU + HEADER com scroll + ANIMAÇÕES de menu 
-    initMenu();
-    initHeaderScroll();
-    initMenuAnimations();
-    initSaudacao();
+// Scroll suave com Lenis
+const lenis = new Lenis({
+  duration: 0.8,  // duração do scroll em segundos
+  wheelMultiplier: 0.2,  // quanto menor, mais lento — testa entre 0.3 e 0.7
+  smoothWheel: true,
+});
 
-    //CARROSSEL 
-    initCarousel();
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
 
-    //VIDEO MODAL dos cards de projetos
-    initVideoModal();
+/* Controle de idioma
+const languageSelect = document.getElementById("languageSelect");
+  const savedLang = localStorage.getItem("lang") || "pt";
 
-    //CARDS de projetos (abrir/fechar detalhes) + ANIMAÇÕES de scroll
-    setupCardInteractions();
-    initCards();
-    initScrollAnimation();
+  setLanguage(savedLang);
+  languageSelect.value = savedLang;
 
-    //Certificados
-    initCertificados();
+  languageSelect.addEventListener("change", (e) => {
+    const lang = e.target.value;
+    setLanguage(lang);
+      localStorage.setItem("lang", lang);
+  });*/
+
+document.addEventListener("DOMContentLoaded", async () => {
+
+
+  // ESPERA os componentes carregarem
+  await loadComponents();
+
+  //MENU + HEADER
+  initMenu();
+  initHeaderScroll();
+  initMenuAnimations();
+  initSaudacao();
+
+  //CARROSSEL
+  initCarousel();
+
+  //VIDEO MODAL
+  initVideoModal();
+
+  //CARDS
+  setupCardInteractions();
+  initCards();
+  initScrollAnimation();
+
+  //HOBBIES
+  initHobbies();
+  //CERTIFICADOS
+  initCertificados();
+
+
+  // LOADER
+  initLoader();
 });
 
 
