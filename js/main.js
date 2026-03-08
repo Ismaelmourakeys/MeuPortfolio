@@ -29,7 +29,7 @@ async function loadComponents() {
 
 // Scroll suave com Lenis
 const lenis = new Lenis({
-  duration: 0.8,  // duração do scroll em segundos
+  duration: 2.4,  // duração do scroll em segundos, quanto maior, mais suave
   wheelMultiplier: 0.2,  // quanto menor, mais lento — testa entre 0.3 e 0.7
   smoothWheel: true,
 });
