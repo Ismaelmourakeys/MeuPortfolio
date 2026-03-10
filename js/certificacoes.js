@@ -1,24 +1,26 @@
 export function initCertificados() {
+  
+  console.log("Certificados carregando...");
   const certificados = [
     {
       titulo: 'Bootcamp Nexa + AWS - Fundamentos de IA Generativa com BedRock',
       instituicao: 'DIO.',
-      imagem: 'assets/img/certificados/Bootcamp_AWS-Fundamentos.png',
+      imagem: './assets/img/certificados/Bootcamp_AWS-Fundamentos.png',
     },
     {
       titulo: 'Curso de Inglês - Beginner 1',
       instituicao: 'FluencyPass',
-      imagem: 'assets/img/certificados/Fluency Academy_beginner-1-2.PNG'
+      imagem: 'assets/img/certificados/Fluency_Academy_beginner-1-2.PNG'
     },
     {
       titulo: 'Criando um Site Simples (HTML, CSS e JavaScript)',
       instituicao: 'Fundação Bradesco',
-      imagem: 'assets/img/certificados/Fundação Bradesco_Site Simples.PNG'
+      imagem: './assets/img/certificados/Fundação_Bradesco_Site Simples.PNG'
     },
     {
       titulo: 'Imersão Front-end 2° edição',
       instituicao: 'Alura',
-      imagem: 'assets/img/certificados/Alura_Imesão Front-end 2° edição.PNG'
+      imagem: 'assets/img/certificados/Alura_Imesão_Front-end_2edição.PNG'
     },
     {
       titulo: 'Curso de HTML',
@@ -28,7 +30,7 @@ export function initCertificados() {
     {
       titulo: 'Curso de Python',
       instituicao: 'Santander Open Academy',
-      imagem: 'assets/img/certificados/Python_Santander Open Academy.PNG'
+      imagem: 'assets/img/certificados/Python_Santander_OpenAcademy.PNG'
     },
     {
       titulo: 'Curso Complementar de Inglês',
@@ -150,7 +152,7 @@ export function initCertificados() {
   }
 
 
-  // ── carousel: prev / next ─────────────────────
+  
   // ── carousel: prev / next ─────────────────────
   function getScrollAmount() {
     const card = grid.firstElementChild;

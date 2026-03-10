@@ -52,35 +52,35 @@ const languageSelect = document.getElementById("languageSelect");
     setLanguage(lang);
       localStorage.setItem("lang", lang);
   });*/
-
-document.addEventListener("DOMContentLoaded", async () => {
-
-
-  // ESPERA os componentes carregarem
-  await loadComponents();
-
+  
+  document.addEventListener("DOMContentLoaded", async () => {
+    
+    
+    // ESPERA os componentes carregarem
+    await loadComponents();
+  
   //MENU + HEADER
   initMenu();
   initHeaderScroll();
   initMenuAnimations();
   initSaudacao();
-
+  
   //CARROSSEL
   initCarousel();
-
+  
   //VIDEO MODAL
   initVideoModal();
-
+  
   //CARDS
   setupCardInteractions();
   initCards();
   initScrollAnimation();
-
+  
   //HOBBIES
   initHobbies();
+  
   //CERTIFICADOS
   initCertificados();
-
 
   // LOADER
   initLoader();
